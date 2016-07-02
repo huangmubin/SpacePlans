@@ -7,48 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1DBA8851D2797BB006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA8841D2797BB006BD6DC /* AppDelegate.swift */; };
-		B1DBA8871D2797BB006BD6DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA8861D2797BB006BD6DC /* ViewController.swift */; };
-		B1DBA88A1D2797BB006BD6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA8881D2797BB006BD6DC /* Main.storyboard */; };
-		B1DBA88D1D2797BB006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA88B1D2797BB006BD6DC /* TimeLog.xcdatamodeld */; };
-		B1DBA88F1D2797BB006BD6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA88E1D2797BB006BD6DC /* Assets.xcassets */; };
-		B1DBA8921D2797BB006BD6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA8901D2797BB006BD6DC /* LaunchScreen.storyboard */; };
-		B1DBA89D1D2797BB006BD6DC /* TimeLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA89C1D2797BB006BD6DC /* TimeLogTests.swift */; };
+		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
+		B1DBA9771D27BF58006BD6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA9751D27BF58006BD6DC /* Main.storyboard */; };
+		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
+		B1DBA97C1D27BF58006BD6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */; };
+		B1DBA97F1D27BF58006BD6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97D1D27BF58006BD6DC /* LaunchScreen.storyboard */; };
+		B1DBA9AD1D27BFF8006BD6DC /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA99E1D27BFF8006BD6DC /* AppData.swift */; };
+		B1DBA9AE1D27BFF8006BD6DC /* InitDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA99F1D27BFF8006BD6DC /* InitDatas.swift */; };
+		B1DBA9B31D27BFF8006BD6DC /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9AC1D27BFF8006BD6DC /* CoreData.swift */; };
+		B1DBA9BA1D27C105006BD6DC /* Logs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9B61D27C105006BD6DC /* Logs+CoreDataProperties.swift */; };
+		B1DBA9BB1D27C105006BD6DC /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9B71D27C105006BD6DC /* Logs.swift */; };
+		B1DBA9BC1D27C105006BD6DC /* Plans+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9B81D27C105006BD6DC /* Plans+CoreDataProperties.swift */; };
+		B1DBA9BD1D27C105006BD6DC /* Plans.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9B91D27C105006BD6DC /* Plans.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B1DBA8991D2797BB006BD6DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1DBA8791D2797BA006BD6DC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B1DBA8801D2797BA006BD6DC;
-			remoteInfo = TimeLog;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		B1DBA8811D2797BA006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1DBA8841D2797BB006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1DBA8861D2797BB006BD6DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B1DBA8891D2797BB006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1DBA88C1D2797BB006BD6DC /* TimeLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLog.xcdatamodel; sourceTree = "<group>"; };
-		B1DBA88E1D2797BB006BD6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B1DBA8911D2797BB006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B1DBA8931D2797BB006BD6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1DBA8981D2797BB006BD6DC /* TimeLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1DBA89C1D2797BB006BD6DC /* TimeLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogTests.swift; sourceTree = "<group>"; };
-		B1DBA89E1D2797BB006BD6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1DBA9761D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B1DBA9791D27BF58006BD6DC /* TimeLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLog.xcdatamodel; sourceTree = "<group>"; };
+		B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1DBA97E1D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1DBA9801D27BF58006BD6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1DBA99E1D27BFF8006BD6DC /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		B1DBA99F1D27BFF8006BD6DC /* InitDatas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitDatas.swift; sourceTree = "<group>"; };
+		B1DBA9AC1D27BFF8006BD6DC /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		B1DBA9B61D27C105006BD6DC /* Logs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logs+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1DBA9B71D27C105006BD6DC /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		B1DBA9B81D27C105006BD6DC /* Plans+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Plans+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1DBA9B91D27C105006BD6DC /* Plans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plans.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1DBA87E1D2797BA006BD6DC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1DBA8951D2797BB006BD6DC /* Frameworks */ = {
+		B1DBA96B1D27BF58006BD6DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,57 +49,156 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B1DBA8781D2797BA006BD6DC = {
+		B1DBA9651D27BF58006BD6DC = {
 			isa = PBXGroup;
 			children = (
-				B1DBA8831D2797BB006BD6DC /* TimeLog */,
-				B1DBA89B1D2797BB006BD6DC /* TimeLogTests */,
-				B1DBA8821D2797BA006BD6DC /* Products */,
+				B1DBA9701D27BF58006BD6DC /* TimeLog */,
+				B1DBA96F1D27BF58006BD6DC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B1DBA8821D2797BA006BD6DC /* Products */ = {
+		B1DBA96F1D27BF58006BD6DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1DBA8811D2797BA006BD6DC /* TimeLog.app */,
-				B1DBA8981D2797BB006BD6DC /* TimeLogTests.xctest */,
+				B1DBA96E1D27BF58006BD6DC /* TimeLog.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B1DBA8831D2797BB006BD6DC /* TimeLog */ = {
+		B1DBA9701D27BF58006BD6DC /* TimeLog */ = {
 			isa = PBXGroup;
 			children = (
-				B1DBA8841D2797BB006BD6DC /* AppDelegate.swift */,
-				B1DBA8861D2797BB006BD6DC /* ViewController.swift */,
-				B1DBA8881D2797BB006BD6DC /* Main.storyboard */,
-				B1DBA88E1D2797BB006BD6DC /* Assets.xcassets */,
-				B1DBA8901D2797BB006BD6DC /* LaunchScreen.storyboard */,
-				B1DBA8931D2797BB006BD6DC /* Info.plist */,
-				B1DBA88B1D2797BB006BD6DC /* TimeLog.xcdatamodeld */,
+				B1DBA9B51D27C042006BD6DC /* AppDelegate */,
+				B1DBA9B41D27C030006BD6DC /* Info */,
+				B1DBA99D1D27BFF8006BD6DC /* Datas */,
+				B1DBA9A41D27BFF8006BD6DC /* Interface */,
+				B1DBA9AB1D27BFF8006BD6DC /* Tools */,
 			);
 			path = TimeLog;
 			sourceTree = "<group>";
 		};
-		B1DBA89B1D2797BB006BD6DC /* TimeLogTests */ = {
+		B1DBA99D1D27BFF8006BD6DC /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				B1DBA89C1D2797BB006BD6DC /* TimeLogTests.swift */,
-				B1DBA89E1D2797BB006BD6DC /* Info.plist */,
+				B1DBA99E1D27BFF8006BD6DC /* AppData.swift */,
+				B1DBA9BF1D27C119006BD6DC /* Init Data */,
+				B1DBA9BE1D27C108006BD6DC /* Database */,
 			);
-			path = TimeLogTests;
+			path = Datas;
+			sourceTree = "<group>";
+		};
+		B1DBA9A41D27BFF8006BD6DC /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA9A51D27BFF8006BD6DC /* DayChart */,
+				B1DBA9A61D27BFF8006BD6DC /* LogEditor */,
+				B1DBA9A71D27BFF8006BD6DC /* LogList */,
+				B1DBA9A81D27BFF8006BD6DC /* PlanEditor */,
+				B1DBA9A91D27BFF8006BD6DC /* PlanList */,
+				B1DBA9AA1D27BFF8006BD6DC /* Timer */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		B1DBA9A51D27BFF8006BD6DC /* DayChart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DayChart;
+			sourceTree = "<group>";
+		};
+		B1DBA9A61D27BFF8006BD6DC /* LogEditor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LogEditor;
+			sourceTree = "<group>";
+		};
+		B1DBA9A71D27BFF8006BD6DC /* LogList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LogList;
+			sourceTree = "<group>";
+		};
+		B1DBA9A81D27BFF8006BD6DC /* PlanEditor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlanEditor;
+			sourceTree = "<group>";
+		};
+		B1DBA9A91D27BFF8006BD6DC /* PlanList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlanList;
+			sourceTree = "<group>";
+		};
+		B1DBA9AA1D27BFF8006BD6DC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		B1DBA9AB1D27BFF8006BD6DC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA9AC1D27BFF8006BD6DC /* CoreData.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B1DBA9B41D27C030006BD6DC /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA9751D27BF58006BD6DC /* Main.storyboard */,
+				B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */,
+				B1DBA97D1D27BF58006BD6DC /* LaunchScreen.storyboard */,
+				B1DBA9801D27BF58006BD6DC /* Info.plist */,
+				B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		B1DBA9B51D27C042006BD6DC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B1DBA9BE1D27C108006BD6DC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA9B61D27C105006BD6DC /* Logs+CoreDataProperties.swift */,
+				B1DBA9B71D27C105006BD6DC /* Logs.swift */,
+				B1DBA9B81D27C105006BD6DC /* Plans+CoreDataProperties.swift */,
+				B1DBA9B91D27C105006BD6DC /* Plans.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		B1DBA9BF1D27C119006BD6DC /* Init Data */ = {
+			isa = PBXGroup;
+			children = (
+				B1DBA99F1D27BFF8006BD6DC /* InitDatas.swift */,
+			);
+			name = "Init Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B1DBA8801D2797BA006BD6DC /* TimeLog */ = {
+		B1DBA96D1D27BF58006BD6DC /* TimeLog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1DBA8A11D2797BB006BD6DC /* Build configuration list for PBXNativeTarget "TimeLog" */;
+			buildConfigurationList = B1DBA9831D27BF58006BD6DC /* Build configuration list for PBXNativeTarget "TimeLog" */;
 			buildPhases = (
-				B1DBA87D1D2797BA006BD6DC /* Sources */,
-				B1DBA87E1D2797BA006BD6DC /* Frameworks */,
-				B1DBA87F1D2797BA006BD6DC /* Resources */,
+				B1DBA96A1D27BF58006BD6DC /* Sources */,
+				B1DBA96B1D27BF58006BD6DC /* Frameworks */,
+				B1DBA96C1D27BF58006BD6DC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -116,47 +206,25 @@
 			);
 			name = TimeLog;
 			productName = TimeLog;
-			productReference = B1DBA8811D2797BA006BD6DC /* TimeLog.app */;
+			productReference = B1DBA96E1D27BF58006BD6DC /* TimeLog.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B1DBA8971D2797BB006BD6DC /* TimeLogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B1DBA8A41D2797BB006BD6DC /* Build configuration list for PBXNativeTarget "TimeLogTests" */;
-			buildPhases = (
-				B1DBA8941D2797BB006BD6DC /* Sources */,
-				B1DBA8951D2797BB006BD6DC /* Frameworks */,
-				B1DBA8961D2797BB006BD6DC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B1DBA89A1D2797BB006BD6DC /* PBXTargetDependency */,
-			);
-			name = TimeLogTests;
-			productName = TimeLogTests;
-			productReference = B1DBA8981D2797BB006BD6DC /* TimeLogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B1DBA8791D2797BA006BD6DC /* Project object */ = {
+		B1DBA9661D27BF58006BD6DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Myron;
 				TargetAttributes = {
-					B1DBA8801D2797BA006BD6DC = {
+					B1DBA96D1D27BF58006BD6DC = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					B1DBA8971D2797BB006BD6DC = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = B1DBA8801D2797BA006BD6DC;
 					};
 				};
 			};
-			buildConfigurationList = B1DBA87C1D2797BA006BD6DC /* Build configuration list for PBXProject "TimeLog" */;
+			buildConfigurationList = B1DBA9691D27BF58006BD6DC /* Build configuration list for PBXProject "TimeLog" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -164,79 +232,61 @@
 				en,
 				Base,
 			);
-			mainGroup = B1DBA8781D2797BA006BD6DC;
-			productRefGroup = B1DBA8821D2797BA006BD6DC /* Products */;
+			mainGroup = B1DBA9651D27BF58006BD6DC;
+			productRefGroup = B1DBA96F1D27BF58006BD6DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B1DBA8801D2797BA006BD6DC /* TimeLog */,
-				B1DBA8971D2797BB006BD6DC /* TimeLogTests */,
+				B1DBA96D1D27BF58006BD6DC /* TimeLog */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1DBA87F1D2797BA006BD6DC /* Resources */ = {
+		B1DBA96C1D27BF58006BD6DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1DBA8921D2797BB006BD6DC /* LaunchScreen.storyboard in Resources */,
-				B1DBA88F1D2797BB006BD6DC /* Assets.xcassets in Resources */,
-				B1DBA88A1D2797BB006BD6DC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1DBA8961D2797BB006BD6DC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B1DBA97F1D27BF58006BD6DC /* LaunchScreen.storyboard in Resources */,
+				B1DBA97C1D27BF58006BD6DC /* Assets.xcassets in Resources */,
+				B1DBA9771D27BF58006BD6DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B1DBA87D1D2797BA006BD6DC /* Sources */ = {
+		B1DBA96A1D27BF58006BD6DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1DBA8871D2797BB006BD6DC /* ViewController.swift in Sources */,
-				B1DBA8851D2797BB006BD6DC /* AppDelegate.swift in Sources */,
-				B1DBA88D1D2797BB006BD6DC /* TimeLog.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1DBA8941D2797BB006BD6DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1DBA89D1D2797BB006BD6DC /* TimeLogTests.swift in Sources */,
+				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
+				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
+				B1DBA9BC1D27C105006BD6DC /* Plans+CoreDataProperties.swift in Sources */,
+				B1DBA9B31D27BFF8006BD6DC /* CoreData.swift in Sources */,
+				B1DBA9BD1D27C105006BD6DC /* Plans.swift in Sources */,
+				B1DBA9BB1D27C105006BD6DC /* Logs.swift in Sources */,
+				B1DBA9AE1D27BFF8006BD6DC /* InitDatas.swift in Sources */,
+				B1DBA9BA1D27C105006BD6DC /* Logs+CoreDataProperties.swift in Sources */,
+				B1DBA9AD1D27BFF8006BD6DC /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		B1DBA89A1D2797BB006BD6DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B1DBA8801D2797BA006BD6DC /* TimeLog */;
-			targetProxy = B1DBA8991D2797BB006BD6DC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		B1DBA8881D2797BB006BD6DC /* Main.storyboard */ = {
+		B1DBA9751D27BF58006BD6DC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B1DBA8891D2797BB006BD6DC /* Base */,
+				B1DBA9761D27BF58006BD6DC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B1DBA8901D2797BB006BD6DC /* LaunchScreen.storyboard */ = {
+		B1DBA97D1D27BF58006BD6DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B1DBA8911D2797BB006BD6DC /* Base */,
+				B1DBA97E1D27BF58006BD6DC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -244,7 +294,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B1DBA89F1D2797BB006BD6DC /* Debug */ = {
+		B1DBA9811D27BF58006BD6DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,7 +340,7 @@
 			};
 			name = Debug;
 		};
-		B1DBA8A01D2797BB006BD6DC /* Release */ = {
+		B1DBA9821D27BF58006BD6DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -329,7 +379,7 @@
 			};
 			name = Release;
 		};
-		B1DBA8A21D2797BB006BD6DC /* Debug */ = {
+		B1DBA9841D27BF58006BD6DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -340,7 +390,7 @@
 			};
 			name = Debug;
 		};
-		B1DBA8A31D2797BB006BD6DC /* Release */ = {
+		B1DBA9851D27BF58006BD6DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -348,75 +398,43 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.TimeLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B1DBA8A51D2797BB006BD6DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TimeLogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Myron.TimeLogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeLog.app/TimeLog";
-			};
-			name = Debug;
-		};
-		B1DBA8A61D2797BB006BD6DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = TimeLogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Myron.TimeLogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeLog.app/TimeLog";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1DBA87C1D2797BA006BD6DC /* Build configuration list for PBXProject "TimeLog" */ = {
+		B1DBA9691D27BF58006BD6DC /* Build configuration list for PBXProject "TimeLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1DBA89F1D2797BB006BD6DC /* Debug */,
-				B1DBA8A01D2797BB006BD6DC /* Release */,
+				B1DBA9811D27BF58006BD6DC /* Debug */,
+				B1DBA9821D27BF58006BD6DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1DBA8A11D2797BB006BD6DC /* Build configuration list for PBXNativeTarget "TimeLog" */ = {
+		B1DBA9831D27BF58006BD6DC /* Build configuration list for PBXNativeTarget "TimeLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1DBA8A21D2797BB006BD6DC /* Debug */,
-				B1DBA8A31D2797BB006BD6DC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		B1DBA8A41D2797BB006BD6DC /* Build configuration list for PBXNativeTarget "TimeLogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B1DBA8A51D2797BB006BD6DC /* Debug */,
-				B1DBA8A61D2797BB006BD6DC /* Release */,
+				B1DBA9841D27BF58006BD6DC /* Debug */,
+				B1DBA9851D27BF58006BD6DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B1DBA88B1D2797BB006BD6DC /* TimeLog.xcdatamodeld */ = {
+		B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B1DBA88C1D2797BB006BD6DC /* TimeLog.xcdatamodel */,
+				B1DBA9791D27BF58006BD6DC /* TimeLog.xcdatamodel */,
 			);
-			currentVersion = B1DBA88C1D2797BB006BD6DC /* TimeLog.xcdatamodel */;
+			currentVersion = B1DBA9791D27BF58006BD6DC /* TimeLog.xcdatamodel */;
 			path = TimeLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = B1DBA8791D2797BA006BD6DC /* Project object */;
+	rootObject = B1DBA9661D27BF58006BD6DC /* Project object */;
 }

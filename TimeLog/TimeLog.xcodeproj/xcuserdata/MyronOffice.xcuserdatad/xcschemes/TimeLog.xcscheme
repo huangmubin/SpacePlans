@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B1DBA8801D2797BA006BD6DC"
+               BlueprintIdentifier = "B1DBA96D1D27BF58006BD6DC"
                BuildableName = "TimeLog.app"
                BlueprintName = "TimeLog"
                ReferencedContainer = "container:TimeLog.xcodeproj">
@@ -28,21 +28,11 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B1DBA8971D2797BB006BD6DC"
-               BuildableName = "TimeLogTests.xctest"
-               BlueprintName = "TimeLogTests"
-               ReferencedContainer = "container:TimeLog.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B1DBA8801D2797BA006BD6DC"
+            BlueprintIdentifier = "B1DBA96D1D27BF58006BD6DC"
             BuildableName = "TimeLog.app"
             BlueprintName = "TimeLog"
             ReferencedContainer = "container:TimeLog.xcodeproj">
@@ -65,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B1DBA8801D2797BA006BD6DC"
+            BlueprintIdentifier = "B1DBA96D1D27BF58006BD6DC"
             BuildableName = "TimeLog.app"
             BlueprintName = "TimeLog"
             ReferencedContainer = "container:TimeLog.xcodeproj">
@@ -84,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B1DBA8801D2797BA006BD6DC"
+            BlueprintIdentifier = "B1DBA96D1D27BF58006BD6DC"
             BuildableName = "TimeLog.app"
             BlueprintName = "TimeLog"
             ReferencedContainer = "container:TimeLog.xcodeproj">
