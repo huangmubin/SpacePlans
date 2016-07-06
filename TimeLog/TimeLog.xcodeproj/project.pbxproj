@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C95868D1D2878E600FE5873 /* ClockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95868C1D2878E600FE5873 /* ClockTools.swift */; };
+		9CBAB7E61D2DC3FB007716E7 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */; };
+		9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */; };
+		9CBAB7EA1D2DC554007716E7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E91D2DC554007716E7 /* MenuViewController.swift */; };
+		9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA9771D27BF58006BD6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA9751D27BF58006BD6DC /* Main.storyboard */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C95868C1D2878E600FE5873 /* ClockTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockTools.swift; sourceTree = "<group>"; };
+		9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListViewController.swift; sourceTree = "<group>"; };
+		9CBAB7E91D2DC554007716E7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTint.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DBA9761D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CBAB7E41D2DC3B3007716E7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9CBAB7E91D2DC554007716E7 /* MenuViewController.swift */,
+				9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		B1DBA9651D27BF58006BD6DC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B1DBA99E1D27BFF8006BD6DC /* AppData.swift */,
+				9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */,
 				B1DBA9BF1D27C119006BD6DC /* Init Data */,
 				B1DBA9BE1D27C108006BD6DC /* Database */,
 			);
@@ -90,11 +110,12 @@
 		B1DBA9A41D27BFF8006BD6DC /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				9CBAB7E41D2DC3B3007716E7 /* Menu */,
+				B1DBA9A91D27BFF8006BD6DC /* PlanList */,
+				B1DBA9A81D27BFF8006BD6DC /* PlanEditor */,
 				B1DBA9A51D27BFF8006BD6DC /* DayChart */,
 				B1DBA9A61D27BFF8006BD6DC /* LogEditor */,
 				B1DBA9A71D27BFF8006BD6DC /* LogList */,
-				B1DBA9A81D27BFF8006BD6DC /* PlanEditor */,
-				B1DBA9A91D27BFF8006BD6DC /* PlanList */,
 				B1DBA9AA1D27BFF8006BD6DC /* Timer */,
 			);
 			path = Interface;
@@ -131,6 +152,7 @@
 		B1DBA9A91D27BFF8006BD6DC /* PlanList */ = {
 			isa = PBXGroup;
 			children = (
+				9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */,
 			);
 			path = PlanList;
 			sourceTree = "<group>";
@@ -146,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B1DBA9AC1D27BFF8006BD6DC /* CoreData.swift */,
+				9C95868C1D2878E600FE5873 /* ClockTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -261,14 +284,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
+				9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */,
+				9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
+				9C95868D1D2878E600FE5873 /* ClockTools.swift in Sources */,
 				B1DBA9BC1D27C105006BD6DC /* Plans+CoreDataProperties.swift in Sources */,
 				B1DBA9B31D27BFF8006BD6DC /* CoreData.swift in Sources */,
 				B1DBA9BD1D27C105006BD6DC /* Plans.swift in Sources */,
+				9CBAB7EA1D2DC554007716E7 /* MenuViewController.swift in Sources */,
 				B1DBA9BB1D27C105006BD6DC /* Logs.swift in Sources */,
 				B1DBA9AE1D27BFF8006BD6DC /* InitDatas.swift in Sources */,
 				B1DBA9BA1D27C105006BD6DC /* Logs+CoreDataProperties.swift in Sources */,
 				B1DBA9AD1D27BFF8006BD6DC /* AppData.swift in Sources */,
+				9CBAB7E61D2DC3FB007716E7 /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +448,7 @@
 				B1DBA9851D27BF58006BD6DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class AppData {
     
@@ -14,7 +15,7 @@ final class AppData {
     static let shared = AppData()
     private init() { }
     class func deploy() {
-        AppData.shared.testPlansOrder()
+        //AppData.shared.testPlansOrder()
     }
     
     // MARK: - CoreData
@@ -46,10 +47,6 @@ final class AppData {
         print("====================")
     }
     
-    private func addOrder(plan: Double) {
-        plansOrder.append(plan)
-    }
-    
     // MARK: Add
     /// 添加计划
     class func addPlan(id: Double?) -> Plans {
@@ -57,7 +54,7 @@ final class AppData {
         plan.id = id ?? Double(Int(NSDate().timeIntervalSince1970))
         plan.idle = false
         
-        AppData.shared.addOrder(plan.id)
+        AppData.shared.plansOrder.append(plan.id)
         AppData.saveOrder()
         return plan
     }
@@ -70,7 +67,36 @@ final class AppData {
         return log
     }
     
+    /// 明细记录分裂
+    class func splitLog(log: Logs) {
+        let dayS = Int(log.start + 28800) / 86400
+        let dayE = Int(log.end + 28800) / 86400
+        
+        if dayE == dayS {
+            saveData()
+        } else {
+            var ranges = [(s: Double, e: Double)]()
+            for i in 0 ..< dayE - dayS {
+                ranges.append((Double(dayS + i * 86400), Double(dayS + i * 86400 + 86400)))
+            }
+            
+            for range in ranges {
+                let new = addLog(log.plan!)
+                new.plan = log.plan
+                new.note = log.note
+                new.start = range.s
+                new.end = range.e
+                new.duration = range.e - range.s
+                saveData()
+            }
+            
+            delete(log)
+            saveData()
+        }
+    }
+    
     // MARK: Find
+    /// 获取计划列表
     class func find() -> [Plans] {
         if let objects = CoreData.find("Plans", predicate: "id != 0", sorts: [], type: .ManagedObjectResultType, limit: 0, offset: 0) as? [Plans] {
             var plans = [Plans]()
@@ -82,5 +108,21 @@ final class AppData {
         } else {
             return []
         }
+    }
+    
+    // MARK: 删除
+    /// 删除计划
+    class func delete(data: NSManagedObject) {
+        if let plan = data as? Plans {
+            let index = AppData.shared.plansOrder.indexOf(plan.id)!
+            AppData.shared.plansOrder.removeAtIndex(index)
+        }
+        CoreData.delete(data)
+    }
+    
+    // MARK: 移动
+    /// 改变计划顺序
+    class func move(index: Int, toIndex: Int) {
+        (AppData.shared.plansOrder[toIndex], AppData.shared.plansOrder[index]) = (AppData.shared.plansOrder[index], AppData.shared.plansOrder[toIndex])
     }
 }

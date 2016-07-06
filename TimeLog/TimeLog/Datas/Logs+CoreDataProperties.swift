@@ -19,6 +19,6 @@ extension Logs {
     @NSManaged var end: Double
     @NSManaged var duration: Double
     @NSManaged var json: NSData?
-    @NSManaged var plan: NSManagedObject?
+    @NSManaged var plan: Plans?
 
 }
