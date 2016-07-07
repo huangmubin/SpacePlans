@@ -15,37 +15,30 @@ final class AppData {
     static let shared = AppData()
     private init() { }
     class func deploy() {
+        AppData.readOrder()
         
         var tmpPlans = [Plans]()
-        do {
-            let datas = AppData.find()
-            for data in datas {
-                if data.idle {
-                    AppData.shared.idles.append(data)
-                } else {
-                    tmpPlans.append(data)
-                }
+        let datas = AppData.find()
+        for data in datas {
+            if data.idle {
+                AppData.shared.idles.append(data)
+            } else {
+                tmpPlans.append(data)
             }
         }
         
-        
-        do {
-            for plan in AppData.shared.plansOrder {
-                let index = tmpPlans.indexOf({ $0.id == plan })!
-                AppData.shared.plans.append(tmpPlans[index])
-            }
+        for plan in AppData.shared.plansOrder {
+            let index = tmpPlans.indexOf({ $0.id == plan })!
+            AppData.shared.plans.append(tmpPlans[index])
         }
         
-        do {
-            AppData.shared.idles.sortInPlace({ $0.id > $1.id })
-        }
-        
+        AppData.shared.idles.sortInPlace({ $0.id > $1.id })
         
         //AppData.shared.testPlansOrder()
     }
     
     // MARK: - App Model
-    var datas = [Plans]()
+    //var datas = [Plans]()
     var plans = [Plans]()
     var idles = [Plans]()
     
@@ -135,12 +128,6 @@ final class AppData {
     /// 获取计划列表
     class func find() -> [Plans] {
         if let objects = CoreData.find("Plans", predicate: "id != 0", sorts: [], type: .ManagedObjectResultType, limit: 0, offset: 0) as? [Plans] {
-//            var plans = [Plans]()
-//            for order in AppData.shared.plansOrder {
-//                let index = objects.indexOf({ $0.id == order })!
-//                plans.append(objects[index])
-//            }
-//            return plans
             return objects
         } else {
             return []

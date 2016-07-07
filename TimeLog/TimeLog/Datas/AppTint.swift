@@ -45,17 +45,30 @@ class AppTint {
     class func buttonBackground1() -> UIColor {
         return [
             UIColor.whiteColor()
-            ][AppTint.shared.tint]
+        ][AppTint.shared.tint]
     }
     class func buttonBackground2() -> UIColor {
         return [
             UIColor.whiteColor()
-            ][AppTint.shared.tint]
+        ][AppTint.shared.tint]
     }
     class func buttonBackground3() -> UIColor {
         return [
             UIColor.whiteColor()
-            ][AppTint.shared.tint]
+        ][AppTint.shared.tint]
+    }
+    
+    /// 文本颜色
+    class func textColor() -> UIColor {
+        return [
+            UIColor.blackColor()
+        ][AppTint.shared.tint]
+    }
+    
+    class func textDetailColor() -> UIColor {
+        return [
+            UIColor.grayColor()
+        ][AppTint.shared.tint]
     }
     
     // MARK: - 字体

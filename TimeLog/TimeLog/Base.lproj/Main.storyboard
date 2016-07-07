@@ -38,7 +38,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1l-LR-2Qi">
                                         <rect key="frame" x="126" y="12" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -58,25 +58,25 @@
                                     <outlet property="titleLabel" destination="e1l-LR-2Qi" id="V47-N3-5xx"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-Xk-Dao">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-Xk-Dao">
                                 <rect key="frame" x="0.0" y="52" width="320" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlanListCell" id="8F5-sk-zas" customClass="PlanListCell" customModule="TimeLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8F5-sk-zas" id="Qez-EG-GOY">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujE-3r-9eP">
-                                                    <rect key="frame" x="8" y="4" width="304" height="51"/>
+                                                    <rect key="frame" x="8" y="4" width="304" height="42"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QR9-OR-pJe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="51"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="42"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7z-db-hQN">
-                                                                    <rect key="frame" x="-15" y="11" width="31" height="30"/>
+                                                                    <rect key="frame" x="-15" y="6" width="31" height="30"/>
                                                                     <state key="normal" image="LogAdd"/>
                                                                 </button>
                                                             </subviews>
@@ -88,10 +88,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhq-0C-pRI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="51"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="42"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beF-jF-yZO">
-                                                                    <rect key="frame" x="-15" y="11" width="30" height="30"/>
+                                                                    <rect key="frame" x="-15" y="6" width="30" height="30"/>
                                                                     <state key="normal" image="Timer"/>
                                                                 </button>
                                                             </subviews>
@@ -103,10 +103,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJt-qz-VbO">
-                                                            <rect key="frame" x="304" y="0.0" width="0.0" height="51"/>
+                                                            <rect key="frame" x="304" y="0.0" width="0.0" height="42"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tI2-Mb-5UZ">
-                                                                    <rect key="frame" x="-15" y="12" width="30" height="27"/>
+                                                                    <rect key="frame" x="-15" y="8" width="30" height="27"/>
                                                                     <state key="normal" image="Edit"/>
                                                                 </button>
                                                             </subviews>
@@ -132,24 +132,24 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-Kf-yzg">
-                                                    <rect key="frame" x="8" y="4" width="304" height="51"/>
+                                                    <rect key="frame" x="8" y="4" width="304" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总时长：100 小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-9v-qyb">
-                                                            <rect key="frame" x="12" y="32" width="135" height="21"/>
+                                                            <rect key="frame" x="12" y="27" width="135" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日：1000 分钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-xm-GRg">
-                                                            <rect key="frame" x="204" y="32" width="128" height="21"/>
+                                                            <rect key="frame" x="224" y="27" width="128" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B98-rL-SQ1">
-                                                            <rect key="frame" x="8" y="9" width="68" height="21"/>
+                                                            <rect key="frame" x="8" y="4" width="68" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -158,7 +158,7 @@
                                                         <constraint firstItem="Mae-xm-GRg" firstAttribute="top" secondItem="0fw-9v-qyb" secondAttribute="top" id="DjO-cX-hXV"/>
                                                         <constraint firstItem="B98-rL-SQ1" firstAttribute="leading" secondItem="nB4-Kf-yzg" secondAttribute="leading" constant="8" id="KQx-Mr-ObJ"/>
                                                         <constraint firstAttribute="centerY" secondItem="B98-rL-SQ1" secondAttribute="bottom" constant="-4" id="P8i-ab-WqX"/>
-                                                        <constraint firstItem="Mae-xm-GRg" firstAttribute="leading" secondItem="nB4-Kf-yzg" secondAttribute="trailing" constant="-100" id="dus-bk-mBr"/>
+                                                        <constraint firstItem="Mae-xm-GRg" firstAttribute="leading" secondItem="nB4-Kf-yzg" secondAttribute="trailing" constant="-80" id="dus-bk-mBr"/>
                                                         <constraint firstItem="0fw-9v-qyb" firstAttribute="leading" secondItem="nB4-Kf-yzg" secondAttribute="leading" constant="12" id="xQh-Gu-uEu"/>
                                                         <constraint firstItem="0fw-9v-qyb" firstAttribute="top" secondItem="B98-rL-SQ1" secondAttribute="bottom" constant="2" id="xwN-4j-5Ar"/>
                                                     </constraints>
@@ -197,10 +197,12 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="WAc-SH-IXG"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rfg-Wh-Sln"/>
+                                    <outletCollection property="gestureRecognizers" destination="Yvd-7A-0EM" appends="YES" id="uxB-51-ITc"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fYj-T0-i7q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="8Sp-T1-4CX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sdf-Xk-Dao" secondAttribute="bottom" id="MFg-eR-NDA"/>
@@ -216,11 +218,36 @@
                     <connections>
                         <outlet property="menuBarView" destination="fYj-T0-i7q" id="QiZ-Ni-PU8"/>
                         <outlet property="tableView" destination="sdf-Xk-Dao" id="ZgE-YR-zAR"/>
+                        <segue destination="K3o-q6-d3d" kind="show" identifier="AddPlan" id="o7R-t8-1Bz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Yvd-7A-0EM">
+                    <connections>
+                        <action selector="moveCellGestureAction:" destination="BYZ-38-t0r" id="OXY-pc-Hur"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="469" y="401"/>
+        </scene>
+        <!--Plan Editor View Controller-->
+        <scene sceneID="3tG-N4-f4r">
+            <objects>
+                <viewController id="K3o-q6-d3d" customClass="PlanEditorViewController" customModule="TimeLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Md-kA-ec6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kk3-Pi-j2d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j3R-s2-VfV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rP5-2G-3im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469" y="1143"/>
         </scene>
     </scenes>
     <resources>

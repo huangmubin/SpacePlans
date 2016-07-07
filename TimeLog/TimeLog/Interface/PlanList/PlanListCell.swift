@@ -15,11 +15,12 @@ class PlanListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layoutIfNeeded()
-        drawShadow()
+        //drawShadow()
         drawBackground()
         drawButton()
         drawContainer()
         drawLabel()
+        //print("shadow \(shadow.frame); timer \(timerBackground.frame)")
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -44,6 +45,11 @@ class PlanListCell: UITableViewCell {
         shadow.shadowRadius    = 2
         shadow.cornerRadius    = 4
         layer.insertSublayer(shadow, atIndex: 0)
+    }
+    
+    func heightLightShadow(light: Bool) {
+        shadow.shadowOpacity = light ? 1 : 0.5
+        shadow.shadowOffset  = light ? CGSize(width: 1, height: 1) : CGSizeZero
     }
     
     // MARK: - Button Background
@@ -93,11 +99,18 @@ class PlanListCell: UITableViewCell {
         dayLabel.font = AppTint.detailFont()
     }
     
+    func updateLabel(idle: Bool) {
+        nameLabel.textColor = idle ? AppTint.textDetailColor() : AppTint.textColor()
+        allLabel.textColor  = AppTint.textDetailColor()
+        dayLabel.textColor  = AppTint.textDetailColor()
+    }
+    
     // MARK: - Touch
     var began = CGPointZero
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         began = touches.first!.locationInView(self)
         began.x -= containerCenter.constant
+        //drawShadow()
     }
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let move = touches.first?.locationInView(self) else { return }
@@ -126,6 +139,7 @@ class PlanListCell: UITableViewCell {
             self.editWidth.constant = abs(constant)
             self.layoutIfNeeded()
         }
+        //print("shadow \(shadow.frame); timer \(timerBackground.frame)")
     }
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         UIView.animateWithDuration(0.5) {

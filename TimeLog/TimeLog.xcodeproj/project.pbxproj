@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C35A2441D2E8C420002C2FB /* PlanEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35A2431D2E8C420002C2FB /* PlanEditorViewController.swift */; };
 		9C95868D1D2878E600FE5873 /* ClockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C95868C1D2878E600FE5873 /* ClockTools.swift */; };
 		9CBAB7E61D2DC3FB007716E7 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */; };
 		9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C35A2431D2E8C420002C2FB /* PlanEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanEditorViewController.swift; sourceTree = "<group>"; };
 		9C95868C1D2878E600FE5873 /* ClockTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockTools.swift; sourceTree = "<group>"; };
 		9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		B1DBA9A81D27BFF8006BD6DC /* PlanEditor */ = {
 			isa = PBXGroup;
 			children = (
+				9C35A2431D2E8C420002C2FB /* PlanEditorViewController.swift */,
 			);
 			path = PlanEditor;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */,
 				9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
+				9C35A2441D2E8C420002C2FB /* PlanEditorViewController.swift in Sources */,
 				9C95868D1D2878E600FE5873 /* ClockTools.swift in Sources */,
 				B1DBA9BC1D27C105006BD6DC /* Plans+CoreDataProperties.swift in Sources */,
 				B1DBA9B31D27BFF8006BD6DC /* CoreData.swift in Sources */,
