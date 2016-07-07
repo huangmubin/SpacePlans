@@ -29,9 +29,9 @@ class InitDatas {
     class func deployApp() {
         NSUserDefaults.standardUserDefaults().registerDefaults(["deployApp": true])
         guard NSUserDefaults.standardUserDefaults().boolForKey("deployApp") else {
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "deployApp")
             return
         }
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "deployApp")
         
         let deploy = [
             Plan(id: 1467444553.0,
@@ -95,6 +95,9 @@ class InitDatas {
             plan.idle = data.idle
             plan.days = data.days
             plan.time = data.time
+            if plan.idle {
+                AppData.shared.idlePlan(plan.id)
+            }
             AppData.saveData()
             for log in data.logs {
                 let detail = AppData.addLog(plan)
@@ -105,6 +108,8 @@ class InitDatas {
                 AppData.saveData()
             }
         }
+        
+        AppData.saveOrder()
     }
     
 }

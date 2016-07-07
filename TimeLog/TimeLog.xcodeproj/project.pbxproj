@@ -12,6 +12,8 @@
 		9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */; };
 		9CBAB7EA1D2DC554007716E7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7E91D2DC554007716E7 /* MenuViewController.swift */; };
 		9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */; };
+		B13065B91D2DFDCD00CCFE0E /* PlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13065B81D2DFDCD00CCFE0E /* PlanListCell.swift */; };
+		B13065BB1D2E008F00CCFE0E /* LayerDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13065BA1D2E008F00CCFE0E /* LayerDrawer.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA9771D27BF58006BD6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA9751D27BF58006BD6DC /* Main.storyboard */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
@@ -32,6 +34,8 @@
 		9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListViewController.swift; sourceTree = "<group>"; };
 		9CBAB7E91D2DC554007716E7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTint.swift; sourceTree = "<group>"; };
+		B13065B81D2DFDCD00CCFE0E /* PlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListCell.swift; sourceTree = "<group>"; };
+		B13065BA1D2E008F00CCFE0E /* LayerDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerDrawer.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DBA9761D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				9CBAB7E71D2DC4C3007716E7 /* PlanListViewController.swift */,
+				B13065B81D2DFDCD00CCFE0E /* PlanListCell.swift */,
 			);
 			path = PlanList;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			children = (
 				B1DBA9AC1D27BFF8006BD6DC /* CoreData.swift */,
 				9C95868C1D2878E600FE5873 /* ClockTools.swift */,
+				B13065BA1D2E008F00CCFE0E /* LayerDrawer.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 				9CBAB7EA1D2DC554007716E7 /* MenuViewController.swift in Sources */,
 				B1DBA9BB1D27C105006BD6DC /* Logs.swift in Sources */,
 				B1DBA9AE1D27BFF8006BD6DC /* InitDatas.swift in Sources */,
+				B13065B91D2DFDCD00CCFE0E /* PlanListCell.swift in Sources */,
 				B1DBA9BA1D27C105006BD6DC /* Logs+CoreDataProperties.swift in Sources */,
 				B1DBA9AD1D27BFF8006BD6DC /* AppData.swift in Sources */,
+				B13065BB1D2E008F00CCFE0E /* LayerDrawer.swift in Sources */,
 				9CBAB7E61D2DC3FB007716E7 /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

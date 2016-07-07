@@ -20,7 +20,10 @@ class AppTint {
     class func deploy() { }
     
     // MARK: - 属性
+    
     private var tint = 0
+    private var font = 0
+    private var image = 0
     
     // MARK: - 色调
     
@@ -38,4 +41,52 @@ class AppTint {
         ][AppTint.shared.tint]
     }
     
+    /// 按钮背景色 1
+    class func buttonBackground1() -> UIColor {
+        return [
+            UIColor.whiteColor()
+            ][AppTint.shared.tint]
+    }
+    class func buttonBackground2() -> UIColor {
+        return [
+            UIColor.whiteColor()
+            ][AppTint.shared.tint]
+    }
+    class func buttonBackground3() -> UIColor {
+        return [
+            UIColor.whiteColor()
+            ][AppTint.shared.tint]
+    }
+    
+    // MARK: - 字体
+    
+    /// 标题字体
+    class func titleFont() -> UIFont {
+        return [
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 3)
+        ][AppTint.shared.font]
+    }
+    
+    /// 名字字体
+    class func nameFont() -> UIFont {
+        return [
+            UIFont.systemFontOfSize(UIFont.systemFontSize())
+        ][AppTint.shared.font]
+    }
+    
+    /// 细节字体
+    class func detailFont() -> UIFont {
+        return [
+            UIFont.systemFontOfSize(UIFont.systemFontSize() - 5)
+        ][AppTint.shared.font]
+    }
+    
+    // MARK: - 图片
+    
+    /// 图片后缀
+    class func imageSuffix() -> String {
+        return [
+            ""
+        ][AppTint.shared.image]
+    }
 }
