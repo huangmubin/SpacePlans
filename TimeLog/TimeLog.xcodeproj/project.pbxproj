@@ -15,6 +15,9 @@
 		9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */; };
 		B13065B91D2DFDCD00CCFE0E /* PlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13065B81D2DFDCD00CCFE0E /* PlanListCell.swift */; };
 		B13065BB1D2E008F00CCFE0E /* LayerDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13065BA1D2E008F00CCFE0E /* LayerDrawer.swift */; };
+		B1AF5A941D2F4581006EEB49 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF5A931D2F4581006EEB49 /* TextView.swift */; };
+		B1AF5A961D2F4C0C006EEB49 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF5A951D2F4C0C006EEB49 /* Button.swift */; };
+		B1AF5A981D2F7936006EEB49 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF5A971D2F7936006EEB49 /* TextField.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA9771D27BF58006BD6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA9751D27BF58006BD6DC /* Main.storyboard */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
@@ -38,6 +41,9 @@
 		9CBAB7EB1D2DC6D4007716E7 /* AppTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTint.swift; sourceTree = "<group>"; };
 		B13065B81D2DFDCD00CCFE0E /* PlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListCell.swift; sourceTree = "<group>"; };
 		B13065BA1D2E008F00CCFE0E /* LayerDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerDrawer.swift; sourceTree = "<group>"; };
+		B1AF5A931D2F4581006EEB49 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		B1AF5A951D2F4C0C006EEB49 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		B1AF5A971D2F7936006EEB49 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DBA9761D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +78,16 @@
 				9CBAB7E51D2DC3FB007716E7 /* MenuBarView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		B1AF5A921D2F4565006EEB49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1AF5A931D2F4581006EEB49 /* TextView.swift */,
+				B1AF5A971D2F7936006EEB49 /* TextField.swift */,
+				B1AF5A951D2F4C0C006EEB49 /* Button.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B1DBA9651D27BF58006BD6DC = {
@@ -116,6 +132,7 @@
 		B1DBA9A41D27BFF8006BD6DC /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				B1AF5A921D2F4565006EEB49 /* Views */,
 				9CBAB7E41D2DC3B3007716E7 /* Menu */,
 				B1DBA9A91D27BFF8006BD6DC /* PlanList */,
 				B1DBA9A81D27BFF8006BD6DC /* PlanEditor */,
@@ -295,8 +312,10 @@
 				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
 				9CBAB7E81D2DC4C3007716E7 /* PlanListViewController.swift in Sources */,
 				9CBAB7EC1D2DC6D4007716E7 /* AppTint.swift in Sources */,
+				B1AF5A981D2F7936006EEB49 /* TextField.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
 				9C35A2441D2E8C420002C2FB /* PlanEditorViewController.swift in Sources */,
+				B1AF5A961D2F4C0C006EEB49 /* Button.swift in Sources */,
 				9C95868D1D2878E600FE5873 /* ClockTools.swift in Sources */,
 				B1DBA9BC1D27C105006BD6DC /* Plans+CoreDataProperties.swift in Sources */,
 				B1DBA9B31D27BFF8006BD6DC /* CoreData.swift in Sources */,
@@ -307,6 +326,7 @@
 				B13065B91D2DFDCD00CCFE0E /* PlanListCell.swift in Sources */,
 				B1DBA9BA1D27C105006BD6DC /* Logs+CoreDataProperties.swift in Sources */,
 				B1DBA9AD1D27BFF8006BD6DC /* AppData.swift in Sources */,
+				B1AF5A941D2F4581006EEB49 /* TextView.swift in Sources */,
 				B13065BB1D2E008F00CCFE0E /* LayerDrawer.swift in Sources */,
 				9CBAB7E61D2DC3FB007716E7 /* MenuBarView.swift in Sources */,
 			);

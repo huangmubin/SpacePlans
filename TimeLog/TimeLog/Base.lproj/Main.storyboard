@@ -244,85 +244,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LB-Nd-ZEt">
-                                <rect key="frame" x="16" y="20" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我要坚持：            天，每天        小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-jf-1dX">
-                                <rect key="frame" x="13" y="80" width="291" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我要坚持            天，每天             小时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-jf-1dX">
+                                <rect key="frame" x="17" y="99" width="297" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6m-Ih-Woi">
-                                <rect key="frame" x="96" y="51" width="60" height="80"/>
+                                <rect key="frame" x="90" y="70" width="53" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="2hq-ce-aZB"/>
+                                    <constraint firstAttribute="width" constant="53" id="2hq-ce-aZB"/>
                                     <constraint firstAttribute="height" constant="80" id="aZe-zu-iQM"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="K3o-q6-d3d" id="jXB-Rx-r4Y"/>
+                                    <outlet property="delegate" destination="K3o-q6-d3d" id="Vgh-ra-rz8"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooJ-N5-jfQ">
-                                <rect key="frame" x="232" y="51" width="35" height="80"/>
+                                <rect key="frame" x="217" y="70" width="59" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="3ZF-ci-3cj"/>
+                                    <constraint firstAttribute="width" constant="59" id="3ZF-ci-3cj"/>
                                     <constraint firstAttribute="height" constant="80" id="AY1-Tw-rYO"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="K3o-q6-d3d" id="9Na-Bi-oUj"/>
+                                    <outlet property="delegate" destination="K3o-q6-d3d" id="U63-zU-Ghs"/>
+                                </connections>
                             </pickerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bHZ-4C-qwY">
-                                <rect key="frame" x="16" y="151" width="288" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-8l-RQE" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="10" y="275" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="jBU-tz-dFJ"/>
+                                </constraints>
+                                <state key="normal" title="取消"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="K3o-q6-d3d" eventType="touchUpInside" id="QYJ-uS-yox"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-mz-ElI" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="170" y="275" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2ZQ-qH-VRF"/>
+                                </constraints>
+                                <state key="normal" title="删除"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="K3o-q6-d3d" eventType="touchUpInside" id="Ny4-KL-X0V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-tv-12g" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="250" y="275" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Z74-hj-HcK"/>
+                                </constraints>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="K3o-q6-d3d" eventType="touchUpInside" id="xxK-hL-2XD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="给计划定个言简意赅的名词吧！" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icU-vR-WNj" customClass="TextField" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="16" y="29" width="288" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextFieldChanged:" destination="K3o-q6-d3d" eventType="editingChanged" id="vA2-0b-eV2"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="给计划写个备注，或者目标，留给以后的自己 ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bHZ-4C-qwY" customClass="TextView" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="16" y="150" width="288" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="qSL-hW-Tuh"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-8l-RQE">
-                                <rect key="frame" x="17" y="266" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU8-iY-sfB">
-                                <rect key="frame" x="97" y="266" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-mz-ElI">
-                                <rect key="frame" x="177" y="266" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-tv-12g">
-                                <rect key="frame" x="257" y="266" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU8-iY-sfB" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="90" y="275" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="QkE-yQ-cI8"/>
+                                </constraints>
+                                <state key="normal" title="闲置"/>
+                                <connections>
+                                    <action selector="adleAction:" destination="K3o-q6-d3d" eventType="touchUpInside" id="gY5-IE-BKP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ooJ-N5-jfQ" firstAttribute="centerY" secondItem="mGF-jf-1dX" secondAttribute="centerY" id="2dl-jk-hFv"/>
                             <constraint firstItem="yU8-iY-sfB" firstAttribute="centerX" secondItem="j3R-s2-VfV" secondAttribute="centerX" multiplier="0.75" id="6km-KN-H7b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mGF-jf-1dX" secondAttribute="trailing" id="6lV-Es-vCW"/>
-                            <constraint firstItem="bHZ-4C-qwY" firstAttribute="leading" secondItem="2LB-Nd-ZEt" secondAttribute="leading" id="7PU-dE-guC"/>
+                            <constraint firstAttribute="trailing" secondItem="mGF-jf-1dX" secondAttribute="trailing" constant="6" id="6lV-Es-vCW"/>
                             <constraint firstItem="W6m-Ih-Woi" firstAttribute="centerY" secondItem="mGF-jf-1dX" secondAttribute="centerY" id="8wS-4P-5ln"/>
-                            <constraint firstItem="mGF-jf-1dX" firstAttribute="leading" secondItem="W6m-Ih-Woi" secondAttribute="trailing" constant="-143" id="Aaw-SO-XVg"/>
+                            <constraint firstItem="mGF-jf-1dX" firstAttribute="leading" secondItem="W6m-Ih-Woi" secondAttribute="trailing" constant="-126" id="Aaw-SO-XVg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="icU-vR-WNj" secondAttribute="leading" id="AsP-xa-jQ4"/>
+                            <constraint firstItem="bHZ-4C-qwY" firstAttribute="leading" secondItem="icU-vR-WNj" secondAttribute="leading" id="FdQ-tZ-lUa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="icU-vR-WNj" secondAttribute="trailing" id="J9j-zt-U3X"/>
                             <constraint firstItem="bHZ-4C-qwY" firstAttribute="centerX" secondItem="j3R-s2-VfV" secondAttribute="centerX" id="KiF-Ix-O7S"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2LB-Nd-ZEt" secondAttribute="leading" id="Lcl-Ov-GmZ"/>
                             <constraint firstItem="XHd-mz-ElI" firstAttribute="centerY" secondItem="IfV-8l-RQE" secondAttribute="centerY" id="PGg-L0-Vhr"/>
                             <constraint firstItem="yU8-iY-sfB" firstAttribute="centerY" secondItem="IfV-8l-RQE" secondAttribute="centerY" id="RPg-Of-iJn"/>
-                            <constraint firstItem="IfV-8l-RQE" firstAttribute="centerY" secondItem="bHZ-4C-qwY" secondAttribute="bottom" constant="30" id="X7u-xH-Dmf"/>
-                            <constraint firstItem="ooJ-N5-jfQ" firstAttribute="leading" secondItem="mGF-jf-1dX" secondAttribute="trailing" constant="-72" id="YlE-JI-wny"/>
+                            <constraint firstItem="IfV-8l-RQE" firstAttribute="centerY" secondItem="bHZ-4C-qwY" secondAttribute="bottom" constant="40" id="X7u-xH-Dmf"/>
+                            <constraint firstItem="ooJ-N5-jfQ" firstAttribute="leading" secondItem="mGF-jf-1dX" secondAttribute="trailing" constant="-97" id="YlE-JI-wny"/>
                             <constraint firstItem="Xd8-tv-12g" firstAttribute="centerX" secondItem="j3R-s2-VfV" secondAttribute="centerX" multiplier="1.75" id="aZz-9S-dqB"/>
-                            <constraint firstItem="bHZ-4C-qwY" firstAttribute="top" secondItem="mGF-jf-1dX" secondAttribute="centerY" constant="60" id="d7g-wO-m5t"/>
+                            <constraint firstItem="bHZ-4C-qwY" firstAttribute="top" secondItem="mGF-jf-1dX" secondAttribute="centerY" constant="40" id="d7g-wO-m5t"/>
+                            <constraint firstItem="icU-vR-WNj" firstAttribute="centerY" secondItem="9Md-kA-ec6" secondAttribute="bottom" constant="40" id="hgl-Wm-WI9"/>
                             <constraint firstItem="Xd8-tv-12g" firstAttribute="centerY" secondItem="IfV-8l-RQE" secondAttribute="centerY" id="iLe-TI-GPX"/>
+                            <constraint firstItem="mGF-jf-1dX" firstAttribute="centerY" secondItem="icU-vR-WNj" secondAttribute="centerY" constant="70" id="iRs-As-rbW"/>
                             <constraint firstItem="IfV-8l-RQE" firstAttribute="centerX" secondItem="j3R-s2-VfV" secondAttribute="centerX" multiplier="0.25" id="joz-gw-nue"/>
-                            <constraint firstItem="mGF-jf-1dX" firstAttribute="centerY" secondItem="2LB-Nd-ZEt" secondAttribute="centerY" constant="60" id="npg-T6-pVl"/>
-                            <constraint firstItem="2LB-Nd-ZEt" firstAttribute="centerY" secondItem="9Md-kA-ec6" secondAttribute="bottom" constant="30" id="sk6-0l-yGG"/>
                             <constraint firstItem="XHd-mz-ElI" firstAttribute="centerX" secondItem="j3R-s2-VfV" secondAttribute="centerX" multiplier="1.25" id="vNk-qi-bFM"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PMI-86-5Qc" appends="YES" id="cEo-Sz-sTE"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dayPicker" destination="W6m-Ih-Woi" id="Yjt-E7-tHO"/>
+                        <outlet property="idleButton" destination="yU8-iY-sfB" id="9hh-Bq-YYS"/>
+                        <outlet property="nameTextField" destination="icU-vR-WNj" id="hpF-jd-t7v"/>
+                        <outlet property="noteTextView" destination="bHZ-4C-qwY" id="Exd-eL-wWB"/>
+                        <outlet property="saveButton" destination="Xd8-tv-12g" id="AoE-vs-ddg"/>
+                        <outlet property="timePicker" destination="ooJ-N5-jfQ" id="oHs-x2-Prc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rP5-2G-3im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PMI-86-5Qc">
+                    <connections>
+                        <action selector="tapGestureAction:" destination="K3o-q6-d3d" id="uJU-zH-e0Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="469" y="1143"/>
         </scene>

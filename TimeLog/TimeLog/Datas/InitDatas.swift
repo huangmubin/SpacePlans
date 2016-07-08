@@ -96,7 +96,7 @@ class InitDatas {
             plan.days = data.days
             plan.time = data.time
             if plan.idle {
-                AppData.shared.idlePlan(plan.id)
+                AppData.idlePlan(plan.id)
             }
             AppData.saveData()
             for log in data.logs {

@@ -71,9 +71,12 @@ final class AppData {
         print("====================")
     }
     
-    func idlePlan(id: Double) {
-        let index = plansOrder.indexOf(id)!
-        plansOrder.removeAtIndex(index)
+    class func idlePlan(id: Double) {
+        let index = AppData.shared.plansOrder.indexOf(id)!
+        AppData.shared.plansOrder.removeAtIndex(index)
+    }
+    class func addOrder(id: Double) {
+        AppData.shared.plansOrder.append(id)
     }
     
     // MARK: Add

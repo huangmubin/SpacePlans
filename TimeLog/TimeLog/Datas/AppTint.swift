@@ -94,6 +94,13 @@ class AppTint {
         ][AppTint.shared.font]
     }
     
+//    /// 按钮字体
+//    class func buttonFont() -> UIFont {
+//        return [
+//            UIFont.systemFontOfSize(UIFont.systemFontSize())
+//            ][AppTint.shared.font]
+//    }
+    
     // MARK: - 图片
     
     /// 图片后缀

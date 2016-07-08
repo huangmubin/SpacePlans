@@ -13,6 +13,7 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        deployMenu()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -30,7 +31,7 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func deployMenu() {
         menuBarView.addAction = { [weak self] (sender) in
-            self?.performSegueWithIdentifier("", sender: nil)
+            self?.performSegueWithIdentifier("AddPlan", sender: nil)
         }
     }
     
