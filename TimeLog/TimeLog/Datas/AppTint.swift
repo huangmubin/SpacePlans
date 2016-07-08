@@ -34,11 +34,13 @@ class AppTint {
         ][AppTint.shared.tint]
     }
     
+    static let essentialColors: [UIColor] = [
+        UIColor.blackColor()
+    ]
+    
     /// 主色调
     class func essentialColor() -> UIColor {
-        return [
-            UIColor.blackColor()
-        ][AppTint.shared.tint]
+        return essentialColors[AppTint.shared.tint]
     }
     
     /// 按钮背景色 1

@@ -19,6 +19,7 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         deployTint()
+        tableView.reloadData()
     }
     
     func deployTint() {
@@ -30,8 +31,13 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var menuBarView: MenuBarView!
     
     func deployMenu() {
-        menuBarView.addAction = { [weak self] (sender) in
+        menuBarView.addAction = { [weak self] in
             self?.performSegueWithIdentifier("AddPlan", sender: nil)
+        }
+        menuBarView.menuAction = { [weak self] in
+            if $0 {
+                self?.performSegueWithIdentifier("PlanToMenu", sender: nil)
+            }
         }
     }
     
@@ -98,7 +104,7 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier! {
-        case "AddPlan":
+        case "AddPlan", "PlanToMenu":
             break
         default:
             assert(false, "\(segue.identifier) : \(segue)")

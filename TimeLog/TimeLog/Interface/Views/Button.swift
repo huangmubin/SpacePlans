@@ -44,13 +44,15 @@ class Button: UIButton {
     }
     
     override func drawRect(rect: CGRect) {
-        let path = UIBezierPath(roundedRect: rect, cornerRadius: 4)
-        if selected {
-            AppTint.essentialColor().setFill()
-        } else {
-            AppTint.backgroundColor().setFill()
+        if imageView == nil {
+            let path = UIBezierPath(roundedRect: rect, cornerRadius: 4)
+            if selected {
+                AppTint.essentialColor().setFill()
+            } else {
+                AppTint.backgroundColor().setFill()
+            }
+            path.fill()
         }
-        path.fill()
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 2

@@ -113,6 +113,7 @@ class PlanEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBAction func saveAction(sender: Button) {
         if data == nil {
             data = AppData.addPlan(nil)
+            AppData.shared.plans.append(data!)
         }
         
         data?.name = nameTextField.text
@@ -123,9 +124,15 @@ class PlanEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
         case (false, true):
             data?.idle = true
             AppData.idlePlan(data!.id)
+            let index = AppData.shared.plans.indexOf(data!)!
+            let plan = AppData.shared.plans.removeAtIndex(index)
+            AppData.shared.idles.append(plan)
         case (true, false):
             data?.idle = false
             AppData.addOrder(data!.id)
+            let index = AppData.shared.idles.indexOf(data!)!
+            let plan = AppData.shared.idles.removeAtIndex(index)
+            AppData.shared.plans.append(plan)
         default:
             break
         }
