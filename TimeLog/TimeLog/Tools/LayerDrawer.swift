@@ -28,4 +28,18 @@ class LayerDrawer {
         return shape
     }
     
+    /// 绘制直线
+    class func line(frame: CGRect, x1: CGFloat, y1: CGFloat, x2: CGFloat, y2: CGFloat, w: CGFloat, dashPhase: CGFloat) -> CAShapeLayer {
+        let path = UIBezierPath()
+        path.moveToPoint(CGPoint(x: x1, y: y1))
+        path.addLineToPoint(CGPoint(x: x2, y: y2))
+        let shape = CAShapeLayer()
+        shape.frame = frame
+        shape.path  = path.CGPath
+        shape.lineCap = kCALineCapRound
+        shape.lineDashPhase = dashPhase
+        shape.lineWidth = w
+        return shape
+    }
+    
 }
