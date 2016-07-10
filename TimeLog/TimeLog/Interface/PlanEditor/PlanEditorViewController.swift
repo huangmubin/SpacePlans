@@ -29,6 +29,12 @@ class PlanEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
+    func deployTint() {
+        view.backgroundColor = AppTint.backgroundColor()
+        nameTextField.textColor = AppTint.textColor()
+        dayLabel.textColor = AppTint.textColor()
+    }
+    
     // MARK: Background
     
     var lines = [CAShapeLayer]()
@@ -64,6 +70,7 @@ class PlanEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // MARK: - Days
     
+    @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var timePicker: UIPickerView!
     

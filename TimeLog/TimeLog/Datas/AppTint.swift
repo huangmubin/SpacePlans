@@ -17,12 +17,18 @@ class AppTint {
     // MARK: - 单例
     static let shared = AppTint()
     private init() { }
-    class func deploy() { }
+    class func deploy() {
+        AppTint.shared.tint = NSUserDefaults.standardUserDefaults().integerForKey("AppTint.tint")
+    }
     
     // MARK: - 属性
     
-    private var tint = 0
-    private var font = 0
+    var tint = 0 {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setInteger(tint, forKey: "AppTint.tint")
+        }
+    }
+    var font = 0
     private var image = 0
     
     // MARK: - 色调
@@ -30,45 +36,63 @@ class AppTint {
     /// 背景颜色
     class func backgroundColor() -> UIColor {
         return [
-            UIColor.whiteColor()
+            UIColor.whiteColor(),
+            UIColor.greenColor(),
+            UIColor.blueColor()
         ][AppTint.shared.tint]
     }
     
-    static let essentialColors: [UIColor] = [
-        UIColor.blackColor()
+    static let tintColors: [UIColor] = [
+        UIColor.whiteColor(),
+        UIColor.greenColor(),
+        UIColor.blueColor()
     ]
     
     /// 主色调
     class func essentialColor() -> UIColor {
-        return essentialColors[AppTint.shared.tint]
+        return [
+            UIColor.blackColor(),
+            UIColor.redColor(),
+            UIColor.brownColor()
+        ][AppTint.shared.tint]
     }
     
     /// 按钮背景色 1
     class func buttonBackground1() -> UIColor {
         return [
-            UIColor.whiteColor()
+            UIColor.whiteColor(),
+            UIColor.lightGrayColor(),
+            UIColor.grayColor()
         ][AppTint.shared.tint]
     }
     class func buttonBackground2() -> UIColor {
         return [
-            UIColor.whiteColor()
+            UIColor.whiteColor(),
+            UIColor.lightGrayColor(),
+            UIColor.grayColor()
         ][AppTint.shared.tint]
     }
     class func buttonBackground3() -> UIColor {
         return [
-            UIColor.whiteColor()
+            UIColor.whiteColor(),
+            UIColor.lightGrayColor(),
+            UIColor.grayColor()
         ][AppTint.shared.tint]
     }
     
     /// 文本颜色
     class func textColor() -> UIColor {
         return [
+            UIColor.blackColor(),
+            UIColor.blackColor(),
             UIColor.blackColor()
         ][AppTint.shared.tint]
     }
     
     class func textDetailColor() -> UIColor {
         return [
+            UIColor.grayColor(),
+            UIColor.grayColor(),
             UIColor.grayColor()
         ][AppTint.shared.tint]
     }
@@ -78,21 +102,27 @@ class AppTint {
     /// 标题字体
     class func titleFont() -> UIFont {
         return [
-            UIFont.systemFontOfSize(UIFont.systemFontSize() + 3)
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 3),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 6),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 9)
         ][AppTint.shared.font]
     }
     
     /// 名字字体
     class func nameFont() -> UIFont {
         return [
-            UIFont.systemFontOfSize(UIFont.systemFontSize())
+            UIFont.systemFontOfSize(UIFont.systemFontSize()),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 3),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 6)
         ][AppTint.shared.font]
     }
     
     /// 细节字体
     class func detailFont() -> UIFont {
         return [
-            UIFont.systemFontOfSize(UIFont.systemFontSize() - 5)
+            UIFont.systemFontOfSize(UIFont.systemFontSize() - 5),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() - 2),
+            UIFont.systemFontOfSize(UIFont.systemFontSize() + 1)
         ][AppTint.shared.font]
     }
     

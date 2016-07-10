@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Every
         AppData.deploy()
+        AppTint.deploy()
         
         // Other
         /*

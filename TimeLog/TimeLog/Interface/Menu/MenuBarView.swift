@@ -26,7 +26,7 @@ final class MenuBarView: UIView {
     }
     
     @IBAction func menuButtonAction(sender: UIButton) {
-        animation(rectLayer.bounds.height == 0)
+        animation(!pushed)
     }
     @IBAction func addButtonAction(sender: UIButton) {
         addAction?()

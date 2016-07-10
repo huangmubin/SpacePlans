@@ -20,6 +20,11 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidAppear(animated)
         deployTint()
         tableView.reloadData()
+        
+        //
+        if menuBarView.pushed {
+            menuBarView.animation(false)
+        }
     }
     
     func deployTint() {

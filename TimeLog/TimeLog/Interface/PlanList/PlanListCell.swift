@@ -83,7 +83,7 @@ class PlanListCell: UITableViewCell {
     @IBOutlet weak var containerCenter: NSLayoutConstraint!
     
     func drawContainer() {
-        container.layer.cornerRadius = 8
+        container.layer.cornerRadius = 4
         container.layer.backgroundColor = AppTint.backgroundColor().CGColor
     }
     
