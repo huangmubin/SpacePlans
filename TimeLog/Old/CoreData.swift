@@ -2,7 +2,7 @@
 //  CoreData.swift
 //  TimeLog
 //
-//  Created by 黄穆斌 on 16/7/11.
+//  Created by 黄穆斌 on 16/7/2.
 //  Copyright © 2016年 Myron. All rights reserved.
 //
 
@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 
 let ProjectName = "TimeLog"
+
 class CoreData {
-    
+
     static let context = CoreData()
     
     // MARK: - 常用方法 - 保存，删除，插入，查找
@@ -30,7 +31,7 @@ class CoreData {
     class func insert(name: String) -> NSManagedObject {
         return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: context.managedObjectContext)
     }
-    
+
     /// 查找数据
     class func find(name: String, predicate: String, sorts: [(String, Bool)], type: NSFetchRequestResultType, limit: Int, offset: Int) -> AnyObject? {
         /**
@@ -136,5 +137,5 @@ class CoreData {
             }
         }
     }
-    
+
 }

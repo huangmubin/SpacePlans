@@ -17,18 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // First
-        InitDatas.deployApp()
         
-        // Every
-        AppData.deploy()
-        AppTint.deploy()
-        
-        // Other
-        /*
-        print(NSHomeDirectory())
-        AppData.shared.testPlansOrder()
-        */
         return true
     }
 
