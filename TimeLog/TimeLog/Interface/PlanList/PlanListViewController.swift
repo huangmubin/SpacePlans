@@ -14,17 +14,15 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         deployMenu()
+        print(aa)
     }
+    
+    var aa = ""
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         deployTint()
         tableView.reloadData()
-        
-        //
-        if menuBarView.pushed {
-            menuBarView.animation(false)
-        }
     }
     
     func deployTint() {
@@ -41,7 +39,11 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         menuBarView.menuAction = { [weak self] in
             if $0 {
-                self?.performSegueWithIdentifier("PlanToMenu", sender: nil)
+                //self?.performSegueWithIdentifier("PlanToMenu", sender: nil)
+                print(self)
+                print(self?.navigationController)
+                self?.navigationController?.popViewControllerAnimated(false)
+                //self?.dismissViewControllerAnimated(false, completion: nil)
             }
         }
     }
@@ -109,7 +111,7 @@ class PlanListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier! {
-        case "AddPlan", "PlanToMenu":
+        case "AddPlan":
             break
         default:
             assert(false, "\(segue.identifier) : \(segue)")

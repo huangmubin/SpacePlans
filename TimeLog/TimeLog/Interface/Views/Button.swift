@@ -29,17 +29,33 @@ class Button: UIButton {
         setTitleColor(AppTint.backgroundColor(), forState: .Selected)
     }
     
-    // MARK: - Override
+    // MARK: - Value
     
-//    override var selected: Bool {
-//        didSet {
-//            for image in subviews {
-//                if image is UIImageView  {
-//                    image.hidden = true
-//                }
-//            }
-//        }
-//    }
+    /// 定义类型和颜色 0: Text; 1: Image; //10: AppTint.tintColors[0]; 11: AppTint.tintColors[1]; 12: AppTint.tintColors[2];
+    @IBInspectable var typeNumber: Int = 0 {
+        didSet {
+            switch typeNumber {
+            case 0:
+                type = Type.Text
+            case 1:
+                type = Type.Image
+//            case 10:
+//                type = Type.Color(AppTint.tintColors[0])
+//            case 11:
+//                type = Type.Color(AppTint.tintColors[1])
+//            case 12:
+//                type = Type.Color(AppTint.tintColors[2])
+            default:
+                break
+            }
+            setNeedsDisplay()
+        }
+    }
+    
+    // 定义备注信息
+    @IBInspectable var note: String = ""
+    
+    // MARK: - Override
     
     override var highlighted: Bool {
         didSet {
@@ -59,27 +75,6 @@ class Button: UIButton {
         case Text
         case Image
         case Color(UIColor)
-    }
-    
-    /// 定义类型和颜色 0: Text; 1: Image; 10: AppTint.tintColors[0]; 11: AppTint.tintColors[1]; 12: AppTint.tintColors[2];
-    @IBInspectable var typeNumber: Int = 0 {
-        didSet {
-            switch typeNumber {
-            case 0:
-                type = Type.Text
-            case 1:
-                type = Type.Image
-            case 10:
-                type = Type.Color(AppTint.tintColors[0])
-            case 11:
-                type = Type.Color(AppTint.tintColors[1])
-            case 12:
-                type = Type.Color(AppTint.tintColors[2])
-            default:
-                break
-            }
-            setNeedsDisplay()
-        }
     }
     
     var type: Type = Type.Text

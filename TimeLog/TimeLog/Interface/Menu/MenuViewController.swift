@@ -16,6 +16,17 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         drawBackground()
         deployTint()
+        performSegueWithIdentifier(showController, sender: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        let con = segue.destinationViewController as! PlanListViewController
+        con.aa = "yes"
     }
     
     func deployTint() {
@@ -26,6 +37,10 @@ class MenuViewController: UITableViewController {
         deployLike()
         deployChat()
     }
+    
+    // MARK: Navigation
+    
+    var showController = "ShowPlanList"
     
     // MARK: Background
     
@@ -66,7 +81,8 @@ class MenuViewController: UITableViewController {
         UIView.animateWithDuration(0.2, animations: {
             self.contentCell.alpha = 0
             }) { (finish) in
-            self.dismissViewControllerAnimated(false, completion: nil)
+            //self.dismissViewControllerAnimated(false, completion: nil)
+            self.performSegueWithIdentifier(self.showController, sender: nil)
         }
     }
     

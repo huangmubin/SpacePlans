@@ -234,7 +234,6 @@
                         <outlet property="menuBarView" destination="fYj-T0-i7q" id="QiZ-Ni-PU8"/>
                         <outlet property="tableView" destination="sdf-Xk-Dao" id="ZgE-YR-zAR"/>
                         <segue destination="K3o-q6-d3d" kind="presentation" identifier="AddPlan" id="o7R-t8-1Bz"/>
-                        <segue destination="q48-Q3-nyd" kind="presentation" identifier="PlanToMenu" animates="NO" id="NqL-pc-1Ob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -244,7 +243,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1281" y="401"/>
+            <point key="canvasLocation" x="1287" y="401"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="quu-qR-2Ii">
@@ -498,6 +497,7 @@
                             <outlet property="delegate" destination="q48-Q3-nyd" id="LR3-ru-iZe"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="3ac-E8-dKO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="chatButton" destination="toX-Qk-gym" id="kgL-9B-41R"/>
@@ -518,11 +518,12 @@
                         <outletCollection property="viewButtons" destination="ckz-Rw-Yzp" collectionClass="NSMutableArray" id="13h-eu-S04"/>
                         <outletCollection property="viewButtons" destination="cEZ-1f-CDR" collectionClass="NSMutableArray" id="Auf-ZU-fAK"/>
                         <outletCollection property="viewButtons" destination="GUp-75-uTp" collectionClass="NSMutableArray" id="jzt-bt-zIy"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowPlanList" animates="NO" action="showDetailViewController:sender:" id="Dce-Fc-VDu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw0-2O-lNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="-508"/>
+            <point key="canvasLocation" x="873" y="401"/>
         </scene>
         <!--Plan Editor View Controller-->
         <scene sceneID="3tG-N4-f4r">
@@ -694,7 +695,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1281" y="1201"/>
+            <point key="canvasLocation" x="1188" y="1152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E6s-Hu-AGc">
@@ -708,12 +709,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4MH-2U-Aug"/>
+                        <segue destination="q48-Q3-nyd" kind="relationship" relationship="rootViewController" id="nbM-sV-wjn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSg-Ma-Eox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="401"/>
+            <point key="canvasLocation" x="456" y="401"/>
         </scene>
     </scenes>
     <resources>
