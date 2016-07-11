@@ -10,13 +10,20 @@ import UIKit
 
 class TimeLogController: UIViewController {
 
-    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
         
+        menuView.deploy()
     }
+    
 
+    // MARK: - Views
+    
+    // MARK: Menu View
+    @IBOutlet weak var menuView: MenuView!
     
     
     // MARK: - Navigation

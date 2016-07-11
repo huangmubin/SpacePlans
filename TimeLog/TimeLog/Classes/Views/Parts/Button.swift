@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Botton: UIButton {
+class Button: UIButton {
     
     // MARK: - Init
     
