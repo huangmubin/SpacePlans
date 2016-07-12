@@ -14,17 +14,43 @@ class TimeLogController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.layoutIfNeeded()
-        
-        menuView.deploy()
+        deployMenuView()
+        deployMenuBar()
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        menuView.setNeedsDisplay()
     }
     
-
     // MARK: - Views
     
     // MARK: Menu View
     @IBOutlet weak var menuView: MenuView!
     
+    func deployMenuView() {
+        menuView.open = { [weak self] in
+            if let action = $0 {
+                print(action)
+            }
+            self?.menuBar.leftAnimation("MenuOpen")
+        }
+    }
+    
+    // MARK: Menu Bar
+    @IBOutlet weak var menuBar: MenuBar!
+    
+    func deployMenuBar() {
+        menuBar.deploy()
+        menuBar.leftAction = { [weak self] in
+            self?.menuView.push($0)
+        }
+        menuBar.rightAction = {
+            print($0)
+        }
+        menuBar.planListAction = {
+            print($0)
+        }
+    }
     
     // MARK: - Navigation
      

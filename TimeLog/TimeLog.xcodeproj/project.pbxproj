@@ -20,6 +20,9 @@
 		9CB9E1BB1D33D83700D62E0B /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1B71D33D83700D62E0B /* Plan.swift */; };
 		9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1BC1D33E26C00D62E0B /* Drawer.swift */; };
 		9CB9E1C31D33E52600D62E0B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1C21D33E52600D62E0B /* Button.swift */; };
+		B17EDB091D34F47800093C81 /* PagControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EDB081D34F47800093C81 /* PagControl.swift */; };
+		B19555DB1D34BB3900031322 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19555DA1D34BB3900031322 /* View.swift */; };
+		B1BADEAB1D34DCFF0019A51F /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
 		B1DBA97C1D27BF58006BD6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		9CB9E1B71D33D83700D62E0B /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		9CB9E1BC1D33E26C00D62E0B /* Drawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		9CB9E1C21D33E52600D62E0B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		B17EDB081D34F47800093C81 /* PagControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagControl.swift; sourceTree = "<group>"; };
+		B19555DA1D34BB3900031322 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DBA9791D27BF58006BD6DC /* TimeLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLog.xcdatamodel; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				9C949F651D34586D00692116 /* MenuView.swift */,
+				B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -132,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				9CB9E1C21D33E52600D62E0B /* Button.swift */,
+				B19555DA1D34BB3900031322 /* View.swift */,
+				B17EDB081D34F47800093C81 /* PagControl.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -253,9 +262,12 @@
 			files = (
 				9C949F681D34699600692116 /* AnimationEngine.swift in Sources */,
 				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
+				B1BADEAB1D34DCFF0019A51F /* MenuBar.swift in Sources */,
+				B19555DB1D34BB3900031322 /* View.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
 				9CB9E19D1D33D65400D62E0B /* TimeLogController.swift in Sources */,
 				9CB9E1AB1D33D6D900D62E0B /* CoreData.swift in Sources */,
+				B17EDB091D34F47800093C81 /* PagControl.swift in Sources */,
 				9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */,
 				9CB9E1C31D33E52600D62E0B /* Button.swift in Sources */,
 				9CB9E1BB1D33D83700D62E0B /* Plan.swift in Sources */,

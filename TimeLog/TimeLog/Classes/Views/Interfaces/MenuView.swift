@@ -8,115 +8,55 @@
 
 import UIKit
 
-class MenuView: UIView {
+class MenuView: View {
     
-    // MARK: - Value
+    // MARK: - Values
     
-    @IBOutlet weak var menuShow: UIView!
-    
-    @IBOutlet weak var leftButton: Button!
-    @IBOutlet weak var rightButton: Button!
-    
-    @IBOutlet var buttons: [Button]!
-    
-    var type: Type = Type.Plan
-    
-    // MARK: Layout
+    var open: ((String?) -> Void)?
     
     @IBOutlet weak var bottomLayout: NSLayoutConstraint!
-    @IBOutlet weak var buttonTopLayout: NSLayoutConstraint!
-    
-    // MARK: Type
-    enum Type {
-        case Open
-        case Plan
-        case Log
-        case Day
-        case Timer
-    }
     
     // MARK: - Methods
     
-    func deploy() {
-        // Self
-        backgroundColor = UIColor.clearColor()
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 1
-        
-        // Menu View
-        let sub = Drawer.roundedRect(frame.size, a: 0, b: 0, c: 8, d: 8)
-        sub.fillColor = AppTint.backColor().CGColor
-        layer.addSublayer(sub)
-        
-        // Menu Show View
-        let show = Drawer.roundedRect(CGSize(width: AppTint.Width, height: AppTint.Height), a: 0, b: 0, c: 8, d: 8)
-        show.backgroundColor = AppTint.backColor().CGColor
-        menuShow.backgroundColor = UIColor.clearColor()
-        menuShow.layer.addSublayer(show)
-        
-    }
-    
-    // MARK: Call
-    var menuOpen: (() -> Void)?
-    var rightAction: (() -> Void)?
-    var showView: ((String) -> Void)?
-    
-    // MARK: Action
-    
-    @IBAction func menuStatusChangeAction(sender: Button) {
-        
-    }
-    
-    @IBAction func menuRightButtonAction(sender: Button) {
-        
-    }
-    
-    @IBAction func menuButtonsAction(sender: Button) {
-        
+    @IBAction func openView(sender: Button) {
+        open?(sender.note)
+        push(false)
     }
     
     // MARK: - Animation
     
-    // MARK: Bar Button
-    
-    func leftButtonAnimation0() {
-        UIView.animateWithDuration(0.25, animations: {
-            self.leftButton.alpha = 0
-            }) { (finish) in
-                self.leftButtonAnimation1()
+    func push(show: Bool) {
+        userInteractionEnabled = show
+        UIView.animateWithDuration(0.5) {
+            self.bottomLayout.constant = show ? AppTint.Height : 44
+            self.layoutIfNeeded()
         }
     }
-    func leftButtonAnimation1() {
-        if self.type == Type.Open {
-            self.leftButton.setImage(UIImage(named: "MenuClose"), forState: .Normal)
-        } else {
-            self.leftButton.setImage(UIImage(named: "MenuOpen"), forState: .Normal)
-        }
-        UIView.animateWithDuration(0.25, animations: {
-            self.leftButton.alpha = 0
-            }, completion: { (finish) in
-                
-        })
-    }
     
-    func rightButtonAnimation0() {
-        switch type {
-        case .Plan:
-            self.rightButton.setImage(UIImage(named: "AddPlan"), forState: .Normal)
-        default:
+    // MARK: - Gesture
+    
+    @IBAction func panGestureAction(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .Began:
             break
-        }
-        UIView.animateWithDuration(0.5, animations: { 
-            self.rightButton.alpha = self.type == Type.Open ? 0 : 1
-            }) { (finish) in
-                
+        case .Changed:
+            UIView.animateWithDuration(0.05) {
+                self.bottomLayout.constant = AppTint.Height + sender.translationInView(self).y
+                self.layoutIfNeeded()
+            }
+        case .Ended:
+            let show = self.bottomLayout.constant >= AppTint.Height * 0.6
+            if !show {
+                open?(nil)
+            }
+            push(show)
+        default:
+            UIView.animateWithDuration(0.25) {
+                self.bottomLayout.constant = AppTint.Height
+                self.layoutIfNeeded()
+            }
         }
     }
     
-    // MARK: Menu Show View
     
-    func showViewAnimation0() {
-        
-    }
 }

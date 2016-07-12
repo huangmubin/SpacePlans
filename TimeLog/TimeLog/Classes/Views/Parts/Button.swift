@@ -32,6 +32,7 @@ class Button: UIButton {
     enum Type: Int {
         case Text = 0
         case Image
+        case Title
     }
     
     var type: Type = Type.Text
@@ -42,6 +43,16 @@ class Button: UIButton {
     }
     
     @IBInspectable var note: String = ""
+    
+    // MAKR: - Method
+    
+    func noteToImage() {
+        setImage(UIImage(named: note), forState: .Normal)
+    }
+    
+    func noteToTitle() {
+        setTitle(note, forState: .Normal)
+    }
     
     // MARK: - Override
     
@@ -77,6 +88,8 @@ class Button: UIButton {
             }
         case .Image:
             break
+        case .Title:
+            return
         }
         
         layer.shadowOpacity = 0.5

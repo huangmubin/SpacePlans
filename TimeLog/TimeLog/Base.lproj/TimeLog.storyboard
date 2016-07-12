@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -36,153 +37,193 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGA-CV-P8W" customClass="MenuView" customModule="TimeLog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-ph-J8v" customClass="MenuView" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-1092" width="320" height="1136"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIL-T3-jWA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x2-7X-51G" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="105" width="210" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="z8f-7g-VwT"/>
-                                                </constraints>
-                                                <state key="normal" title="明细列表"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowLog"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="menuButtonsAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="eb4-gn-klG"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-bF-rH5" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="143" width="210" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="xdx-FZ-7y5"/>
-                                                </constraints>
-                                                <state key="normal" title="每日分析"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowDay"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="menuButtonsAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="kbH-DZ-TZs"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkO-V5-Rok" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="181" width="210" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="hpj-Jr-ChF"/>
-                                                </constraints>
-                                                <state key="normal" title="计时器"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowTimer"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="menuButtonsAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="63Y-XC-GY4"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNJ-fp-kN4" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="67" width="210" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="210" id="5X2-Jr-geF"/>
-                                                </constraints>
-                                                <state key="normal" title="计划列表"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowPlan"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="menuButtonsAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="Z5D-PL-Wfz"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-SF-jGs" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="628" width="210" height="30"/>
                                         <constraints>
-                                            <constraint firstItem="RkO-V5-Rok" firstAttribute="top" secondItem="5X9-bF-rH5" secondAttribute="bottom" constant="8" id="7WV-fc-HMo"/>
-                                            <constraint firstItem="yNJ-fp-kN4" firstAttribute="centerY" secondItem="WIL-T3-jWA" secondAttribute="top" constant="82" id="Fqa-mc-G1N"/>
-                                            <constraint firstItem="6x2-7X-51G" firstAttribute="centerX" secondItem="WIL-T3-jWA" secondAttribute="centerX" id="I7P-NG-NY4"/>
-                                            <constraint firstItem="5X9-bF-rH5" firstAttribute="top" secondItem="6x2-7X-51G" secondAttribute="bottom" constant="8" id="KEf-Nr-vJ4"/>
-                                            <constraint firstItem="5X9-bF-rH5" firstAttribute="centerX" secondItem="WIL-T3-jWA" secondAttribute="centerX" id="aKX-JW-H6Z"/>
-                                            <constraint firstItem="6x2-7X-51G" firstAttribute="top" secondItem="yNJ-fp-kN4" secondAttribute="bottom" constant="8" id="bz9-EB-A0r"/>
-                                            <constraint firstItem="yNJ-fp-kN4" firstAttribute="centerX" secondItem="WIL-T3-jWA" secondAttribute="centerX" id="ehi-4z-dPo"/>
-                                            <constraint firstItem="RkO-V5-Rok" firstAttribute="centerX" secondItem="WIL-T3-jWA" secondAttribute="centerX" id="wRS-yM-Kbj"/>
+                                            <constraint firstAttribute="width" constant="210" id="KxF-kC-EbG"/>
                                         </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSJ-cM-N6R" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="7" width="30" height="30"/>
-                                        <state key="normal" image="MenuOpen"/>
+                                        <state key="normal" title="计划列表"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowPlan"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="menuStatusChangeAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="xKQ-pB-tRY"/>
+                                            <action selector="openView:" destination="zqj-ph-J8v" eventType="touchUpInside" id="ID5-AA-xRt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSp-k3-zZT" customClass="Button" customModule="TimeLog" customModuleProvider="target">
-                                        <rect key="frame" x="270" y="7" width="30" height="30"/>
-                                        <state key="normal" image="PlanAdd"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3i-lY-3pn" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="666" width="210" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="210" id="0Jb-uK-B0Q"/>
+                                        </constraints>
+                                        <state key="normal" title="明细列表"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowLog"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="menuRightButtonAction:" destination="RGA-CV-P8W" eventType="touchUpInside" id="78d-gk-j3Y"/>
+                                            <action selector="openView:" destination="zqj-ph-J8v" eventType="touchUpInside" id="CKf-bh-agj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g64-yv-cAP" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="704" width="210" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="210" id="Jep-bQ-Zhc"/>
+                                        </constraints>
+                                        <state key="normal" title="每日分析"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowDay"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openView:" destination="zqj-ph-J8v" eventType="touchUpInside" id="EpD-10-AMU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYZ-Bk-hph" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="742" width="210" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="210" id="P2P-vk-SRa"/>
+                                        </constraints>
+                                        <state key="normal" title="计时器"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="ShowTimer"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openView:" destination="zqj-ph-J8v" eventType="touchUpInside" id="LVT-WA-ywR"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="WIL-T3-jWA" firstAttribute="centerX" secondItem="RGA-CV-P8W" secondAttribute="centerX" id="4gj-Vq-Jst"/>
-                                    <constraint firstAttribute="trailing" secondItem="hSp-k3-zZT" secondAttribute="trailing" constant="20" id="9Lg-8U-Hng"/>
-                                    <constraint firstAttribute="height" constant="44" id="SQk-7A-sZw"/>
-                                    <constraint firstAttribute="bottom" secondItem="WIL-T3-jWA" secondAttribute="bottom" id="lIK-5N-24G"/>
-                                    <constraint firstItem="uSJ-cM-N6R" firstAttribute="leading" secondItem="RGA-CV-P8W" secondAttribute="leading" constant="20" id="ruk-yA-pfw"/>
-                                    <constraint firstItem="uSJ-cM-N6R" firstAttribute="centerY" secondItem="RGA-CV-P8W" secondAttribute="centerY" id="seC-C8-afd"/>
-                                    <constraint firstItem="hSp-k3-zZT" firstAttribute="centerY" secondItem="RGA-CV-P8W" secondAttribute="centerY" id="vGy-9k-qyG"/>
+                                    <constraint firstItem="g64-yv-cAP" firstAttribute="top" secondItem="Y3i-lY-3pn" secondAttribute="bottom" constant="8" id="8iG-Pw-xTT"/>
+                                    <constraint firstItem="e2e-SF-jGs" firstAttribute="top" secondItem="zqj-ph-J8v" secondAttribute="centerY" constant="60" id="ASn-KU-lgg"/>
+                                    <constraint firstItem="AYZ-Bk-hph" firstAttribute="top" secondItem="g64-yv-cAP" secondAttribute="bottom" constant="8" id="AbP-fe-8hM"/>
+                                    <constraint firstItem="Y3i-lY-3pn" firstAttribute="top" secondItem="e2e-SF-jGs" secondAttribute="bottom" constant="8" id="CXM-ky-F8T"/>
+                                    <constraint firstItem="g64-yv-cAP" firstAttribute="centerX" secondItem="zqj-ph-J8v" secondAttribute="centerX" id="Ezn-Uy-98L"/>
+                                    <constraint firstItem="Y3i-lY-3pn" firstAttribute="centerX" secondItem="zqj-ph-J8v" secondAttribute="centerX" id="SOQ-kP-6Ik"/>
+                                    <constraint firstItem="AYZ-Bk-hph" firstAttribute="centerX" secondItem="zqj-ph-J8v" secondAttribute="centerX" id="VjE-AQ-hUM"/>
+                                    <constraint firstItem="e2e-SF-jGs" firstAttribute="centerX" secondItem="zqj-ph-J8v" secondAttribute="centerX" id="bSg-H6-eQo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerA">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerB">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerC">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerD">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="offsetW">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="offsetH">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="bottomLayout" destination="xT3-jz-eQH" id="njZ-z0-EDa"/>
+                                    <outletCollection property="gestureRecognizers" destination="cDc-O5-DRP" appends="YES" id="yvg-dk-eca"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-fv-afk" customClass="MenuBar" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-ex-WP8" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                        <state key="normal" image="MenuOpen"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="MenuOpen"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="leftButtonAction:" destination="RHX-fv-afk" eventType="touchUpInside" id="7JE-f4-lXF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0E-ha-PR9" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="270" y="7" width="30" height="30"/>
+                                        <state key="normal" image="PlanAdd"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="PlanAdd"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="rightButtonAction:" destination="RHX-fv-afk" eventType="touchUpInside" id="Xsk-kt-mzQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgA-h1-UB8" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="7" width="60" height="30"/>
+                                        <state key="normal" title="计划列表"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="计划列表"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="planListAction:" destination="RHX-fv-afk" eventType="touchUpInside" id="UrI-7S-VSq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EgA-h1-UB8" firstAttribute="centerX" secondItem="RHX-fv-afk" secondAttribute="centerX" id="7LA-qZ-236"/>
+                                    <constraint firstItem="EgA-h1-UB8" firstAttribute="centerY" secondItem="RHX-fv-afk" secondAttribute="centerY" id="Pgr-9T-BOz"/>
+                                    <constraint firstAttribute="trailing" secondItem="h0E-ha-PR9" secondAttribute="trailing" constant="20" id="WLT-hs-6bC"/>
+                                    <constraint firstItem="cT6-ex-WP8" firstAttribute="centerY" secondItem="RHX-fv-afk" secondAttribute="centerY" id="XDn-Q6-IKH"/>
+                                    <constraint firstItem="cT6-ex-WP8" firstAttribute="leading" secondItem="RHX-fv-afk" secondAttribute="leading" constant="20" id="gGz-Af-pma"/>
+                                    <constraint firstAttribute="height" constant="44" id="h6R-Cd-JZm"/>
+                                    <constraint firstItem="h0E-ha-PR9" firstAttribute="centerY" secondItem="RHX-fv-afk" secondAttribute="centerY" id="iVZ-cJ-5RZ"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="bottomLayout" destination="lIK-5N-24G" id="vDF-mT-veP"/>
-                                    <outlet property="buttonTopLayout" destination="Fqa-mc-G1N" id="ri1-yN-2sL"/>
-                                    <outlet property="leftButton" destination="uSJ-cM-N6R" id="dd8-oP-vea"/>
-                                    <outlet property="menuShow" destination="WIL-T3-jWA" id="2kY-aX-tR3"/>
-                                    <outlet property="rightButton" destination="hSp-k3-zZT" id="8mb-5o-6wr"/>
-                                    <outletCollection property="buttons" destination="yNJ-fp-kN4" collectionClass="NSMutableArray" id="EDY-57-15f"/>
-                                    <outletCollection property="buttons" destination="6x2-7X-51G" collectionClass="NSMutableArray" id="Ziw-hZ-EbK"/>
-                                    <outletCollection property="buttons" destination="5X9-bF-rH5" collectionClass="NSMutableArray" id="zGa-fc-5F0"/>
-                                    <outletCollection property="buttons" destination="RkO-V5-Rok" collectionClass="NSMutableArray" id="vrF-s7-cmh"/>
+                                    <outlet property="leftButton" destination="cT6-ex-WP8" id="Rrx-7y-YB0"/>
+                                    <outlet property="planListButton" destination="EgA-h1-UB8" id="84N-5M-Par"/>
+                                    <outlet property="rightButton" destination="h0E-ha-PR9" id="ZXz-Ld-B90"/>
                                 </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue6-e6-qYR" customClass="PagControl" customModule="TimeLog" customModuleProvider="target">
+                                <rect key="frame" x="40" y="225" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WIL-T3-jWA" firstAttribute="height" secondItem="LeL-Nf-l7O" secondAttribute="height" id="Buh-pQ-CHG"/>
-                            <constraint firstItem="RGA-CV-P8W" firstAttribute="top" secondItem="vzN-oq-Tdp" secondAttribute="bottom" id="HD5-be-p7N"/>
-                            <constraint firstAttribute="trailing" secondItem="RGA-CV-P8W" secondAttribute="trailing" id="JaV-n7-ASe"/>
-                            <constraint firstItem="WIL-T3-jWA" firstAttribute="width" secondItem="LeL-Nf-l7O" secondAttribute="width" id="nnR-tk-I9j"/>
-                            <constraint firstItem="RGA-CV-P8W" firstAttribute="leading" secondItem="LeL-Nf-l7O" secondAttribute="leading" id="vwH-jZ-Zis"/>
+                            <constraint firstItem="RHX-fv-afk" firstAttribute="top" secondItem="vzN-oq-Tdp" secondAttribute="bottom" id="1lj-Uz-OXa"/>
+                            <constraint firstAttribute="trailing" secondItem="RHX-fv-afk" secondAttribute="trailing" id="1oV-cH-pjp"/>
+                            <constraint firstItem="RHX-fv-afk" firstAttribute="leading" secondItem="LeL-Nf-l7O" secondAttribute="leading" id="58b-ha-dnL"/>
+                            <constraint firstItem="zqj-ph-J8v" firstAttribute="height" secondItem="LeL-Nf-l7O" secondAttribute="height" multiplier="2" id="YhX-yh-JYw"/>
+                            <constraint firstItem="zqj-ph-J8v" firstAttribute="centerX" secondItem="LeL-Nf-l7O" secondAttribute="centerX" id="fju-l6-Z7T"/>
+                            <constraint firstItem="zqj-ph-J8v" firstAttribute="width" secondItem="LeL-Nf-l7O" secondAttribute="width" id="xNJ-he-vck"/>
+                            <constraint firstItem="zqj-ph-J8v" firstAttribute="bottom" secondItem="vzN-oq-Tdp" secondAttribute="bottom" constant="44" id="xT3-jz-eQH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a03-xa-SQJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="menuView" destination="RGA-CV-P8W" id="B21-No-69e"/>
+                        <outlet property="menuBar" destination="RHX-fv-afk" id="SA6-eg-I5R"/>
+                        <outlet property="menuView" destination="zqj-ph-J8v" id="q7V-9z-n0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0g-RW-rQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cDc-O5-DRP">
+                    <connections>
+                        <action selector="panGestureAction:" destination="zqj-ph-J8v" id="fkR-ba-ekv"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="213" y="397"/>
         </scene>
