@@ -20,7 +20,9 @@ class TimeLogController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         menuView.setNeedsDisplay()
+        pag.deploy()
     }
+    @IBOutlet weak var pag: PagControl!
     
     // MARK: - Views
     

@@ -44,6 +44,14 @@ class Drawer: NSObject {
         return shape
     }
     
+    /// 绘制圆形
+    class func round(size: CGFloat) -> CALayer {
+        let layer = CALayer()
+        layer.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        layer.cornerRadius = size / 2
+        return layer
+    }
+    
     // MARK: - Path
     /// 绘制圆角矩形 Layer，a 点为左上角，b 为右上角，c 为右下角，d 为左下角
     class func roundedPath(size: CGSize, a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat) -> UIBezierPath {

@@ -12,6 +12,12 @@ class Button: UIButton {
     
     // MARK: - Init
     
+    init(type: Int) {
+        super.init(frame: CGRect(origin: CGPointZero, size: CGSize(width: 30, height: 30)))
+        types = type
+        deploy()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         deploy()
@@ -25,6 +31,10 @@ class Button: UIButton {
     func deploy() {
         tintColor = AppTint.mainColor()
         setTitleColor(AppTint.backColor(), forState: .Selected)
+        
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = 2
     }
 
     // MARK: - Value
@@ -32,7 +42,7 @@ class Button: UIButton {
     enum Type: Int {
         case Text = 0
         case Image
-        case Title
+        case UnShadow
     }
     
     var type: Type = Type.Text
@@ -88,12 +98,14 @@ class Button: UIButton {
             }
         case .Image:
             break
-        case .Title:
+        case .UnShadow:
+            print("unshadow = \(note)")
+            layer.shadowOpacity = 0
             return
         }
-        
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowRadius = 2
+//        
+//        layer.shadowOpacity = 0.5
+//        layer.shadowOffset = CGSize(width: 0, height: 0)
+//        layer.shadowRadius = 2
     }
 }
