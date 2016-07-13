@@ -40,22 +40,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECw-5b-Bc7" customClass="PlanListView" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gxw-qi-K2p">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gxw-qi-K2p">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="scrollIndicatorInsets" minX="100" minY="50" maxX="100" maxY="60"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanListCell" id="vPZ-dZ-o4T" customClass="PlanListCell" customModule="TimeLog" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPZ-dZ-o4T" id="epo-iH-INv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zE-rl-IOT">
-                                                            <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                            <rect key="frame" x="8" y="4" width="304" height="36"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YO5-BF-TLz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="36"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-K5-Uds" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                                                             <rect key="frame" x="-15" y="3" width="30" height="30"/>
@@ -79,7 +80,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT2-Cb-dgt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="35"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="36"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxS-2a-sJv" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                                                             <rect key="frame" x="-16" y="3" width="32" height="30"/>
@@ -102,7 +103,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3K-qA-fCl">
-                                                                    <rect key="frame" x="304" y="0.0" width="0.0" height="35"/>
+                                                                    <rect key="frame" x="304" y="0.0" width="0.0" height="36"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-cc-0ok" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                                                             <rect key="frame" x="-15" y="4" width="30" height="27"/>
@@ -142,8 +143,36 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-vx-7B3">
-                                                            <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                            <rect key="frame" x="8" y="4" width="304" height="36"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-4q-7Sc">
+                                                                    <rect key="frame" x="8" y="1" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c54-vO-x1T">
+                                                                    <rect key="frame" x="254" y="24" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCU-Fd-dg3">
+                                                                    <rect key="frame" x="16" y="24" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="KVU-4q-7Sc" firstAttribute="bottom" secondItem="2Wb-vx-7B3" secondAttribute="centerY" constant="4" id="TRe-91-HAF"/>
+                                                                <constraint firstItem="c54-vO-x1T" firstAttribute="top" secondItem="kCU-Fd-dg3" secondAttribute="top" id="dky-qX-lI3"/>
+                                                                <constraint firstItem="kCU-Fd-dg3" firstAttribute="leading" secondItem="KVU-4q-7Sc" secondAttribute="leading" constant="8" id="etv-wG-tYO"/>
+                                                                <constraint firstAttribute="trailing" secondItem="c54-vO-x1T" secondAttribute="trailing" constant="8" id="gxl-zk-31J"/>
+                                                                <constraint firstItem="KVU-4q-7Sc" firstAttribute="leading" secondItem="2Wb-vx-7B3" secondAttribute="leading" constant="8" id="nZ1-2j-oiE"/>
+                                                                <constraint firstItem="kCU-Fd-dg3" firstAttribute="top" secondItem="KVU-4q-7Sc" secondAttribute="bottom" constant="2" id="t4N-0P-Vk4"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -164,12 +193,15 @@
                                                     <outlet property="backView" destination="6zE-rl-IOT" id="bsG-nT-Aam"/>
                                                     <outlet property="content" destination="2Wb-vx-7B3" id="7xr-hX-4kD"/>
                                                     <outlet property="contentCenterLayout" destination="znr-BU-pyE" id="f9x-Y7-S6x"/>
+                                                    <outlet property="dayLabel" destination="c54-vO-x1T" id="chU-Zx-dFs"/>
                                                     <outlet property="editButton" destination="Pbl-cc-0ok" id="7No-yZ-sXB"/>
                                                     <outlet property="leftAView" destination="kT2-Cb-dgt" id="H7H-23-Q8B"/>
                                                     <outlet property="leftBView" destination="YO5-BF-TLz" id="UIX-1d-OLQ"/>
                                                     <outlet property="logButton" destination="kxS-2a-sJv" id="Mn1-Xt-4mm"/>
+                                                    <outlet property="nameLabel" destination="KVU-4q-7Sc" id="Syb-Pr-FJ7"/>
                                                     <outlet property="rightView" destination="L3K-qA-fCl" id="nIN-RQ-Ka2"/>
                                                     <outlet property="timerButton" destination="7ax-K5-Uds" id="8t6-gM-KtB"/>
+                                                    <outlet property="totalLabel" destination="kCU-Fd-dg3" id="JT6-kE-Tef"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -395,6 +427,7 @@
                     <connections>
                         <outlet property="menuBar" destination="RHX-fv-afk" id="SA6-eg-I5R"/>
                         <outlet property="menuView" destination="zqj-ph-J8v" id="q7V-9z-n0G"/>
+                        <outlet property="planListView" destination="ECw-5b-Bc7" id="adA-ud-dCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0g-RW-rQv" userLabel="First Responder" sceneMemberID="firstResponder"/>

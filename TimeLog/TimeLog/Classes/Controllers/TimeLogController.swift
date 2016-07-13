@@ -16,6 +16,7 @@ class TimeLogController: UIViewController {
         super.viewDidLoad()
         deployMenuView()
         deployMenuBar()
+        deployPlanListView()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -26,6 +27,7 @@ class TimeLogController: UIViewController {
     // MARK: - Views
     
     // MARK: Menu View
+    
     @IBOutlet weak var menuView: MenuView!
     
     func deployMenuView() {
@@ -39,6 +41,7 @@ class TimeLogController: UIViewController {
     }
     
     // MARK: Menu Bar
+    
     @IBOutlet weak var menuBar: MenuBar!
     
     func deployMenuBar() {
@@ -58,6 +61,17 @@ class TimeLogController: UIViewController {
         menuBar.dayAction = {
             print("dayAction \($0) \($1)")
             return $1
+        }
+    }
+    
+    // MARK: Plan List View
+    
+    @IBOutlet weak var planListView: PlanListView!
+    
+    func deployPlanListView() {
+        planListView.deploy()
+        planListView.actions = {
+            print("Actions = \($0), Index = \($1.row)")
         }
     }
     

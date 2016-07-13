@@ -14,12 +14,10 @@ class PlanListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        deploy()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
 
     // MARK: - Values
@@ -35,7 +33,6 @@ class PlanListCell: UITableViewCell {
     
     @IBOutlet weak var backView: UIView!
     
-    
     @IBOutlet weak var leftAView: UIView!
     @IBOutlet weak var leftBView: UIView!
     @IBOutlet weak var rightView: UIView!
@@ -44,16 +41,25 @@ class PlanListCell: UITableViewCell {
     @IBOutlet weak var timerButton: Button!
     @IBOutlet weak var editButton: Button!
     
-    
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var contentCenterLayout: NSLayoutConstraint!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    
     // MAKR: - Methods
     
+    var singleDeploy = true
     func deploy() {
+        guard singleDeploy else { return }
+        singleDeploy = false
+        
+        self.layoutIfNeeded()
         // shadowLayer
-        shadowLayer.frame = CGRect(x: 8, y: 4, width: frame.width - 16, height: frame.height - 8)
-        shadowLayer.cornerRadius    = 8
+        //shadowLayer.frame = CGRect(x: 8, y: 4, width: frame.width - 16, height: frame.height - 8)
+        shadowLayer.frame = backView.frame
+        shadowLayer.cornerRadius    = 4
         shadowLayer.shadowOffset    = CGSizeZero
         shadowLayer.shadowOpacity   = 0.5
         shadowLayer.shadowRadius    = 2
@@ -61,21 +67,32 @@ class PlanListCell: UITableViewCell {
         layer.insertSublayer(shadowLayer, atIndex: 0)
         
         // backView
-        backViewMaskLayer.cornerRadius = 8
-        backViewMaskLayer.frame = backView.bounds
+        backViewMaskLayer.cornerRadius = 4
+        backViewMaskLayer.backgroundColor = UIColor.whiteColor().CGColor
+        backViewMaskLayer.frame  = backView.bounds
         backView.backgroundColor = AppTint.backColor()
+        backView.layer.masksToBounds = true
         backView.layer.mask = backViewMaskLayer
         
         // Button View
         leftAView.backgroundColor = AppTint.subColor().A
         leftBView.backgroundColor = AppTint.subColor().B
-        rightView.backgroundColor =
-            AppTint.subColor().C
+        rightView.backgroundColor = AppTint.subColor().C
         
         // Content
         content.backgroundColor = AppTint.backColor()
+        content.layer.cornerRadius = 4
         contentCenterLayout.constant = 0
         self.layoutIfNeeded()
+        
+        // Label
+        nameLabel.font  = AppTint.mainFont()
+        totalLabel.font = AppTint.noteFont()
+        dayLabel.font   = AppTint.noteFont()
+        
+        nameLabel.textColor  = AppTint.fontColor().main
+        totalLabel.textColor = AppTint.fontColor().sub
+        dayLabel.textColor   = AppTint.fontColor().sub
     }
     
     // MARK: Button Actions
@@ -102,12 +119,12 @@ class PlanListCell: UITableViewCell {
     var origin: CGFloat = 0
     var layout: CGFloat = 0
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        origin = touches.first!.locationInView(self).y
+        origin = touches.first!.locationInView(self).x
         layout = contentCenterLayout.constant
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let distance = touches.first!.locationInView(self).y - origin
+        let distance = touches.first!.locationInView(self).x - origin
         UIView.animateWithDuration(0.02) { 
             self.contentCenterLayout.constant = self.layout + distance
             self.layoutIfNeeded()

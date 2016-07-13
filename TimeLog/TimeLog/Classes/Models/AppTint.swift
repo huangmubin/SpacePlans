@@ -43,7 +43,7 @@ class AppTint: NSObject {
     class func fontColor() -> (main: UIColor, sub: UIColor, accent: UIColor) {
         return (
             UIColor.darkTextColor(),
-            UIColor.lightTextColor(),
+            UIColor.lightGrayColor(),
             UIColor.whiteColor()
         )
     }
