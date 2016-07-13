@@ -27,7 +27,6 @@ class PagControl: UIView {
         addSubview(rightButton)
         
         // Background
-        let backLayer = CALayer()
         backLayer.frame = CGRect(x: 30, y: y - 15, width: frame.width - 60, height: 30)
         backLayer.backgroundColor = UIColor.redColor().CGColor
         backLayer.masksToBounds = true
@@ -42,7 +41,7 @@ class PagControl: UIView {
             sub.backgroundColor = subColor.CGColor
             pointsLayer.addSublayer(sub)
         }
-        let origin = pointsLayer.frame.width / 2 - space - size / 2 + backLayer.frame.width / 2
+        origin = pointsLayer.frame.width / 2 - space - size / 2 + backLayer.frame.width / 2
         pointsLayer.position = CGPoint(x: origin - CGFloat(index) * (size + space), y: y)
         backLayer.addSublayer(pointsLayer)
         
@@ -58,6 +57,8 @@ class PagControl: UIView {
     
     // MARK: Layer
     
+    var origin: CGFloat = 0
+    var backLayer = CALayer()
     var pointsLayer = CALayer()
     var centerLayer = CALayer()
     
@@ -99,16 +100,29 @@ class PagControl: UIView {
     // MARK: Private
     
     func buttonAction(sender: ImageButton) {
-        switch (sender === leftButton, index > 0, index < total-1) {
-        case (true, true, _):
-            index -= 1
-            indexChanged?(true, index)
-        case (false, _, true):
-            index += 1
-            indexChanged?(true, index)
-        default:
-            indexChanged?(false, index)
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(2)
+        CATransaction.setCompletionBlock {
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(2)
+            CATransaction.setCompletionBlock {
+                print("Done")
+            }
+            self.centerLayer.position = CGPoint(x: self.backLayer.frame.width / 2, y: 15)
+            CATransaction.commit()
         }
+        self.centerLayer.position = CGPoint(x: 0, y: 15)
+        CATransaction.commit()
+//        switch (sender === leftButton, index > 0, index < total-1) {
+//        case (true, true, _):
+//            index -= 1
+//            indexChanged?(true, index)
+//        case (false, _, true):
+//            index += 1
+//            indexChanged?(true, index)
+//        default:
+//            indexChanged?(false, index)
+//        }
     }
     
     // MARK: - Animation
