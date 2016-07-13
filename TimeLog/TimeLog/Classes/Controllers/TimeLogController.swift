@@ -20,9 +20,8 @@ class TimeLogController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         menuView.setNeedsDisplay()
-        pag.deploy()
+        
     }
-    @IBOutlet weak var pag: PagControl!
     
     // MARK: - Views
     
@@ -33,6 +32,7 @@ class TimeLogController: UIViewController {
         menuView.open = { [weak self] in
             if let action = $0 {
                 print(action)
+                self?.menuBar.setType(action)
             }
             self?.menuBar.leftAnimation("MenuOpen")
         }
@@ -47,10 +47,17 @@ class TimeLogController: UIViewController {
             self?.menuView.push($0)
         }
         menuBar.rightAction = {
-            print($0)
+            print("rightAction \($0)")
         }
         menuBar.planListAction = {
-            print($0)
+            print("planListAction \($0)")
+        }
+        menuBar.logListAction = {
+            print("logListAction \($0)")
+        }
+        menuBar.dayAction = {
+            print("dayAction \($0) \($1)")
+            return $1
         }
     }
     

@@ -13,28 +13,67 @@ class MenuBar: UIView {
     // MARK: - Deploy
     
     func deploy() {
+        // planListButton
         planListButton.titleLabel?.font = AppTint.titleFont()
         planListButton.setTitleColor(AppTint.fontColor().main, forState: .Normal)
+        
+        // dayButton
+        dayButton.titleLabel?.font = AppTint.titleFont()
+        dayButton.setTitleColor(AppTint.fontColor().main, forState: .Normal)
+        dayButton.setTitleColor(AppTint.fontColor().accent, forState: .Selected)
+        
+        // Bar
+        self.planListButton.alpha = 0
+        self.logPageControl.alpha = 0
+        self.dayButton.alpha = 0
+        type = .Plan
     }
     
     // MARK: - Type
     enum Type: String {
         case Plan = "ShowPlan"
+        case Log = "ShowLog"
         case Day = "ShowDay"
+    }
+    
+    func setType(id: String) {
+        if let new = Type(rawValue: id) {
+            type = new
+        } else {
+            showBarControls()
+        }
     }
     
     var type: Type = Type.Plan {
         didSet {
-            planListButton.hidden = true
-            switch type {
-            case .Plan:
-                planListButton.hidden = false
-            case .Day:
-                break
-            }
+            showBarControls()
         }
     }
     
+    func hiddenBarControls() {
+        UIView.animateWithDuration(0.5) {
+            self.planListButton.alpha = 0
+            self.logPageControl.alpha = 0
+            self.dayButton.alpha = 0
+        }
+    }
+    
+    func showBarControls() {
+        switch type {
+        case .Plan:
+            UIView.animateWithDuration(0.5) {
+                self.planListButton.alpha = 1
+            }
+        case .Log:
+            UIView.animateWithDuration(0.5) {
+                self.logPageControl.alpha = 1
+            }
+        case .Day:
+            UIView.animateWithDuration(0.5) {
+                self.dayButton.alpha = 1
+            }
+        }
+    }
     
     // MAKR: - Left Button
     
@@ -46,9 +85,11 @@ class MenuBar: UIView {
         if leftButton.note == "MenuOpen" {
             leftAction?(true)
             leftAnimation("MenuClose")
+            hiddenBarControls()
         } else {
             leftAction?(false)
             leftAnimation("MenuOpen")
+            showBarControls()
         }
     }
     
@@ -91,5 +132,37 @@ class MenuBar: UIView {
         planListButton.note = planListButton.note == "计划列表" ? "闲置列表" : "计划列表"
         planListButton.noteToTitle()
         planListAction?(planListButton.note == "计划列表")
+    }
+    
+    // MARK: - Log List Bar
+    
+    var logListAction: ((Int) -> Void)?
+    
+    var logIndex: Int {
+        set {
+            logPageControl.currentPage = newValue
+        }
+        get {
+            return logPageControl.currentPage
+        }
+    }
+    
+    @IBOutlet weak var logPageControl: PageControl!
+    
+    @IBAction func logPageValueChanged(sender: PageControl) {
+        logListAction?(logPageControl.currentPage)
+    }
+    
+    // MARK: - Day Bar
+    
+    var dayAction: ((Bool, String) -> String)?
+    
+    @IBOutlet weak var dayButton: Button!
+    
+    @IBAction func dayButtonAction(sender: Button) {
+        dayButton.selected = !dayButton.selected
+        if let action = dayAction {
+            action(dayButton.selected, dayButton.note)
+        }
     }
 }

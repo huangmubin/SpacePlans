@@ -21,7 +21,7 @@ class AppData {
     // MARK: Data
     
     var plans: [Plan] = [Plan]()
-    var idle : [Plan] = [Plan]()
+    var idles: [Plan] = [Plan]()
     var order: (plan: [Double], idle: [Double]) = ([],[])
     var planListChoicePlan: Plan?
     
@@ -40,7 +40,7 @@ class AppData {
         }
         for id in AppData.shared.order.idle {
             let index = datas.indexOf({ $0.id == id })!
-            AppData.shared.idle.append(datas[index])
+            AppData.shared.idles.append(datas[index])
         }
     }
     

@@ -99,7 +99,7 @@ class Button: UIButton {
         case .Image:
             break
         case .UnShadow:
-            print("unshadow = \(note)")
+            //print("unshadow = \(note)")
             layer.shadowOpacity = 0
             return
         }

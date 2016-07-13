@@ -27,6 +27,8 @@
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
 		B1DBA97C1D27BF58006BD6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */; };
 		B1DBA97F1D27BF58006BD6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97D1D27BF58006BD6DC /* LaunchScreen.storyboard */; };
+		B1DC3D951D35EB89001557EF /* PlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC3D941D35EB89001557EF /* PlanListView.swift */; };
+		B1DC3D971D35EF17001557EF /* PlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC3D961D35EF17001557EF /* PlanListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1DBA97E1D27BF58006BD6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1DBA9801D27BF58006BD6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1DC3D941D35EB89001557EF /* PlanListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListView.swift; sourceTree = "<group>"; };
+		B1DC3D961D35EF17001557EF /* PlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			children = (
 				9C949F651D34586D00692116 /* MenuView.swift */,
 				B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */,
+				B1DC3D941D35EB89001557EF /* PlanListView.swift */,
+				B1DC3D961D35EF17001557EF /* PlanListCell.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -276,7 +282,9 @@
 				9CB9E1B81D33D83700D62E0B /* Log+CoreDataProperties.swift in Sources */,
 				9CB9E1BA1D33D83700D62E0B /* Plan+CoreDataProperties.swift in Sources */,
 				9CB9E1B91D33D83700D62E0B /* Log.swift in Sources */,
+				B1DC3D971D35EF17001557EF /* PlanListCell.swift in Sources */,
 				9CB9E1A11D33D68300D62E0B /* AppTint.swift in Sources */,
+				B1DC3D951D35EB89001557EF /* PlanListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
