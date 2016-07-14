@@ -28,6 +28,7 @@ class AppData {
     // MARK: - Methods
     
     class func deploy() {
+        
         // 顺序
         AppData.shared.order.plan = (NSUserDefaults.standardUserDefaults().objectForKey("OrderPlan") as? [Double]) ?? []
         AppData.shared.order.idle = (NSUserDefaults.standardUserDefaults().objectForKey("OrderIdle") as? [Double]) ?? []
@@ -42,14 +43,76 @@ class AppData {
             let index = datas.indexOf({ $0.id == id })!
             AppData.shared.idles.append(datas[index])
         }
+        
+        print("\(self) - \(#function): Order = \(AppData.shared.order)")
     }
+    
+    // MARK: Data
+    
+    class func removePlan(idle: Bool, index: Int) {
+        if idle {
+            let data = AppData.shared.idles.removeAtIndex(index)
+            delete(data)
+            
+            AppData.shared.order.idle.removeAtIndex(index)
+        } else {
+            let data = AppData.shared.plans.removeAtIndex(index)
+            delete(data)
+            
+            AppData.shared.order.plan.removeAtIndex(index)
+        }
+        AppData.save()
+        AppData.saveOrder()
+        Notify.post(NotifyType.Reload)
+    }
+    
+    class func save(reload: Bool, info: AnyObject?) {
+        CoreData.save()
+        if let info = info {
+            Notify.post(reload ? NotifyType.Reload : NotifyType.Update, userInfo: info)
+        } else {
+            Notify.post(reload ? NotifyType.Reload : NotifyType.Update)
+        }
+    }
+    
+    // MARK: Order
+    
+    /// idle == true
+    class func orderChanged(origin: Bool, now: Bool, id: Double) {
+        switch (origin, now) {
+        case (true, false):
+            let index = AppData.shared.order.idle.indexOf(id)!
+            AppData.shared.order.idle.removeAtIndex(index)
+            AppData.shared.order.plan.append(id)
+            
+            let data = AppData.shared.idles.removeAtIndex(index)
+            data.idle = now
+            AppData.shared.plans.append(data)
+        case (false, true):
+            let index = AppData.shared.order.plan.indexOf(id)!
+            AppData.shared.order.plan.removeAtIndex(index)
+            AppData.shared.order.idle.append(id)
+            
+            let data = AppData.shared.plans.removeAtIndex(index)
+            data.idle = now
+            AppData.shared.idles.append(data)
+        default:
+            break
+        }
+        AppData.saveOrder()
+    }
+    
+    // MARK: - Core
     
     // MARK: Database
     
     class func addPlan() -> Plan {
         let plan = CoreData.insert("Plan") as! Plan
         plan.id = Double(Int(NSDate().timeIntervalSince1970))
-        return CoreData.insert("Plan") as! Plan
+        AppData.shared.plans.append(plan)
+        AppData.shared.order.plan.append(plan.id)
+        AppData.saveOrder()
+        return plan
     }
     
     class func addLog(plan: Plan) -> Log {
@@ -115,8 +178,8 @@ class AppData {
     }
     
     class func saveOrder() {
+        print("\(self) - \(#function): Order = \(AppData.shared.order)")
         NSUserDefaults.standardUserDefaults().setObject(AppData.shared.order.plan, forKey: "OrderPlan")
         NSUserDefaults.standardUserDefaults().setObject(AppData.shared.order.idle, forKey: "OrderIdle")
-        
     }
 }

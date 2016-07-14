@@ -32,6 +32,18 @@ class TextView: UITextView, UITextViewDelegate {
         delegate = self
     }
     
+    func setNewText(str: String?) {
+        text = str
+        if text.isEmpty == false {
+            holder = false
+            textColor = AppTint.fontColor().main
+        } else {
+            holder = true
+            text = placeholder
+            textColor = AppTint.fontColor().sub
+        }
+    }
+    
     // MARK: - UITextViewDelegate
     
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {

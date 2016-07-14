@@ -96,16 +96,17 @@ class TimeLogController: UIViewController {
             if $0 == "PlanAdd" {
                 self?.performSegueWithIdentifier("Edit", sender: nil)
             }
-            print("rightAction \($0)")
+            print("\(self!) - \(#function): MenuBar RightAction \($0)")
         }
-        menuBar.planListAction = {
-            print("planListAction \($0)")
+        menuBar.planListAction = { [weak self] in
+            print("\(self!) - \(#function): MenuBar planListAction \($0)")
+            self?.planListView.idle = $0
         }
-        menuBar.logListAction = {
-            print("logListAction \($0)")
+        menuBar.logListAction = { [weak self] in
+            print("\(self!) - \(#function): MenuBar logListAction \($0)")
         }
-        menuBar.dayAction = {
-            print("dayAction \($0) \($1)")
+        menuBar.dayAction = { [weak self] in
+            print("\(self!) - \(#function): MenuBar dayAction \($0) \($1)")
             return $1
         }
     }
@@ -117,8 +118,8 @@ class TimeLogController: UIViewController {
     func deployPlanListView() {
         planListView.deploy()
         planListView.actions = { [weak self] in
-            self?.performSegueWithIdentifier($0, sender: $1)
-            print("Actions = \($0), Index = \($1.row)")
+            print("\(self) - \(#function): PlanListView Actions = \($0), Index = \($1.row)")
+            self?.performSegueWithIdentifier($0, sender: $1.row)
         }
     }
     
@@ -134,9 +135,14 @@ class TimeLogController: UIViewController {
     // MARK: - Navigation
      
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("\(self) - \(#function): prepareForSegue identifier: \(segue.identifier); sender: \(sender);")
         switch segue.identifier! {
         case "ShowTimer":
             break
+        case "Edit":
+            let controller = segue.destinationViewController as! PlanEditorController
+            controller.index = sender as? Int
+            controller.idle  = self.planListView.idle
         default:
             break
         }

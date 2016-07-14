@@ -78,11 +78,17 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="7ZN-J3-TSb" eventType="touchUpInside" id="dgH-vW-Olx"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="给计划定个言简意赅的名字吧！" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSp-ck-B1C" customClass="TextField" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="280" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChanged:" destination="7ZN-J3-TSb" eventType="editingChanged" id="3l7-ef-K9B"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K14-JK-bTA" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="92" y="244" width="60" height="30"/>
@@ -95,6 +101,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteAction:" destination="7ZN-J3-TSb" eventType="touchUpInside" id="ZqT-ov-WLi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIt-4C-E8z" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="168" y="244" width="60" height="30"/>
@@ -107,6 +116,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="idleAction:" destination="7ZN-J3-TSb" eventType="touchUpInside" id="ix4-DT-Zf3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vJ-JT-JLq" customClass="Button" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="240" y="244" width="60" height="30"/>
@@ -119,6 +131,9 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveAction:" destination="7ZN-J3-TSb" eventType="touchUpInside" id="peZ-kW-JPn"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="为计划写个备注，留给以后的自己。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGH-lt-bqo" customClass="TextView" customModule="TimeLog" customModuleProvider="target">
                                 <rect key="frame" x="20" y="184" width="280" height="52"/>
@@ -229,6 +244,11 @@
                     <connections>
                         <outlet property="backView" destination="oct-71-kWf" id="C4R-dV-oHO"/>
                         <outlet property="dayPicker" destination="ImR-dW-5In" id="WXW-C0-G0h"/>
+                        <outlet property="deleteButton" destination="K14-JK-bTA" id="YzN-qV-pKY"/>
+                        <outlet property="idleButton" destination="wIt-4C-E8z" id="YHQ-QM-cxh"/>
+                        <outlet property="nameTextField" destination="qSp-ck-B1C" id="hes-fc-exI"/>
+                        <outlet property="noteTextView" destination="NGH-lt-bqo" id="NoP-tL-kIr"/>
+                        <outlet property="saveButton" destination="9vJ-JT-JLq" id="PaN-fy-h6c"/>
                         <outlet property="timePicker" destination="Sic-RF-MzM" id="C9S-yY-NzE"/>
                     </connections>
                 </viewController>
@@ -414,13 +434,13 @@
                                                             <rect key="frame" x="8" y="4" width="304" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dD-iS-mHI">
-                                                                    <rect key="frame" x="16" y="26" width="34" height="21"/>
+                                                                    <rect key="frame" x="16" y="24" width="34" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-4l-p2i">
-                                                                    <rect key="frame" x="268" y="26" width="28" height="21"/>
+                                                                    <rect key="frame" x="268" y="24" width="28" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -439,7 +459,7 @@
                                                                 <constraint firstItem="XBi-3E-ieZ" firstAttribute="leading" secondItem="Ggy-nQ-yy1" secondAttribute="leading" constant="8" id="Zeb-pE-hDB"/>
                                                                 <constraint firstItem="XBi-3E-ieZ" firstAttribute="bottom" secondItem="Ggy-nQ-yy1" secondAttribute="centerY" constant="4" id="gWc-Nm-4Lb"/>
                                                                 <constraint firstAttribute="trailing" secondItem="pB9-4l-p2i" secondAttribute="trailing" constant="8" id="uqI-MX-cMF"/>
-                                                                <constraint firstItem="9dD-iS-mHI" firstAttribute="top" secondItem="XBi-3E-ieZ" secondAttribute="bottom" constant="4" id="zx9-jU-Jmt"/>
+                                                                <constraint firstItem="9dD-iS-mHI" firstAttribute="top" secondItem="XBi-3E-ieZ" secondAttribute="bottom" constant="2" id="zx9-jU-Jmt"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

@@ -131,7 +131,7 @@ class MenuBar: UIView {
     @IBAction func planListAction(sender: Button) {
         planListButton.note = planListButton.note == "计划列表" ? "闲置列表" : "计划列表"
         planListButton.noteToTitle()
-        planListAction?(planListButton.note == "计划列表")
+        planListAction?(planListButton.note == "闲置列表")
     }
     
     // MARK: - Log List Bar

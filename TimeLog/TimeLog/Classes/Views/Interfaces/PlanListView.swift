@@ -13,7 +13,11 @@ class PlanListView: UIView, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Values
     
     /// 显示闲置列表还是计划列表
-    var idle: Bool = false
+    var idle: Bool = false {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: Property
     
@@ -26,6 +30,7 @@ class PlanListView: UIView, UITableViewDataSource, UITableViewDelegate {
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         
         // Notify
+        print("\(self) - \(#function): Add notify.")
         Notify.remove(self)
         Notify.add(self, selector: #selector(reload), type: NotifyType.Reload)
         Notify.add(self, selector: #selector(update), type: NotifyType.Update)
@@ -36,18 +41,15 @@ class PlanListView: UIView, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Notify
     
     func reload(notify: NSNotification) {
-        if let plan = Notify.data(notify) as? Bool {
-            idle = plan
-            tableView.reloadData()
-            print("Notify NSThread.currentThread() \(NSThread.currentThread())")
-        }
+        print("\(self) - \(#function): Reload")
+        tableView.reloadData()
     }
     
     func update(notify: NSNotification) {
+        print("\(self) - \(#function): Update")
         if let index = Notify.data(notify) as? Int {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             if let cell = tableView.cellForRowAtIndexPath(indexPath) as? PlanListCell {
-                print("Notify NSThread.currentThread() \(NSThread.currentThread())")
                 updateCell(cell, index: indexPath)
             }
         }
@@ -56,32 +58,34 @@ class PlanListView: UIView, UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return idle ? AppData.shared.idles.count : AppData.shared.plans.count
-        return 10
+        print("\(self) - \(#function): idle = \(idle); count = \(idle ? AppData.shared.idles.count : AppData.shared.plans.count)")
+        return idle ? AppData.shared.idles.count : AppData.shared.plans.count
+        //return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("\(self) - \(#function): index = \(indexPath.row)")
         let cell = tableView.dequeueReusableCellWithIdentifier("PlanListCell", forIndexPath: indexPath) as! PlanListCell
         cell.deploy()
         
         updateCell(cell, index: indexPath)
-        
         return cell
     }
     
     func updateCell(cell: PlanListCell, index: NSIndexPath) {
         cell.deploy()
         
-        /*
-         let data = idle ? AppData.shared.idles[index.row] : AppData.shared.plans[index.row]
-         cell.nameLabel.text = data.name
-        */
+        
+        let data = idle ? AppData.shared.idles[index.row] : AppData.shared.plans[index.row]
+        cell.nameLabel.text = data.name
+ 
  
         cell.index   = index
         cell.actions = actions
         
-        
+        /*
         cell.nameLabel.text  = "\(index.row) Cell"
+        */
         cell.totalLabel.text = "1000 小时"
         cell.dayLabel.text   = "50 分钟"
     }
