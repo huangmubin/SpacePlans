@@ -30,6 +30,14 @@
 		B1DBA97F1D27BF58006BD6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97D1D27BF58006BD6DC /* LaunchScreen.storyboard */; };
 		B1DC3D951D35EB89001557EF /* PlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC3D941D35EB89001557EF /* PlanListView.swift */; };
 		B1DC3D971D35EF17001557EF /* PlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC3D961D35EF17001557EF /* PlanListCell.swift */; };
+		B1DC66611D3773230006E24B /* DayChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC66601D3773230006E24B /* DayChartView.swift */; };
+		B1DC66631D3773330006E24B /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC66621D3773330006E24B /* LogListView.swift */; };
+		B1DC66651D3777950006E24B /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC66641D3777950006E24B /* TimerController.swift */; };
+		B1DC66671D3779DD0006E24B /* PlanEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC66661D3779DD0006E24B /* PlanEditorController.swift */; };
+		B1DC66691D3779ED0006E24B /* LogEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC66681D3779ED0006E24B /* LogEditorController.swift */; };
+		B1DC666B1D377D710006E24B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC666A1D377D710006E24B /* TextField.swift */; };
+		B1DC666D1D377EBB0006E24B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC666C1D377EBB0006E24B /* TextView.swift */; };
+		B1DC666F1D377EDF0006E24B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC666E1D377EDF0006E24B /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +66,14 @@
 		B1DBA9801D27BF58006BD6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1DC3D941D35EB89001557EF /* PlanListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListView.swift; sourceTree = "<group>"; };
 		B1DC3D961D35EF17001557EF /* PlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanListCell.swift; sourceTree = "<group>"; };
+		B1DC66601D3773230006E24B /* DayChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayChartView.swift; sourceTree = "<group>"; };
+		B1DC66621D3773330006E24B /* LogListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+		B1DC66641D3777950006E24B /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		B1DC66661D3779DD0006E24B /* PlanEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanEditorController.swift; sourceTree = "<group>"; };
+		B1DC66681D3779ED0006E24B /* LogEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEditorController.swift; sourceTree = "<group>"; };
+		B1DC666A1D377D710006E24B /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		B1DC666C1D377EBB0006E24B /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		B1DC666E1D377EDF0006E24B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				9CB9E19C1D33D65400D62E0B /* TimeLogController.swift */,
+				B1DC66641D3777950006E24B /* TimerController.swift */,
+				B1DC66661D3779DD0006E24B /* PlanEditorController.swift */,
+				B1DC66681D3779ED0006E24B /* LogEditorController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,10 +155,10 @@
 		9CB9E1C01D33E52600D62E0B /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				9C949F651D34586D00692116 /* MenuView.swift */,
-				B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */,
-				B1DC3D941D35EB89001557EF /* PlanListView.swift */,
-				B1DC3D961D35EF17001557EF /* PlanListCell.swift */,
+				B1DC665F1D3773020006E24B /* Day */,
+				B1DC665E1D3772FC0006E24B /* Log */,
+				B1DC665D1D3772F30006E24B /* Plan */,
+				B1DC665C1D3772EC0006E24B /* Menu */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -150,6 +169,9 @@
 				9CB9E1C21D33E52600D62E0B /* Button.swift */,
 				B19555DA1D34BB3900031322 /* View.swift */,
 				B17EDB081D34F47800093C81 /* PagControl.swift */,
+				B1DC666C1D377EBB0006E24B /* TextView.swift */,
+				B1DC666E1D377EDF0006E24B /* PickerView.swift */,
+				B1DC666A1D377D710006E24B /* TextField.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -196,6 +218,40 @@
 				B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B1DC665C1D3772EC0006E24B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9C949F651D34586D00692116 /* MenuView.swift */,
+				B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		B1DC665D1D3772F30006E24B /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC3D941D35EB89001557EF /* PlanListView.swift */,
+				B1DC3D961D35EF17001557EF /* PlanListCell.swift */,
+			);
+			name = Plan;
+			sourceTree = "<group>";
+		};
+		B1DC665E1D3772FC0006E24B /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC66621D3773330006E24B /* LogListView.swift */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
+		B1DC665F1D3773020006E24B /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC66601D3773230006E24B /* DayChartView.swift */,
+			);
+			name = Day;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,21 +330,29 @@
 				B1BADEAB1D34DCFF0019A51F /* MenuBar.swift in Sources */,
 				B19555DB1D34BB3900031322 /* View.swift in Sources */,
 				9CD11C181D3683FA00B459BA /* Notify.swift in Sources */,
+				B1DC666B1D377D710006E24B /* TextField.swift in Sources */,
+				B1DC66691D3779ED0006E24B /* LogEditorController.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
 				9CB9E19D1D33D65400D62E0B /* TimeLogController.swift in Sources */,
 				9CB9E1AB1D33D6D900D62E0B /* CoreData.swift in Sources */,
 				B17EDB091D34F47800093C81 /* PagControl.swift in Sources */,
 				9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */,
+				B1DC666F1D377EDF0006E24B /* PickerView.swift in Sources */,
 				9CB9E1C31D33E52600D62E0B /* Button.swift in Sources */,
+				B1DC66671D3779DD0006E24B /* PlanEditorController.swift in Sources */,
 				9CB9E1BB1D33D83700D62E0B /* Plan.swift in Sources */,
+				B1DC66651D3777950006E24B /* TimerController.swift in Sources */,
 				9C949F661D34586D00692116 /* MenuView.swift in Sources */,
 				9CB9E19F1D33D67C00D62E0B /* AppData.swift in Sources */,
 				9CB9E1B81D33D83700D62E0B /* Log+CoreDataProperties.swift in Sources */,
 				9CB9E1BA1D33D83700D62E0B /* Plan+CoreDataProperties.swift in Sources */,
 				9CB9E1B91D33D83700D62E0B /* Log.swift in Sources */,
+				B1DC66611D3773230006E24B /* DayChartView.swift in Sources */,
 				B1DC3D971D35EF17001557EF /* PlanListCell.swift in Sources */,
 				9CB9E1A11D33D68300D62E0B /* AppTint.swift in Sources */,
+				B1DC666D1D377EBB0006E24B /* TextView.swift in Sources */,
 				B1DC3D951D35EB89001557EF /* PlanListView.swift in Sources */,
+				B1DC66631D3773330006E24B /* LogListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

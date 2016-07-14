@@ -162,7 +162,8 @@ class MenuBar: UIView {
     @IBAction func dayButtonAction(sender: Button) {
         dayButton.selected = !dayButton.selected
         if let action = dayAction {
-            action(dayButton.selected, dayButton.note)
+            dayButton.note = action(dayButton.selected, dayButton.note)
+            dayButton.noteToTitle()
         }
     }
 }
