@@ -8,39 +8,23 @@
 
 import UIKit
 
-class LogListView: UIView, UITableViewDataSource, UITableViewDelegate {
+class LogListView: UIView {
 
     var index = 0
     var format = NSDateFormatter()
     
     func deploy() {
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    }
-    
-    // MARK: - TableView
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    // MAKR: - UITableViewDataSource
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.shared[false, index].logs?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LogListCell", forIndexPath: indexPath) as! LogListCell
-        
-        if let data = AppData.shared[false, index].logs?.objectAtIndex(indexPath.row) as? Log {
-            cell.note.text = data.note
-            cell.start.text = format.stringFromDate(NSDate(timeIntervalSince1970: data.start))
-            cell.end.text = format.stringFromDate(NSDate(timeIntervalSince1970: data.end))
-            cell.duration.text = String(format: "%.0f", data.duration / 60)
-            cell.start.sizeToFit()
-            cell.end.sizeToFit()
-            cell.duration.sizeToFit()
+        scrollView.contentSize = CGSize(width: CGFloat(AppData.shared.plans.count
+            ) * AppTint.Width, height: AppTint.Height - 44)
+        for (i,plan) in AppData.shared.plans.enumerate() {
+            let con = UIStoryboard(name: "TimeLog", bundle: nil).instantiateViewControllerWithIdentifier("LogListController") as! LogListController
+            con.view.frame = CGRect(x: CGFloat(i) * AppTint.Width, y: 0, width: AppTint.Width, height: AppTint.Height - 44)
+            con.label.text = plan.name
+            scrollView.addSubview(con.view)
         }
-        
-        return cell
     }
- 
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
 }

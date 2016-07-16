@@ -79,7 +79,6 @@ class TimeLogController: UIViewController {
                     self?.showView(0)
                 case "ShowLog":
                     self?.showView(1)
-                    self?.logListView.tableView.reloadData()
                 case "ShowDay":
                     self?.showView(2)
                 case "ShowTimer":
@@ -140,7 +139,6 @@ class TimeLogController: UIViewController {
     
     func deployLogList() {
         logListView.deploy()
-        logListView.tableView.reloadData()
     }
     
     // MARK: Day Chart View

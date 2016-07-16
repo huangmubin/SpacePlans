@@ -22,6 +22,7 @@
 		9CB9E1C31D33E52600D62E0B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1C21D33E52600D62E0B /* Button.swift */; };
 		9CD11C181D3683FA00B459BA /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD11C171D3683FA00B459BA /* Notify.swift */; };
 		B106C2A41D39E646005AE0FD /* LogListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B106C2A31D39E646005AE0FD /* LogListCell.swift */; };
+		B106C2A61D3A0AC8005AE0FD /* LogListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B106C2A51D3A0AC8005AE0FD /* LogListController.swift */; };
 		B17EDB091D34F47800093C81 /* PagControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EDB081D34F47800093C81 /* PagControl.swift */; };
 		B19555DB1D34BB3900031322 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19555DA1D34BB3900031322 /* View.swift */; };
 		B1BADEAB1D34DCFF0019A51F /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */; };
@@ -60,6 +61,7 @@
 		9CB9E1C21D33E52600D62E0B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9CD11C171D3683FA00B459BA /* Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
 		B106C2A31D39E646005AE0FD /* LogListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogListCell.swift; sourceTree = "<group>"; };
+		B106C2A51D3A0AC8005AE0FD /* LogListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogListController.swift; sourceTree = "<group>"; };
 		B17EDB081D34F47800093C81 /* PagControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagControl.swift; sourceTree = "<group>"; };
 		B19555DA1D34BB3900031322 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B1BADEAA1D34DCFF0019A51F /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B1DC66661D3779DD0006E24B /* PlanEditorController.swift */,
 				B1DC66681D3779ED0006E24B /* LogEditorController.swift */,
 				B1DD11331D387978005E7598 /* PlanChoicerController.swift */,
+				B106C2A51D3A0AC8005AE0FD /* LogListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				B1DC66651D3777950006E24B /* TimerController.swift in Sources */,
 				9C949F661D34586D00692116 /* MenuView.swift in Sources */,
 				9CB9E19F1D33D67C00D62E0B /* AppData.swift in Sources */,
+				B106C2A61D3A0AC8005AE0FD /* LogListController.swift in Sources */,
 				9CB9E1B81D33D83700D62E0B /* Log+CoreDataProperties.swift in Sources */,
 				9CB9E1BA1D33D83700D62E0B /* Plan+CoreDataProperties.swift in Sources */,
 				9CB9E1B91D33D83700D62E0B /* Log.swift in Sources */,
