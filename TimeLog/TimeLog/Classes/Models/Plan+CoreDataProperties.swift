@@ -15,12 +15,12 @@ import CoreData
 extension Plan {
 
     @NSManaged var days: Double
+    @NSManaged var time: Double
     @NSManaged var id: Double
     @NSManaged var idle: Bool
     @NSManaged var json: NSData?
     @NSManaged var name: String?
     @NSManaged var note: String?
-    @NSManaged var time: Double
     @NSManaged var logs: NSMutableOrderedSet?
 
 }

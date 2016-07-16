@@ -22,27 +22,34 @@ class TextView: UITextView, UITextViewDelegate {
         deploy()
     }
     
-    var placeholder = "Test"
-    
-    var holder = true
     func deploy() {
         font = AppTint.noteFont()
         textColor = holder ? AppTint.fontColor().sub : AppTint.fontColor().main
-        placeholder = text
+        text = holder ? placeholder : note
         delegate = self
     }
     
-    func setNewText(str: String?) {
-        text = str
-        if text.isEmpty == false {
-            holder = false
-            textColor = AppTint.fontColor().main
-        } else {
-            holder = true
-            text = placeholder
-            textColor = AppTint.fontColor().sub
+    // MARK: - Plance Holder
+    
+    /// 占位符
+    @IBInspectable var placeholder: String? = "Test"
+    /// 文本内容
+    @IBInspectable var note: String? = "" {
+        didSet {
+            if note?.isEmpty == false {
+                holder = false
+                text = note
+                textColor = AppTint.fontColor().main
+            } else {
+                holder = true
+                text = placeholder
+                textColor = AppTint.fontColor().sub
+            }
         }
     }
+    
+    /// 是否使用占位符
+    var holder = true
     
     // MARK: - UITextViewDelegate
     
@@ -55,12 +62,6 @@ class TextView: UITextView, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        if text.isEmpty == false {
-            holder = false
-        } else {
-            text = placeholder
-            holder = true
-            textColor = AppTint.fontColor().sub
-        }
+        note = text
     }
 }

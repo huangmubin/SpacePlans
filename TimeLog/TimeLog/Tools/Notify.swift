@@ -51,8 +51,8 @@ class Notify: NSObject {
         NSNotificationCenter.defaultCenter().postNotificationName(type.rawValue, object: nil, userInfo: userInfo)
     }
     
-    class func post(type: NotifyType, userInfo: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(type.rawValue, object: nil, userInfo: ["Data": userInfo])
+    class func post(type: NotifyType, info: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName(type.rawValue, object: nil, userInfo: ["Data": info])
     }
     
     class func post(type: NotifyType) {

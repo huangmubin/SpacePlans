@@ -116,11 +116,13 @@ class PlanListCell: UITableViewCell {
     
     // MARK: - Gesture
     
+    var gesture: ((Bool) -> Void)?
     var origin: CGFloat = 0
     var layout: CGFloat = 0
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         origin = touches.first!.locationInView(self).x
         layout = contentCenterLayout.constant
+        gesture?(true)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -143,6 +145,7 @@ class PlanListCell: UITableViewCell {
             self.contentCenterLayout.constant = self.layout
             self.layoutIfNeeded()
         }
+        gesture?(false)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -150,5 +153,6 @@ class PlanListCell: UITableViewCell {
             self.contentCenterLayout.constant = 0
             self.layoutIfNeeded()
         }
+        gesture?(false)
     }
 }

@@ -25,6 +25,12 @@ class AppData {
     var order: (plan: [Double], idle: [Double]) = ([],[])
     var planListChoicePlan: Plan?
     
+    subscript (idle: Bool, index: Int) -> Plan {
+        get {
+            return idle ? idles[index] : plans[index]
+        }
+    }
+    
     // MARK: - Methods
     
     class func deploy() {
@@ -35,16 +41,21 @@ class AppData {
         
         // 初始化数据
         let datas = (CoreData.find("Plan", predicate: "id != 0", sorts: [], type: .ManagedObjectResultType, limit: 0, offset: 0) as? [Plan]) ?? [Plan]()
+        let date = NSDate()
         for id in AppData.shared.order.plan {
             let index = datas.indexOf({ $0.id == id })!
             AppData.shared.plans.append(datas[index])
+            //datas[index].updateTotal()
+            datas[index].updateDay(date)
         }
         for id in AppData.shared.order.idle {
             let index = datas.indexOf({ $0.id == id })!
             AppData.shared.idles.append(datas[index])
+            //datas[index].updateTotal()
+            datas[index].updateDay(date)
         }
         
-        print("\(self) - \(#function): Order = \(AppData.shared.order)")
+        //print("\(self) - \(#function): Order = \(AppData.shared.order)")
     }
     
     // MARK: Data
@@ -69,9 +80,39 @@ class AppData {
     class func save(reload: Bool, info: AnyObject?) {
         CoreData.save()
         if let info = info {
-            Notify.post(reload ? NotifyType.Reload : NotifyType.Update, userInfo: info)
+            Notify.post(reload ? NotifyType.Reload : NotifyType.Update, info: info)
         } else {
             Notify.post(reload ? NotifyType.Reload : NotifyType.Update)
+        }
+    }
+    
+    class func logSplit(log: Log) {
+        var day   = Clock.dayRange(NSDate(timeIntervalSince1970: log.start)).end.timeIntervalSince1970
+        var start = log.start
+        let end   = log.end
+        var data  = log
+        //print("\(self) - \(#function): plan.id = \(log.plan!.id); start = \(start); end = \(end); day = \(day); data = \(data);")
+        while start < end {
+            if end < day {
+                start = end
+                data.end = end
+                data.duration = data.end - data.start
+                save()
+            } else {
+                data.end = day
+                data.duration = data.end - data.start
+                start = day
+                day += 86400
+                
+                guard start < end else { save(); return }
+                
+                data = AppData.addLog(log.plan!)
+                data.note = log.note
+                data.json = log.json
+                data.start = start
+                save()
+            }
+            //print("\(self) - \(#function): id = \(data.plan!.id); start = \(start); end = \(end); day = \(day); data = \(data);")
         }
     }
     

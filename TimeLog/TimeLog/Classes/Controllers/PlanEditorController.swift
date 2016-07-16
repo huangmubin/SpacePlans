@@ -18,9 +18,8 @@ class PlanEditorController: UIViewController {
     func deployValue() {
         if let index = index {
             let data = idle ? AppData.shared.idles[index] : AppData.shared.plans[index]
-            nameTextField.text = data.name
-            noteTextView.setNewText(data.note)
-            noteTextView.holder = false
+            nameTextField.text  = data.name
+            noteTextView.note   = data.note
             idle = data.idle
             dayPicker.selectRow(Int(data.days - 1), inComponent: 0, animated: false)
             timePicker.selectRow(Int(data.time / 360 - 1), inComponent: 0, animated: false)
@@ -114,7 +113,7 @@ class PlanEditorController: UIViewController {
         data.name = nameTextField.text
         data.days = Double(dayPicker.selectedRowInComponent(0) + 1)
         data.time = Double(timePicker.selectedRowInComponent(0) + 1) * 360
-        data.note = noteTextView.text
+        data.note = noteTextView.note
         
         AppData.save(true, info: nil)
         

@@ -17,11 +17,20 @@ class TimeLogController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
+        
         deployMenuView()
         deployMenuBar()
         deployPlanListView()
+        deployLogList()
         
         view.backgroundColor = AppTint.backColor()
+        logListView.frame = CGRect(x: 0, y: 44, width: view.bounds.width, height: view.bounds.height - 44)
+        dayChartView.frame = CGRect(x: 0, y: 44, width: view.bounds.width, height: view.bounds.height - 44)
+        
+        view.insertSubview(logListView, atIndex: 0)
+        view.insertSubview(dayChartView, atIndex: 0)
+        
         showView(nil)
     }
     override func viewDidAppear(animated: Bool) {
@@ -70,6 +79,7 @@ class TimeLogController: UIViewController {
                     self?.showView(0)
                 case "ShowLog":
                     self?.showView(1)
+                    self?.logListView.tableView.reloadData()
                 case "ShowDay":
                     self?.showView(2)
                 case "ShowTimer":
@@ -118,18 +128,25 @@ class TimeLogController: UIViewController {
     func deployPlanListView() {
         planListView.deploy()
         planListView.actions = { [weak self] in
-            print("\(self) - \(#function): PlanListView Actions = \($0), Index = \($1.row)")
+            print("\(self!) - \(#function): PlanListView Actions = \($0), Index = \($1.row)")
             self?.performSegueWithIdentifier($0, sender: $1.row)
         }
+        planListView.tableView.reloadData()
     }
     
     // MARK: Log List View
     
-    @IBOutlet weak var logListView: LogListView!
+    @IBOutlet var logListView: LogListView!
+    
+    func deployLogList() {
+        logListView.deploy()
+        logListView.tableView.reloadData()
+    }
     
     // MARK: Day Chart View
     
-    @IBOutlet weak var dayChartView: DayChartView!
+    @IBOutlet var dayChartView: DayChartView!
+    
     
     
     // MARK: - Navigation
@@ -143,8 +160,13 @@ class TimeLogController: UIViewController {
             let controller = segue.destinationViewController as! PlanEditorController
             controller.index = sender as? Int
             controller.idle  = self.planListView.idle
+        case "LogAdd":
+            let controller = segue.destinationViewController as! LogEditorController
+            controller.index = sender as! Int
+            controller.idle  = self.planListView.idle
         default:
-            break
+            print("Other?")
+            assert(false, "\(sender)")
         }
     }
 
