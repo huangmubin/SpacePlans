@@ -8,7 +8,7 @@
         <!--Main Controller-->
         <scene sceneID="1Ay-S1-y8C">
             <objects>
-                <viewController id="pbq-G1-Ru4" customClass="MainController" customModule="TimeLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pbq-G1-Ru4" customClass="MainController" customModule="TimeLog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rxy-mf-8G1"/>
                         <viewControllerLayoutGuide type="bottom" id="w9h-ta-YgI"/>

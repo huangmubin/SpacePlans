@@ -9,57 +9,95 @@
 import Foundation
 import CoreData
 
+enum UpdateType {
+    case Total
+    case Duration
+    case TotalAndDuration
+    case Groups(Double, Double)
+    case GroupsAndTotal(Double, Double)
+}
+
+enum GroupType {
+    case Day
+}
+
+func InRange<T: Comparable>(i: T, s: T, e: T) -> Bool {
+    return i >= s && i < e
+}
 
 class Plan: NSManagedObject {
 
     /// 总时长
     var total: Double = 0
-    /// 单日时长
-    var day: Double   = 0
-    
+    /// 持续时间
+    var duration: Double = 0
+    /// Log
+    var logs: [Log] = []
     /// 明细分组
     var groups: [[Log]] = []
     
+    // MARK: Methods
     
-    
-    func updateDay(date: NSDate) {
-        // 时长数据
-        let days = Clock.dayRange(date.timeIntervalSince1970)
-        
-        day = 0
-        total = 0
-        
-        // 分组数据
-        var group = [Log]()
-        
-        // 整理
-        logs?.enumerateObjectsUsingBlock({ [weak self] (data, index, pointer) in
+    func deploy() {
+        logs.removeAll(keepCapacity: true)
+        detail?.enumerateObjectsUsingBlock({ [weak self] (data, index, pointer) in
             if let log = data as? Log {
-                /// 时长统计
-                if log.start >= days.start && log.end <= days.end {
-                    //print(self?.day)
-                    self?.day += log.duration
-                }
-                self?.total += log.duration
-                
-                group.append(log)
+                self?.logs.append(log)
             }
         })
-        
-        // 分组
-        groups = []
-        guard group.count > 0 else { return }
-        group.sortInPlace({ $0.start > $1.start })
-        var range = Clock.dayRange(group[0].start)
-        groups.append([])
-        for g in group {
-            if g.start >= range.start && g.end <= range.end {
-                groups[groups.count-1].append(g)
-            } else {
-                range = Clock.dayRange(g.start)
-                groups.append([g])
+        logs.sortInPlace({ $0.start < $1.start })
+    }
+    
+    func update(type: UpdateType) {
+        switch type {
+        case .Total:
+            logs.forEach {
+                self.total += $0.duration
+            }
+        case .Duration:
+            logs.forEach {
+                if InRange($0.duration, s: Range.start, e: Range.end) {
+                    self.duration += $0.duration
+                }
+            }
+        case .TotalAndDuration:
+            logs.forEach {
+                self.total += $0.duration
+                if InRange($0.duration, s: Range.start, e: Range.end) {
+                    self.duration += $0.duration
+                }
+            }
+        case .Groups(let start, let end):
+            logs.forEach {
+                if InRange($0.duration, s: start, e: end) {
+                    self.duration += $0.duration
+                }
+            }
+        case .GroupsAndTotal(let start, let end):
+            logs.forEach {
+                self.total += $0.duration
+                if InRange($0.duration, s: start, e: end) {
+                    self.duration += $0.duration
+                }
             }
         }
     }
 
+    func deployGroup(type: GroupType) {
+        guard logs.count > 0 else { return }
+        groups.removeAll(keepCapacity: true)
+        groups.append([])
+        switch type {
+        case .Day:
+            var range = Clock.dayRange(logs[0].start)
+            for log in logs {
+                if InRange(log.start, s: range.start, e: range.end) {
+                    groups[groups.count-1].append(log)
+                } else {
+                    range = Clock.dayRange(log.start)
+                    groups.append([log])
+                }
+            }
+        }
+    }
 }

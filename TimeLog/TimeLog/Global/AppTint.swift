@@ -8,13 +8,23 @@
 
 import UIKit
 
+/// 状态栏高度
+let StatusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+/// 屏幕宽度
+let ScreenWidth     = UIScreen.mainScreen().bounds.width
+/// 屏幕高度
+let ScreenHeight    = UIScreen.mainScreen().bounds.height
+/// 视图尺寸
+let ViewFrame       = CGRect(x: 0, y: StatusBarHeight, width: ScreenWidth, height: ScreenHeight - StatusBarHeight - 4)
+
+
 class AppTint: NSObject {
     
     // MARK: - Values
     
-    static let Width = UIScreen.mainScreen().bounds.width
-    static let Height = UIScreen.mainScreen().bounds.height
-    static let Size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+//    static let Width = UIScreen.mainScreen().bounds.width
+//    static let Height = UIScreen.mainScreen().bounds.height
+//    static let Size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
     
     // MARK: - Colors
     

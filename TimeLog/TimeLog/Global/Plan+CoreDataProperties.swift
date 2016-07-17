@@ -21,6 +21,6 @@ extension Plan {
     @NSManaged var json: NSData?
     @NSManaged var name: String?
     @NSManaged var note: String?
-    @NSManaged var logs: NSMutableOrderedSet?
+    @NSManaged var detail: NSMutableOrderedSet?
 
 }

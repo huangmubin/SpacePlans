@@ -73,4 +73,17 @@ class Notify: NSObject {
         }
         return nil
     }
+    
+    // MARK: - Keyboard Notification
+    
+    /**
+     UIKeyboardDidChangeFrameNotification
+     UIKeyboardDidHideNotification
+     UIKeyboardDidShowNotification
+     
+     if let rect = info.objectForKey(UIKeyboardFrameEndUserInfoKey)?.CGRectValue {
+     
+     }
+     */
+    
 }

@@ -36,6 +36,10 @@
 		9CC18EF01D3B0CB0004A6913 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EEF1D3B0CB0004A6913 /* TimerController.swift */; };
 		9CC18EF31D3B0CF0004A6913 /* TimeLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EF11D3B0CF0004A6913 /* TimeLogCell.swift */; };
 		9CC18EF41D3B0CF0004A6913 /* TimeLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18EF21D3B0CF0004A6913 /* TimeLogCell.xib */; };
+		9CC18EF71D3B2534004A6913 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EF61D3B2534004A6913 /* Protocols.swift */; };
+		9CC18EF91D3B2839004A6913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EF81D3B2839004A6913 /* ViewController.swift */; };
+		9CC18EFB1D3B4191004A6913 /* PlanEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EFA1D3B4191004A6913 /* PlanEditorController.swift */; };
+		9CC18EFD1D3B8A96004A6913 /* LogEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */; };
 		9CD11C181D3683FA00B459BA /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD11C171D3683FA00B459BA /* Notify.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
@@ -74,6 +78,10 @@
 		9CC18EEF1D3B0CB0004A6913 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CC18EF11D3B0CF0004A6913 /* TimeLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogCell.swift; sourceTree = "<group>"; };
 		9CC18EF21D3B0CF0004A6913 /* TimeLogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLogCell.xib; sourceTree = "<group>"; };
+		9CC18EF61D3B2534004A6913 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9CC18EF81D3B2839004A6913 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9CC18EFA1D3B4191004A6913 /* PlanEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanEditorController.swift; sourceTree = "<group>"; };
+		9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEditorController.swift; sourceTree = "<group>"; };
 		9CD11C171D3683FA00B459BA /* Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,11 +156,12 @@
 		9CC18ED21D3B0C4F004A6913 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				9CC18EF81D3B2839004A6913 /* ViewController.swift */,
 				9CC18ED71D3B0C4F004A6913 /* Main */,
 				9CC18EDA1D3B0C4F004A6913 /* Menu */,
 				9CC18EDC1D3B0C4F004A6913 /* Plan */,
-				9CC18ED31D3B0C4F004A6913 /* Day */,
 				9CC18ED51D3B0C4F004A6913 /* Log */,
+				9CC18ED31D3B0C4F004A6913 /* Day */,
 				9CC18EDE1D3B0C4F004A6913 /* Timer */,
 			);
 			path = Interface;
@@ -172,6 +181,7 @@
 			children = (
 				9CC18ED61D3B0C4F004A6913 /* Log.storyboard */,
 				9CC18EED1D3B0CA6004A6913 /* LogController.swift */,
+				9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 			children = (
 				9CC18EDD1D3B0C4F004A6913 /* Plan.storyboard */,
 				9CC18EE91D3B0C8E004A6913 /* PlanController.swift */,
+				9CC18EFA1D3B4191004A6913 /* PlanEditorController.swift */,
 			);
 			path = Plan;
 			sourceTree = "<group>";
@@ -210,6 +221,14 @@
 				9CC18EEF1D3B0CB0004A6913 /* TimerController.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		9CC18EF51D3B2528004A6913 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9CC18EF61D3B2534004A6913 /* Protocols.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		B1DBA9651D27BF58006BD6DC = {
@@ -235,6 +254,7 @@
 				9CC18EAE1D3B0A89004A6913 /* Global */,
 				9CC18ED21D3B0C4F004A6913 /* Interface */,
 				9CC18EAD1D3B0A89004A6913 /* CustomViews */,
+				9CC18EF51D3B2528004A6913 /* Protocol */,
 				9CB9E1971D33D5B700D62E0B /* Tools */,
 				9CB9E1981D33D5B900D62E0B /* Resources */,
 				B1DBA9B41D27C030006BD6DC /* Info */,
@@ -340,6 +360,7 @@
 				9CC18EEA1D3B0C8E004A6913 /* PlanController.swift in Sources */,
 				9C949F681D34699600692116 /* AnimationEngine.swift in Sources */,
 				9CC18EBE1D3B0AD2004A6913 /* Log.swift in Sources */,
+				9CC18EFD1D3B8A96004A6913 /* LogEditorController.swift in Sources */,
 				9CC18EF31D3B0CF0004A6913 /* TimeLogCell.swift in Sources */,
 				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
 				9CC18EE31D3B0C4F004A6913 /* MainController.swift in Sources */,
@@ -350,13 +371,16 @@
 				9CC18EBC1D3B0AD2004A6913 /* AppData.swift in Sources */,
 				9CC18EEE1D3B0CA6004A6913 /* LogController.swift in Sources */,
 				B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */,
+				9CC18EF71D3B2534004A6913 /* Protocols.swift in Sources */,
 				9CC18EC81D3B0AE6004A6913 /* Button.swift in Sources */,
 				9CC18EC91D3B0AE6004A6913 /* PagControl.swift in Sources */,
+				9CC18EF91D3B2839004A6913 /* ViewController.swift in Sources */,
 				9CB9E1AB1D33D6D900D62E0B /* CoreData.swift in Sources */,
 				9CC18EC01D3B0AD2004A6913 /* Plan.swift in Sources */,
 				B1DD11381D389718005E7598 /* Clock.swift in Sources */,
 				9CC18EC11D3B0AD2004A6913 /* Plan+CoreDataProperties.swift in Sources */,
 				9CC18ECC1D3B0AE6004A6913 /* TextView.swift in Sources */,
+				9CC18EFB1D3B4191004A6913 /* PlanEditorController.swift in Sources */,
 				9CC18EEC1D3B0C9C004A6913 /* DayController.swift in Sources */,
 				9CC18EF01D3B0CB0004A6913 /* TimerController.swift in Sources */,
 				9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */,
@@ -471,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.TimeLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -482,6 +507,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.TimeLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

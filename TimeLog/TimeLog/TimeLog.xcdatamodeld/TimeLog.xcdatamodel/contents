@@ -6,7 +6,7 @@
         <attribute name="json" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plan" inverseName="logs" inverseEntity="Plan" syncable="YES"/>
+        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plan" inverseName="detail" inverseEntity="Plan" syncable="YES"/>
     </entity>
     <entity name="Plan" representedClassName=".Plan" syncable="YES">
         <attribute name="days" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -16,7 +16,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Log" inverseName="plan" inverseEntity="Log" syncable="YES"/>
+        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Log" inverseName="plan" inverseEntity="Log" syncable="YES"/>
     </entity>
     <elements>
         <element name="Log" positionX="-27" positionY="18" width="128" height="135"/>

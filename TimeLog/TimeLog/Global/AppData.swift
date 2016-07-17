@@ -9,6 +9,15 @@
 import UIKit
 import CoreData
 
+// MARK: Global Data
+
+/// 正常计划列表
+var Plans: [Plan] = [Plan]()
+/// 闲置计划列表
+var Idles: [Plan] = [Plan]()
+/// 区间范围
+var Range: (start: Double, end: Double) = (0,0)
+
 class AppData {
     
     // MARK: - Values
@@ -18,21 +27,20 @@ class AppData {
     static let shared: AppData = AppData()
     private init() {}
     
+    // MARK: Range
+    
+    //var range: (start: Double, end: Double) = (0,0)
+    
     // MARK: Data
     
-    var plans: [Plan] = [Plan]()
-    var idles: [Plan] = [Plan]()
+    //var plans: [Plan] = [Plan]()
+    //var idles: [Plan] = [Plan]()
     var order: (plan: [Double], idle: [Double]) = ([],[])
-    var planListChoicePlan: Plan?
-    
-    subscript (idle: Bool, index: Int) -> Plan {
-        get {
-            return idle ? idles[index] : plans[index]
-        }
-    }
+    //var planListChoicePlan: Plan?
     
     // MARK: - Methods
     
+    /// 初始化配置
     class func deploy() {
         
         // 顺序
@@ -41,16 +49,16 @@ class AppData {
         
         // 初始化数据
         let datas = (CoreData.find("Plan", predicate: "id != 0", sorts: [], type: .ManagedObjectResultType, limit: 0, offset: 0) as? [Plan]) ?? [Plan]()
-        let date = NSDate()
+        
         for id in AppData.shared.order.plan {
             let index = datas.indexOf({ $0.id == id })!
-            AppData.shared.plans.append(datas[index])
-            datas[index].updateDay(date)
+            // AppData.shared.plans.append(datas[index])
+            Plans.append(datas[index])
         }
         for id in AppData.shared.order.idle {
             let index = datas.indexOf({ $0.id == id })!
-            AppData.shared.idles.append(datas[index])
-            datas[index].updateDay(date)
+            // AppData.shared.idles.append(datas[index])
+            Idles.append(datas[index])
         }
         
         //print("\(self) - \(#function): Order = \(AppData.shared.order)")
@@ -58,14 +66,17 @@ class AppData {
     
     // MARK: Data
     
+    /// 移除计划
     class func removePlan(idle: Bool, index: Int) {
         if idle {
-            let data = AppData.shared.idles.removeAtIndex(index)
+            // let data = AppData.shared.idles.removeAtIndex(index)
+            let data = Idles.removeAtIndex(index)
             delete(data)
             
             AppData.shared.order.idle.removeAtIndex(index)
         } else {
-            let data = AppData.shared.plans.removeAtIndex(index)
+            //let data = AppData.shared.plans.removeAtIndex(index)
+            let data = Plans.removeAtIndex(index)
             delete(data)
             
             AppData.shared.order.plan.removeAtIndex(index)
@@ -75,15 +86,17 @@ class AppData {
         Notify.post(NotifyType.Reload)
     }
     
-    class func save(reload: Bool, info: AnyObject?) {
-        CoreData.save()
-        if let info = info {
-            Notify.post(reload ? NotifyType.Reload : NotifyType.Update, info: info)
-        } else {
-            Notify.post(reload ? NotifyType.Reload : NotifyType.Update)
-        }
-    }
+    /// 保存计划
+//    class func save(reload: Bool, info: AnyObject?) {
+//        CoreData.save()
+//        if let info = info {
+//            Notify.post(reload ? NotifyType.Reload : NotifyType.Update, info: info)
+//        } else {
+//            Notify.post(reload ? NotifyType.Reload : NotifyType.Update)
+//        }
+//    }
     
+    /// 明细分割并保存
     class func logSplit(log: Log) {
         var day   = Clock.dayRange(NSDate(timeIntervalSince1970: log.start)).end.timeIntervalSince1970
         var start = log.start
@@ -116,7 +129,7 @@ class AppData {
     
     // MARK: Order
     
-    /// idle == true
+    /// 顺序变更 idle == true
     class func orderChanged(origin: Bool, now: Bool, id: Double) {
         switch (origin, now) {
         case (true, false):
@@ -124,17 +137,21 @@ class AppData {
             AppData.shared.order.idle.removeAtIndex(index)
             AppData.shared.order.plan.append(id)
             
-            let data = AppData.shared.idles.removeAtIndex(index)
+            // let data = AppData.shared.idles.removeAtIndex(index)
+            let data = Idles.removeAtIndex(index)
             data.idle = now
-            AppData.shared.plans.append(data)
+            // AppData.shared.plans.append(data)
+            Plans.append(data)
         case (false, true):
             let index = AppData.shared.order.plan.indexOf(id)!
             AppData.shared.order.plan.removeAtIndex(index)
             AppData.shared.order.idle.append(id)
             
-            let data = AppData.shared.plans.removeAtIndex(index)
+            // let data = AppData.shared.plans.removeAtIndex(index)
+            let data = Plans.removeAtIndex(index)
             data.idle = now
-            AppData.shared.idles.append(data)
+            // AppData.shared.idles.append(data)
+            Idles.append(data)
         default:
             break
         }
@@ -145,29 +162,38 @@ class AppData {
     
     // MARK: Database
     
+    /// 添加计划
     class func addPlan() -> Plan {
         let plan = CoreData.insert("Plan") as! Plan
         plan.id = Double(Int(NSDate().timeIntervalSince1970))
-        AppData.shared.plans.append(plan)
+        // AppData.shared.plans.append(plan)
+        Plans.append(plan)
         AppData.shared.order.plan.append(plan.id)
         AppData.saveOrder()
         return plan
     }
     
+    /// 添加明细
     class func addLog(plan: Plan) -> Log {
         let log = CoreData.insert("Log") as! Log
         log.plan = plan
-        plan.logs?.addObject(log)
+        // plan.logs?.addObject(log)
+        plan.detail?.addObject(log)
+        plan.logs.append(log)
         return log
     }
     
+    /// 删除计划
     class func delete(data: NSManagedObject) {
         if let plan = data as? Plan {
-            if let logs = plan.logs {
-                for log in logs {
-                    CoreData.delete(log as! Log)
-                }
+            for log in plan.logs {
+                CoreData.delete(log)
             }
+//            if let logs = plan.logs {
+//                for log in logs {
+//                    CoreData.delete(log as! Log)
+//                }
+//            }
             if plan.idle {
                 let index = AppData.shared.order.idle.indexOf(plan.id)!
                 AppData.shared.order.idle.removeAtIndex(index)
