@@ -23,9 +23,9 @@ class PlanEditorController: UIViewController {
             idle = data.idle
             dayPicker.selectRow(Int(data.days - 1), inComponent: 0, animated: false)
             timePicker.selectRow(Int(data.time / 360 - 1), inComponent: 0, animated: false)
-            print("\(self) - \(#function): index = \(index); name = \(data.name); note = \(data.note); idle = \(idle); days = \(data.days); time = \(data.time);")
+            //print("\(self) - \(#function): index = \(index); name = \(data.name); note = \(data.note); idle = \(idle); days = \(data.days); time = \(data.time);")
         } else {
-            print("\(self) - \(#function): index = \(index); idle = \(idle);")
+            //print("\(self) - \(#function): index = \(index); idle = \(idle);")
             deleteButton.enabled = false
             saveButton.enabled = false
         }

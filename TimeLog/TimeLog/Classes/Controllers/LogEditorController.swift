@@ -230,6 +230,8 @@ class LogEditorController: UIViewController {
         log?.plan?.updateDay(NSDate())
         //log?.plan?.updateTotal()
         
+        print("\(self) - \(#function): note = \(log?.note), textView = \(noteTextView.note))")
+        
         Notify.post(NotifyType.Update, userInfo: ["idle": idle, "index": index])
         
         dismissViewControllerAnimated(false, completion: nil)

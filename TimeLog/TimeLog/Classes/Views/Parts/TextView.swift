@@ -40,10 +40,6 @@ class TextView: UITextView, UITextViewDelegate {
                 holder = false
                 text = note
                 textColor = AppTint.fontColor().main
-            } else {
-                holder = true
-                text = placeholder
-                textColor = AppTint.fontColor().sub
             }
         }
     }
@@ -60,8 +56,16 @@ class TextView: UITextView, UITextViewDelegate {
         }
         return true
     }
-    
+    func textViewDidChange(textView: UITextView) {
+        if text.isEmpty == false {
+            note = text
+        }
+    }
     func textViewDidEndEditing(textView: UITextView) {
-        note = text
+        if text.isEmpty != false {
+            holder = true
+            text = placeholder
+            textColor = AppTint.fontColor().sub
+        }
     }
 }

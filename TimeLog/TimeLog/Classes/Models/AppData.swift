@@ -45,13 +45,11 @@ class AppData {
         for id in AppData.shared.order.plan {
             let index = datas.indexOf({ $0.id == id })!
             AppData.shared.plans.append(datas[index])
-            //datas[index].updateTotal()
             datas[index].updateDay(date)
         }
         for id in AppData.shared.order.idle {
             let index = datas.indexOf({ $0.id == id })!
             AppData.shared.idles.append(datas[index])
-            //datas[index].updateTotal()
             datas[index].updateDay(date)
         }
         

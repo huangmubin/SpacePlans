@@ -31,6 +31,15 @@ class Clock: NSObject {
         return (start!, end)
     }
     
+    /// 输出日期当天的时间范围
+    class func dayRange(date: Double) -> (start: Double, end: Double) {
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        var start: NSDate?
+        calendar.rangeOfUnit(NSCalendarUnit.Day, startDate: &start, interval: nil, forDate: NSDate(timeIntervalSince1970: date))
+        return (start!.timeIntervalSince1970, start!.timeIntervalSince1970 + 86400)
+    }
+    
+    
     /// 输出日期当月的时间范围
     class func monthRange(date: NSDate) -> (start: NSDate, end: NSDate) {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()

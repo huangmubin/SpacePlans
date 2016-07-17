@@ -20,6 +20,7 @@
 		9CB9E1BB1D33D83700D62E0B /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1B71D33D83700D62E0B /* Plan.swift */; };
 		9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1BC1D33E26C00D62E0B /* Drawer.swift */; };
 		9CB9E1C31D33E52600D62E0B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9E1C21D33E52600D62E0B /* Button.swift */; };
+		9CC18EA81D3B0262004A6913 /* LogPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EA71D3B0262004A6913 /* LogPreview.swift */; };
 		9CD11C181D3683FA00B459BA /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD11C171D3683FA00B459BA /* Notify.swift */; };
 		B106C2A41D39E646005AE0FD /* LogListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B106C2A31D39E646005AE0FD /* LogListCell.swift */; };
 		B106C2A61D3A0AC8005AE0FD /* LogListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B106C2A51D3A0AC8005AE0FD /* LogListController.swift */; };
@@ -59,6 +60,7 @@
 		9CB9E1B71D33D83700D62E0B /* Plan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		9CB9E1BC1D33E26C00D62E0B /* Drawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		9CB9E1C21D33E52600D62E0B /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		9CC18EA71D3B0262004A6913 /* LogPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPreview.swift; sourceTree = "<group>"; };
 		9CD11C171D3683FA00B459BA /* Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
 		B106C2A31D39E646005AE0FD /* LogListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogListCell.swift; sourceTree = "<group>"; };
 		B106C2A51D3A0AC8005AE0FD /* LogListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogListController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				B1DC66621D3773330006E24B /* LogListView.swift */,
 				B106C2A31D39E646005AE0FD /* LogListCell.swift */,
+				9CC18EA71D3B0262004A6913 /* LogPreview.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				B106C2A41D39E646005AE0FD /* LogListCell.swift in Sources */,
 				9CB9E1AB1D33D6D900D62E0B /* CoreData.swift in Sources */,
 				B17EDB091D34F47800093C81 /* PagControl.swift in Sources */,
+				9CC18EA81D3B0262004A6913 /* LogPreview.swift in Sources */,
 				B1DD11381D389718005E7598 /* Clock.swift in Sources */,
 				9CB9E1BD1D33E26C00D62E0B /* Drawer.swift in Sources */,
 				B1DC666F1D377EDF0006E24B /* PickerView.swift in Sources */,

@@ -27,6 +27,17 @@ class MenuBar: UIView {
         self.logPageControl.alpha = 0
         self.dayButton.alpha = 0
         type = .Plan
+        
+        self.logPageControl.numberOfPages = AppData.shared.plans.count
+        
+        // Notify
+        Notify.add(self, selector: #selector(reload), type: NotifyType.Reload)
+    }
+    
+    // MARK: - Notify
+    
+    func reload() {
+        self.logPageControl.numberOfPages = AppData.shared.plans.count
     }
     
     // MARK: - Type

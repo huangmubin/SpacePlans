@@ -9,7 +9,6 @@
 import UIKit
 
 class LogListCell: UITableViewCell {
-
     
     // MARK: - Values
     
@@ -79,6 +78,62 @@ class LogListCell: UITableViewCell {
         noteLabel.textColor  = AppTint.fontColor().main
         timeLabel.textColor = AppTint.fontColor().sub
         startLabel.textColor   = AppTint.fontColor().sub
+    }
+    
+    
+    
+    // MARK: Button Actions
+    
+    var actions: ((NSIndexPath) -> Void)?
+    
+    @IBAction func buttonActions(sender: Button) {
+        actions?(index)
+        UIView.animateWithDuration(0.5) {
+            self.contentCenterLayout.constant = 0
+            self.layoutIfNeeded()
+        }
+    }
+    
+    
+    // MARK: - Gesture
+    
+    var gesture: ((Bool) -> Void)?
+    var origin: CGFloat = 0
+    var layout: CGFloat = 0
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        origin = touches.first!.locationInView(self).x
+        layout = contentCenterLayout.constant
+        gesture?(true)
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let distance = touches.first!.locationInView(self).x - origin + self.layout
+        UIView.animateWithDuration(0.02) {
+            self.contentCenterLayout.constant = distance <= 0 ? distance : 0
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if self.contentCenterLayout.constant < -backView.frame.height {
+            layout = -backView.frame.height
+        } else {
+            layout = 0
+        }
+        UIView.animateWithDuration(0.2) {
+            self.contentCenterLayout.constant = self.layout
+            self.layoutIfNeeded()
+        }
+        gesture?(false)
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        UIView.animateWithDuration(0.2) {
+            self.contentCenterLayout.constant = 0
+            self.layoutIfNeeded()
+        }
+        gesture?(false)
     }
     
 }

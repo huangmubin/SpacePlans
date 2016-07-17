@@ -105,14 +105,15 @@ class TimeLogController: UIViewController {
             if $0 == "PlanAdd" {
                 self?.performSegueWithIdentifier("Edit", sender: nil)
             }
-            print("\(self!) - \(#function): MenuBar RightAction \($0)")
+            //print("\(self!) - \(#function): MenuBar RightAction \($0)")
         }
         menuBar.planListAction = { [weak self] in
-            print("\(self!) - \(#function): MenuBar planListAction \($0)")
+            //print("\(self!) - \(#function): MenuBar planListAction \($0)")
             self?.planListView.idle = $0
         }
         menuBar.logListAction = { [weak self] in
-            print("\(self!) - \(#function): MenuBar logListAction \($0)")
+            self?.logListView.index = $0
+            //print("\(self!) - \(#function): MenuBar logListAction \($0)")
         }
         menuBar.dayAction = { [weak self] in
             print("\(self!) - \(#function): MenuBar dayAction \($0) \($1)")
@@ -127,7 +128,7 @@ class TimeLogController: UIViewController {
     func deployPlanListView() {
         planListView.deploy()
         planListView.actions = { [weak self] in
-            print("\(self!) - \(#function): PlanListView Actions = \($0), Index = \($1.row)")
+            //print("\(self!) - \(#function): PlanListView Actions = \($0), Index = \($1.row)")
             self?.performSegueWithIdentifier($0, sender: $1.row)
         }
         planListView.tableView.reloadData()
@@ -139,6 +140,9 @@ class TimeLogController: UIViewController {
     
     func deployLogList() {
         logListView.deploy()
+        logListView.indexAction = { [weak self] in
+            self?.menuBar.logPageControl.currentPage = $0
+        }
     }
     
     // MARK: Day Chart View

@@ -50,18 +50,100 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSI-Lb-BCN">
                                                     <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gr9-h3-j9x">
+                                                            <rect key="frame" x="304" y="0.0" width="0.0" height="35"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-LC-5VI" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                                                    <rect key="frame" x="-15" y="3" width="30" height="30"/>
+                                                                    <state key="normal" image="Delete"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="types">
+                                                                            <integer key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="note" value="Delete"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="buttonActions:" destination="e0f-yC-nWo" eventType="touchUpInside" id="f5K-Jo-puj"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="8QL-LC-5VI" firstAttribute="centerY" secondItem="gr9-h3-j9x" secondAttribute="centerY" id="AGj-Cg-bn9"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Ugc-4Q-PJy"/>
+                                                                <constraint firstItem="8QL-LC-5VI" firstAttribute="centerX" secondItem="gr9-h3-j9x" secondAttribute="centerX" id="aSX-hX-Fry"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="gr9-h3-j9x" secondAttribute="trailing" id="edd-Pw-K3e"/>
+                                                        <constraint firstItem="gr9-h3-j9x" firstAttribute="top" secondItem="YSI-Lb-BCN" secondAttribute="top" id="uuy-lb-1WJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gr9-h3-j9x" secondAttribute="bottom" id="zss-ur-2T9"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42N-h1-wQP">
+                                                    <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-rX-Ips">
+                                                            <rect key="frame" x="8" y="1" width="37" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="持续 100 分钟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-dx-e2U">
+                                                            <rect key="frame" x="16" y="24" width="105" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="始于：16： 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YQ-XI-I2e">
+                                                            <rect key="frame" x="187" y="24" width="109" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Kdh-dx-e2U" firstAttribute="top" secondItem="9DH-rX-Ips" secondAttribute="bottom" constant="2" id="01D-aV-lk6"/>
+                                                        <constraint firstItem="9DH-rX-Ips" firstAttribute="leading" secondItem="42N-h1-wQP" secondAttribute="leading" constant="8" id="A5W-Wz-YaT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9YQ-XI-I2e" secondAttribute="trailing" constant="8" id="DTO-43-Fgu"/>
+                                                        <constraint firstItem="9YQ-XI-I2e" firstAttribute="top" secondItem="Kdh-dx-e2U" secondAttribute="top" id="dGb-c0-h5m"/>
+                                                        <constraint firstItem="Kdh-dx-e2U" firstAttribute="leading" secondItem="9DH-rX-Ips" secondAttribute="leading" constant="8" id="eHA-7f-6GL"/>
+                                                        <constraint firstItem="9DH-rX-Ips" firstAttribute="bottom" secondItem="42N-h1-wQP" secondAttribute="centerY" constant="4" id="otv-gi-Pq3"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="42N-h1-wQP" firstAttribute="height" secondItem="YSI-Lb-BCN" secondAttribute="height" id="OJ0-JT-F3S"/>
+                                                <constraint firstItem="gr9-h3-j9x" firstAttribute="leading" secondItem="42N-h1-wQP" secondAttribute="trailing" priority="750" id="TCM-0h-GOe"/>
+                                                <constraint firstItem="42N-h1-wQP" firstAttribute="width" secondItem="YSI-Lb-BCN" secondAttribute="width" id="TnD-A9-Wmo"/>
                                                 <constraint firstAttribute="trailing" secondItem="YSI-Lb-BCN" secondAttribute="trailing" constant="8" id="VgJ-bN-tmV"/>
+                                                <constraint firstItem="42N-h1-wQP" firstAttribute="centerY" secondItem="cYn-Go-OJT" secondAttribute="centerY" id="fFe-rZ-p1y"/>
                                                 <constraint firstItem="YSI-Lb-BCN" firstAttribute="top" secondItem="cYn-Go-OJT" secondAttribute="top" constant="4" id="heQ-HK-Q8L"/>
                                                 <constraint firstItem="YSI-Lb-BCN" firstAttribute="leading" secondItem="cYn-Go-OJT" secondAttribute="leading" constant="8" id="k8J-4t-59c"/>
                                                 <constraint firstAttribute="bottom" secondItem="YSI-Lb-BCN" secondAttribute="bottom" constant="4" id="pbp-Aj-ox5"/>
+                                                <constraint firstItem="42N-h1-wQP" firstAttribute="centerX" secondItem="cYn-Go-OJT" secondAttribute="centerX" id="tCd-Yv-HFi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backView" destination="YSI-Lb-BCN" id="A7j-in-OfW"/>
+                                            <outlet property="content" destination="42N-h1-wQP" id="Re6-Co-qFC"/>
+                                            <outlet property="contentCenterLayout" destination="tCd-Yv-HFi" id="J9B-dt-eAp"/>
+                                            <outlet property="deleteButton" destination="8QL-LC-5VI" id="Yt7-Yu-PWH"/>
+                                            <outlet property="noteLabel" destination="9DH-rX-Ips" id="Qic-7B-flf"/>
+                                            <outlet property="rightView" destination="gr9-h3-j9x" id="9hh-a0-Naq"/>
+                                            <outlet property="startLabel" destination="9YQ-XI-I2e" id="Y2q-Oq-lMh"/>
+                                            <outlet property="timeLabel" destination="Kdh-dx-e2U" id="oJH-fY-hDN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rwY-kU-yPa" id="ZGp-MJ-udw"/>
+                                    <outlet property="delegate" destination="rwY-kU-yPa" id="r9D-rB-OG6"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsE-TL-34A">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -72,10 +154,22 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrl-rb-BgI" customClass="Button" customModule="TimeLog" customModuleProvider="target">
+                                        <rect key="frame" x="281" y="62" width="31" height="30"/>
+                                        <state key="normal" image="LogAdd"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="types">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="note" value="LogAdd"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Xrl-rb-BgI" secondAttribute="bottom" constant="8" id="9Kj-um-gi6"/>
                                     <constraint firstItem="BWy-xL-SIc" firstAttribute="centerY" secondItem="AsE-TL-34A" secondAttribute="centerY" id="Wja-qP-M0p"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xrl-rb-BgI" secondAttribute="trailing" constant="8" id="XvN-Om-yfj"/>
                                     <constraint firstItem="BWy-xL-SIc" firstAttribute="centerX" secondItem="AsE-TL-34A" secondAttribute="centerX" id="bbu-QL-Gbr"/>
                                     <constraint firstAttribute="height" constant="100" id="u5B-db-oAT"/>
                                 </constraints>
@@ -95,6 +189,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="524"/>
                     <connections>
+                        <outlet property="label" destination="BWy-xL-SIc" id="4ji-5f-pAY"/>
                         <outlet property="tableView" destination="Qeb-s6-Zx2" id="yaZ-Pp-vxr"/>
                     </connections>
                 </viewController>
@@ -968,7 +1063,7 @@
                                             <action selector="planListAction:" destination="RHX-fv-afk" eventType="touchUpInside" id="UrI-7S-VSq"/>
                                         </connections>
                                     </button>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="b1a-0T-9lG" customClass="PageControl" customModule="TimeLog" customModuleProvider="target">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="b1a-0T-9lG" customClass="PageControl" customModule="TimeLog" customModuleProvider="target">
                                         <rect key="frame" x="58" y="4" width="204" height="37"/>
                                         <connections>
                                             <action selector="logPageValueChanged:" destination="RHX-fv-afk" eventType="valueChanged" id="9hP-9R-JOC"/>
@@ -1055,6 +1150,9 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Icd-5H-ZDE">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="delegate" destination="r8h-Xe-En0" id="s1f-4z-QUh"/>
+                            </connections>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1111,6 +1209,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Delete" width="30" height="30"/>
         <image name="Edit" width="30" height="27"/>
         <image name="LogAdd" width="31" height="30"/>
         <image name="MenuOpen" width="30" height="30"/>
