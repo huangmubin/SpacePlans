@@ -9,6 +9,9 @@
 import UIKit
 
 class LogEditorController: ViewController {
+    
+    
+    
 /*
     // MARK: - Values
     

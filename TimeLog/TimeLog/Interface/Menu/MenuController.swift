@@ -85,15 +85,9 @@ class MenuController: ViewController {
      index: DataIndex
      */
     func showingActions(data: [String: AnyObject]) {
-        let type = data["type"] as! String
-        switch type {
-        case "LogAdd":
-            
-        default:
-            <#code#>
-        }
+        
     }
-    
+//
     // MARK: - Editor
     
     var editor: EditorController!
