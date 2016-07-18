@@ -8,8 +8,8 @@
 
 import UIKit
 
-class LogEditorController: ViewController, UITableViewDataSource, UITableViewDelegate {
-
+class LogEditorController: ViewController {
+/*
     // MARK: - Values
     
     var index: Int = 0
@@ -282,5 +282,5 @@ class LogEditorController: ViewController, UITableViewDataSource, UITableViewDel
         //dismissViewControllerAnimated(false, completion: nil)
     }
 
-    
+    */
 }

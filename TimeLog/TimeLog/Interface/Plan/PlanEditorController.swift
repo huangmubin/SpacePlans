@@ -8,48 +8,45 @@
 
 import UIKit
 
-class PlanEditorController: ViewController {
-
-    // MARK: - Value
-    
-    var index: Int?
-    var idle: Bool = false
-    
-    func deployValue() {
-        if let index = index {
-            let data = idle ? Idles[index] : Plans[index]
-            nameTextField.text  = data.name
-            noteTextView.note   = data.note
-            idle = data.idle
-            dayPicker.selectRow(Int(data.days - 1), inComponent: 0, animated: false)
-            timePicker.selectRow(Int(data.time / 360 - 1), inComponent: 0, animated: false)
-        } else {
-            deleteButton.enabled = false
-            saveButton.enabled = false
-        }
-        idleButton.selected = idle
-    }
+class PlanEditorController: EditorController {
     
     // MARK: - Life cycle
     
     override func deploy() {
         view.layoutIfNeeded()
-        deployBackView()
         deployValue()
+        deployBackView()
         deployPicker()
         nameTextField.becomeFirstResponder()
     }
     
+    // MARK: - Value
+    
+    func deployValue() {
+        if let data = index.takePlan() {
+            nameTextField.text  = data.name
+            noteTextView.note   = data.note
+            dayPicker.selectRow(Int(data.days - 1), inComponent: 0, animated: false)
+            timePicker.selectRow(Int(data.time / 360 - 1), inComponent: 0, animated: false)
+            idleButton.selected = data.idle
+        } else {
+            deleteButton.enabled = false
+            saveButton.enabled = false
+        }
+    }
+    
     // MARK: - Back View
     
+    //@IBOutlet weak var centerLayout: NSLayoutConstraint!
     var layers = [CALayer]()
     
     func deployBackView() {
         for layer in layers {
             layer.removeFromSuperlayer()
         }
+        layers.removeAll(keepCapacity: true)
         
-        let lines: [CGFloat] = [50, 130, view.bounds.height-60]
+        let lines: [CGFloat] = [50, 120, 190]
         for line in lines {
             let layer = Drawer.line(view.bounds, x1: 10, y1: line, x2: view.bounds.width - 10, y2: line, w: 1, dashPhase: 10)
             layer.strokeColor = AppTint.mainColor().CGColor
@@ -58,18 +55,11 @@ class PlanEditorController: ViewController {
         }
     }
     
-    func setSize(h: CGFloat) {
-        let change = h - layers[2].frame.height
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(0.3)
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
-        layers[2].frame.origin.y = change
-        CATransaction.commit()
-        
-        UIView.animateWithDuration(0.3) { 
-            self.view.frame.size.height = h
-        }
+    @IBAction func tapAction(sender: UITapGestureRecognizer) {
+        nameTextField.resignFirstResponder()
+        noteTextView.resignFirstResponder()
     }
+    
     
     // MARK: - Name
     
@@ -102,14 +92,15 @@ class PlanEditorController: ViewController {
     //var actions: ((Bool) -> Void)?
     
     @IBAction func cancelAction(sender: Button) {
-        actions?(false)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        action?(nil)
     }
     
     @IBAction func deleteAction(sender: Button) {
-        if let index = index {
-            AppData.removePlan(idle, index: index)
+        if let i = index.index {
+            AppData.removePlan(index.idle, index: i)
+            action?(["type": "delete"])
         }
-        actions?(false)
     }
     
     @IBAction func idleAction(sender: Button) {
@@ -117,10 +108,13 @@ class PlanEditorController: ViewController {
     }
     
     @IBAction func saveAction(sender: Button) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
         var data: Plan
-        if let index = index {
-            data = idle ? Idles[index] : Plans[index]
-            AppData.orderChanged(idle, now: idleButton.selected, id: data.id)
+        
+        if let plan = index.takePlan() {
+            data = plan
+            AppData.orderChanged(plan.idle, now: idleButton.selected, id: plan.id)
         } else {
             data = AppData.addPlan()
             data.idle = idleButton.selected
@@ -132,8 +126,27 @@ class PlanEditorController: ViewController {
         data.note = noteTextView.note
         
         AppData.save()
-        actions?(true)
+        
+        action?(true)
     }
     
+    // MARK: - Keyboard
     
+//    func keyboard(info: NSNotification) {
+//        if let value = info.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+//            let height = value.CGRectValue().height
+//            let move = -height / 2
+//            UIView.animateWithDuration(0.3) {
+//                self.centerLayout.constant = move
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//    }
+//    
+//    func keyboardHide() {
+//        UIView.animateWithDuration(0.3) { 
+//            self.centerLayout.constant = 0
+//            self.view.layoutIfNeeded()
+//        }
+//    }
 }

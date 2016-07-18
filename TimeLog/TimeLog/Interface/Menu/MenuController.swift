@@ -10,28 +10,20 @@ import UIKit
 
 class MenuController: ViewController {
 
-    // MARK: - Values
-    
-    /// 当前显示的视图标识
-    var show: String {
-        set {
-            NSUserDefaults.standardUserDefaults().setObject(show, forKey: "ShowViewIdentify")
-        }
-        get {
-            return (NSUserDefaults.standardUserDefaults().objectForKey("ShowViewIdentify") as? String) ?? "Plan"
-        }
-    }
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addKeyboardNotification()
+        view.insertSubview(backgroundEffectView, atIndex: 0)
         showingView = ViewController.initNib(show)
         showingView.view.frame = ViewFrame
         showingView.deploy()
         view.addSubview(showingView.view)
     }
+    
+    // MARK: - Back ground
+    
+    @IBOutlet weak var backgroundEffectView: UIVisualEffectView!
     
     
     // MARK: - Menu
@@ -41,24 +33,32 @@ class MenuController: ViewController {
     @IBOutlet weak var leftButton: Button!
     
     @IBAction func rightAction(sender: Button) {
-        editorDeploy(true, index: 0)
+        var index = showingView.index
+        if index.type {
+            index.index = nil
+        } else {
+            index.deital = nil
+        }
+        editorDeploy(index)
     }
     @IBAction func leftAction(sender: Button) {
+        
     }
-    
-    
     
     // MARK: - Buttons
     
     @IBOutlet var navigationButtons: [Button]!
     
     @IBAction func navigationAction(sender: Button) {
+        print("note \(sender.note); show \(show)")
         if sender.note == show {
             animateShow(true)
         } else {
             show = sender.note
             let new = ViewController.initNib(sender.note)
             new.view.frame = CGRect(x: 0, y: ScreenHeight, width: ViewFrame.width, height: ViewFrame.height)
+            new.actions = showingActions
+            new.gesture = gestureSwith
             new.deploy()
             view.addSubview(new.view)
             animateChange(new)
@@ -70,43 +70,74 @@ class MenuController: ViewController {
     
     var showingView: ViewController!
     
-    
-    // MARK: - Editor
-    
-    var editor: ViewController!
-    
-    func editorDeploy(plan: Bool, index: Int) {
-        if plan {
-            editor = ViewController.initNib("Plan", identifier: "PlanEditor")
-            editor.view.frame = CGRect(x: 0, y: ScreenHeight, width: ScreenWidth, height: 320)
-            editor.actions = editorAction
-            view.addSubview(editor.view)
-            editor.deploy()
-            UIView.animateWithDuration(0.3) {
-                self.editor.view.frame.origin.y = 20
-            }
-        } else {
-            
+    /// 当前显示的视图标识
+    var show: String {
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "ShowViewIdentify")
+        }
+        get {
+            return (NSUserDefaults.standardUserDefaults().objectForKey("ShowViewIdentify") as? String) ?? "Plan"
         }
     }
     
-    func editorAction(data: AnyObject?) {
-        let update = data as! Bool
-        if update {
+    /*
+     type: "LogAdd", "Edit", "Timer", "Select"
+     index: DataIndex
+     */
+    func showingActions(data: [String: AnyObject]) {
+        let type = data["type"] as! String
+        switch type {
+        case "LogAdd":
             
-        } else {
+        default:
+            <#code#>
+        }
+    }
+    
+    // MARK: - Editor
+    
+    var editor: EditorController!
+    
+    func editorDeploy(index: DataIndex) {
+        panGesture.enabled = false
+        
+        editor = EditorController.initNib(index.type ? "Plan" : "Log", identifier: index.type ? "PlanEditor" : "LogEditor")
+        
+        editor.index = index
+        
+        editor.view.frame = ViewFrame
+        editor.view.frame.origin.y = ScreenHeight
+        
+        editor.action = editorAction
+        view.addSubview(editor.view)
+        editor.deploy()
+        editorAnimation(true)
+    }
+    
+    func editorAction(data: AnyObject?) {
+        if data == nil {
             showingView.update(nil)
+        } else {
+            showingView.update(data)
         }
         
-        UIView.animateWithDuration(0.5, animations: {
-            self.editor.view.frame.origin.y = ScreenHeight
+        editorAnimation(false)
+    }
+    
+    func editorAnimation(show: Bool) {
+        UIView.animateWithDuration(0.3, animations: { 
+            self.editor.view.frame.origin.y = show ? StatusBarHeight : ScreenHeight
             }) { (finish) in
-                self.editor.view.removeFromSuperview()
-                self.editor = nil
+                if !show {
+                    self.editor.view.removeFromSuperview()
+                    self.editor = nil
+                    self.panGesture.enabled = true
+                }
         }
     }
     
     // MARK: - Gesture
+    
     
     @IBOutlet var panGesture: UIPanGestureRecognizer!
     
@@ -131,6 +162,10 @@ class MenuController: ViewController {
                 animationShowDay()
             }
         }
+    }
+    
+    func gestureSwith(open: Bool) {
+        panGesture.enabled = open
     }
     
     // MARK: - Animation
@@ -159,28 +194,5 @@ class MenuController: ViewController {
         }
     }
     
-    
-    // MARK: - Keyboard Notification
-    
-    /** 设置键盘广播方法 */
-    func addKeyboardNotification() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuController.KeyboardDidChangeFrameNotification(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
-        //UIKeyboardWillChangeFrameNotification
-        //UIKeyboardDidChangeFrameNotification
-    }
-    /** 移除键盘广播方法 */
-    func removeNotification() {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    // 键盘变化广播方法，每次出现时，就通过改变 searchViewBottomLayout 改变 SearchView 的位置。
-    func KeyboardDidChangeFrameNotification(notification: NSNotification) {
-        let info: NSDictionary = notification.userInfo!
-        if let rect = info.objectForKey(UIKeyboardFrameEndUserInfoKey)?.CGRectValue {
-            if let plan = editor as? PlanEditorController {
-                plan.setSize(ScreenHeight - StatusBarHeight - rect.height - 4)
-            }
-        }
-    }
 
 }

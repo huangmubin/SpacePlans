@@ -19,15 +19,13 @@ class ViewController: UIViewController {
         return UIStoryboard(name: nib, bundle: nil).instantiateViewControllerWithIdentifier(identifier) as! ViewController
     }
     
-    func deploy() {
-        
-    }
+    func deploy() { }
     
-    func update(data: AnyObject?) {
-        
-    }
+    func update(data: AnyObject?) { }
     
-    var actions: ((AnyObject?) -> Void)?
+    var actions: (([String: AnyObject]) -> Void)?
+    var gesture: ((Bool) -> Void)?
+    var index: DataIndex!
     
     deinit {
         print("\(self) - Deinit.")

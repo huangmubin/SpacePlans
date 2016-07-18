@@ -10,6 +10,32 @@ import UIKit
 import CoreData
 
 // MARK: Global Data
+struct DataIndex {
+    /// true is Plan, false is Log
+    var type: Bool = true
+    /// is Idles or Plans
+    var idle: Bool = false
+    /// Plan[index]
+    var index: Int?
+    /// Plan[index].logs[detail]
+    var deital: Int?
+    
+    func takePlan() -> Plan? {
+        if index == nil {
+            return nil
+        } else {
+            return idle ? Idles[index!] : Plans[index!]
+        }
+    }
+    
+    func takeIdle() -> Log? {
+        if index == nil || deital == nil {
+            return nil
+        } else {
+            return idle ? Idles[index!].logs[deital!] : Plans[index!].logs[deital!]
+        }
+    }
+}
 
 /// 正常计划列表
 var Plans: [Plan] = [Plan]()
@@ -130,32 +156,30 @@ class AppData {
     // MARK: Order
     
     /// 顺序变更 idle == true
-    class func orderChanged(origin: Bool, now: Bool, id: Double) {
+    class func orderChanged(origin: Bool, now: Bool, id: Double) -> Bool {
         switch (origin, now) {
         case (true, false):
             let index = AppData.shared.order.idle.indexOf(id)!
             AppData.shared.order.idle.removeAtIndex(index)
             AppData.shared.order.plan.append(id)
             
-            // let data = AppData.shared.idles.removeAtIndex(index)
             let data = Idles.removeAtIndex(index)
             data.idle = now
-            // AppData.shared.plans.append(data)
             Plans.append(data)
+            
         case (false, true):
             let index = AppData.shared.order.plan.indexOf(id)!
             AppData.shared.order.plan.removeAtIndex(index)
             AppData.shared.order.idle.append(id)
             
-            // let data = AppData.shared.plans.removeAtIndex(index)
             let data = Plans.removeAtIndex(index)
             data.idle = now
-            // AppData.shared.idles.append(data)
             Idles.append(data)
         default:
-            break
+            return false
         }
         AppData.saveOrder()
+        return true
     }
     
     // MARK: - Core

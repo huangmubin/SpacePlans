@@ -24,8 +24,6 @@
 		9CC18ECD1D3B0AE6004A6913 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EC71D3B0AE6004A6913 /* View.swift */; };
 		9CC18EE01D3B0C4F004A6913 /* Day.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18ED41D3B0C4F004A6913 /* Day.storyboard */; };
 		9CC18EE11D3B0C4F004A6913 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18ED61D3B0C4F004A6913 /* Log.storyboard */; };
-		9CC18EE21D3B0C4F004A6913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18ED81D3B0C4F004A6913 /* Main.storyboard */; };
-		9CC18EE31D3B0C4F004A6913 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18ED91D3B0C4F004A6913 /* MainController.swift */; };
 		9CC18EE41D3B0C4F004A6913 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18EDB1D3B0C4F004A6913 /* Menu.storyboard */; };
 		9CC18EE51D3B0C4F004A6913 /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18EDD1D3B0C4F004A6913 /* Plan.storyboard */; };
 		9CC18EE61D3B0C4F004A6913 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC18EDF1D3B0C4F004A6913 /* Timer.storyboard */; };
@@ -41,6 +39,7 @@
 		9CC18EFB1D3B4191004A6913 /* PlanEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EFA1D3B4191004A6913 /* PlanEditorController.swift */; };
 		9CC18EFD1D3B8A96004A6913 /* LogEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */; };
 		9CD11C181D3683FA00B459BA /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD11C171D3683FA00B459BA /* Notify.swift */; };
+		B1589F311D3C6ABD00482522 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1589F301D3C6ABD00482522 /* EditorController.swift */; };
 		B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */; };
 		B1DBA97A1D27BF58006BD6DC /* TimeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DBA9781D27BF58006BD6DC /* TimeLog.xcdatamodeld */; };
 		B1DBA97C1D27BF58006BD6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DBA97B1D27BF58006BD6DC /* Assets.xcassets */; };
@@ -66,8 +65,6 @@
 		9CC18EC71D3B0AE6004A6913 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9CC18ED41D3B0C4F004A6913 /* Day.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Day.storyboard; sourceTree = "<group>"; };
 		9CC18ED61D3B0C4F004A6913 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
-		9CC18ED81D3B0C4F004A6913 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9CC18ED91D3B0C4F004A6913 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		9CC18EDB1D3B0C4F004A6913 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		9CC18EDD1D3B0C4F004A6913 /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		9CC18EDF1D3B0C4F004A6913 /* Timer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
@@ -83,6 +80,7 @@
 		9CC18EFA1D3B4191004A6913 /* PlanEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanEditorController.swift; sourceTree = "<group>"; };
 		9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEditorController.swift; sourceTree = "<group>"; };
 		9CD11C171D3683FA00B459BA /* Notify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
+		B1589F301D3C6ABD00482522 /* EditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		B1DBA96E1D27BF58006BD6DC /* TimeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DBA9711D27BF58006BD6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DBA9791D27BF58006BD6DC /* TimeLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLog.xcdatamodel; sourceTree = "<group>"; };
@@ -157,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC18EF81D3B2839004A6913 /* ViewController.swift */,
-				9CC18ED71D3B0C4F004A6913 /* Main */,
+				B1589F301D3C6ABD00482522 /* EditorController.swift */,
 				9CC18EDA1D3B0C4F004A6913 /* Menu */,
 				9CC18EDC1D3B0C4F004A6913 /* Plan */,
 				9CC18ED51D3B0C4F004A6913 /* Log */,
@@ -184,15 +182,6 @@
 				9CC18EFC1D3B8A96004A6913 /* LogEditorController.swift */,
 			);
 			path = Log;
-			sourceTree = "<group>";
-		};
-		9CC18ED71D3B0C4F004A6913 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9CC18ED81D3B0C4F004A6913 /* Main.storyboard */,
-				9CC18ED91D3B0C4F004A6913 /* MainController.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		9CC18EDA1D3B0C4F004A6913 /* Menu */ = {
@@ -338,7 +327,6 @@
 			files = (
 				9CC18EE61D3B0C4F004A6913 /* Timer.storyboard in Resources */,
 				B1DBA97F1D27BF58006BD6DC /* LaunchScreen.storyboard in Resources */,
-				9CC18EE21D3B0C4F004A6913 /* Main.storyboard in Resources */,
 				9CC18EE51D3B0C4F004A6913 /* Plan.storyboard in Resources */,
 				9CC18EE01D3B0C4F004A6913 /* Day.storyboard in Resources */,
 				9CC18EE41D3B0C4F004A6913 /* Menu.storyboard in Resources */,
@@ -363,7 +351,6 @@
 				9CC18EFD1D3B8A96004A6913 /* LogEditorController.swift in Sources */,
 				9CC18EF31D3B0CF0004A6913 /* TimeLogCell.swift in Sources */,
 				B1DBA9721D27BF58006BD6DC /* AppDelegate.swift in Sources */,
-				9CC18EE31D3B0C4F004A6913 /* MainController.swift in Sources */,
 				9CC18ECA1D3B0AE6004A6913 /* PickerView.swift in Sources */,
 				9CD11C181D3683FA00B459BA /* Notify.swift in Sources */,
 				9CC18ECD1D3B0AE6004A6913 /* View.swift in Sources */,
@@ -378,6 +365,7 @@
 				9CB9E1AB1D33D6D900D62E0B /* CoreData.swift in Sources */,
 				9CC18EC01D3B0AD2004A6913 /* Plan.swift in Sources */,
 				B1DD11381D389718005E7598 /* Clock.swift in Sources */,
+				B1589F311D3C6ABD00482522 /* EditorController.swift in Sources */,
 				9CC18EC11D3B0AD2004A6913 /* Plan+CoreDataProperties.swift in Sources */,
 				9CC18ECC1D3B0AE6004A6913 /* TextView.swift in Sources */,
 				9CC18EFB1D3B4191004A6913 /* PlanEditorController.swift in Sources */,
